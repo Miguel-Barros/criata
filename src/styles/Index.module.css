@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+
+.title {
+    padding: 0;
+    margin: 0;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    color: #595555;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.left,
+.right {
+    width: 50vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.subtitle {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    width: 434px;
+    text-align: justify;
+    color: #726b6b;
+    margin-top: 15%;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    color: #726b6b;
+}
+
+.b {
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 35px;
+    color: #A57645;
+}
+
+.btn {
+    width: 193px;
+    height: 55px;
+    background: #EFBA6D;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    border: none;
+    font-weight: 700;
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-top: 15%;
+    cursor: pointer;
+    margin-left: 25%;
+    transition: all .3s ease-out;
+}
+
+.btn:hover {
+    background: #e2b168;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    width: 50%;
+    height: 50%;
+    margin: 50vh auto;
+    transform: translateY(-50%);
+}
+
+.background {
+    position: absolute;
+    width: 55%;
+    object-fit: cover;
+    height: 100%;
+    right: 0;
+    z-index: -1;
+}
+
+.ilus {
+    position: absolute;
+    width: 40%;
+    right: 5vw;
+    top: 25vh;
+}
+
+.navigation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 2vw;
+    top: 50vh;
+}
+
+.elipse {
+    width: 25px;
+    height: 25px;
+    margin-top: 45%;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.elipse:hover {
+    background: #EFBA6D;
+}
