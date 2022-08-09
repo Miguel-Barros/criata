@@ -13,9 +13,6 @@
     height: 100vh;
 }
 
-.left {
-}
-
 .right {
     display: flex;
     flex-direction: column;
