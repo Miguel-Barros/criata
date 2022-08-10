@@ -86,7 +86,7 @@
 
 .background {
     position: absolute;
-    width: 55%;
+    width: 50%;
     object-fit: cover;
     height: 100%;
     right: 0;
@@ -95,9 +95,9 @@
 
 .ilus {
     position: absolute;
-    width: 40%;
-    right: 5vw;
-    top: 25vh;
+    width: 25%;
+    right: 10vw;
+    top: 30vh;
 }
 
 .navigation {
