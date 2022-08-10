@@ -1,19 +1,17 @@
 .container {
     width: 100vw;
     height: 100vh;
-    font-family: Mulish;
 }
 
 .main {
     display: flex;
+    justify-content: space-around;
 }
 
-.left, .right {
+.left,
+.right {
     width: 50vw;
     height: 100vh;
-}
-
-.right {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +28,7 @@
 
 .input {
     width: 300px;
-    height: 45px;
+    height: 40px;
     background: #F5F5F4;
     border: 8px;
     margin: 1.2%;
@@ -55,6 +53,8 @@
     height: 40px;
     margin-top: 2%;
     background: #EFBA6D;
+    font-weight: 600;
+    color: white;
     border-radius: 12px;
     border: none;
     font-size: 16px;

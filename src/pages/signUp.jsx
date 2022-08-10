@@ -18,7 +18,7 @@ export default function SignUp() {
                     <input type="text" placeholder='Nome de usuario' className={styles.input} />
                     <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />
-                    <input type="password" placeholder='Senha' className={styles.input} />
+                    <input type="password" placeholder='Confirmar senha' className={styles.input} />
                     <button className={styles.btn}>Criar conta</button>
                     <Link href='/signIn'>
                         <a className={styles.link}>Fazer login</a>
