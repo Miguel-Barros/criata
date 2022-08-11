@@ -1,8 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/SignIn.module.css'
+import styles from '../styles/SignIn.module.css';
+import Router from 'next/router';
 
 export default function SignIn() {
+
+    async function SignInWithEmail() {
+        Router.push('/home')
+    }
 
     return (
         <div className={styles.container}>
@@ -14,7 +19,7 @@ export default function SignIn() {
                     <h1 className={styles.title}>Login</h1>
                     <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />
-                    <button className={styles.btn}>Login</button>
+                    <button className={styles.btn} onClick={() => { SignInWithEmail() }}>Login</button>
                     <Link href='/signUp'>
                         <a className={styles.link}>Criar conta</a>
                     </Link>
