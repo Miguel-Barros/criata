@@ -81,3 +81,16 @@
     position: absolute;
     bottom: 5vh;
 }
+
+.ilus {
+    width: 30vw;
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    left: 0;
+}

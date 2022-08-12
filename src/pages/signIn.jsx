@@ -26,7 +26,8 @@ export default function SignIn() {
                     <p className={styles.copyright}>Coaraci © 2022</p>
                 </div>
                 <div className={styles.right}>
-                    Imagem
+                    <img src="/assets/images/login/bg-ilus.svg" className={styles.background}/>
+                    <img src="/assets/images/login/ilus.svg" className={styles.ilus}/>
                 </div>
             </main >
         </div >

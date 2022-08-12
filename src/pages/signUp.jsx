@@ -10,7 +10,8 @@ export default function SignUp() {
             </Head>
             <main className={styles.main}>
                 <div className={styles.left}>
-                    left
+                    <img src="/assets/images/signUp/bg-ilus.svg" className={styles.background} />
+                    <img src="/assets/images/signUp/ilus.svg" className={styles.ilus} />
                 </div>
                 <div className={styles.right}>
                     <h1 className={styles.title}>Criar conta</h1>
