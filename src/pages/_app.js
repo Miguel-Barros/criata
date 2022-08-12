@@ -1,9 +1,12 @@
 import '../styles/globals.css'
-import '../pages/config/firebase.config'
+import '../config/firebase.config'
+import { AuthProvider } from '../hook/auth'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
   )
 }
 
