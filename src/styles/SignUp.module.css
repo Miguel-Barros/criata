@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Mulish');
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -20,7 +22,9 @@
 
 .title {
     margin: 0;
+    font-family: 'Mulish';
     font-style: normal;
+    font-weight: 700;
     font-size: 48px;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -29,6 +33,10 @@
 .input {
     width: 300px;
     height: 40px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.45);
     background: #F5F5F4;
     border: 8px;
     margin: 1.2%;
@@ -51,24 +59,36 @@
 .btn {
     width: 140px;
     height: 40px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
     margin-top: 2%;
     background: #EFBA6D;
     font-weight: 600;
-    color: white;
     border-radius: 12px;
     border: none;
-    font-size: 16px;
     cursor: pointer;
     transition: all .3s ease-out;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 }
 
 .btn:hover {
     background: #e2b168;
 }
 
+.btn:active{
+    transform: translateY(3px);
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
+}
+
 .link {
     margin-top: 1%;
     font-size: 13px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
     color: #484848;
     transition: all .3s ease-out;
 }
@@ -78,6 +98,9 @@
 }
 
 .copyright {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
     position: absolute;
     bottom: 5vh;
 }
