@@ -87,6 +87,23 @@
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
 }
 
+.btn_suporte{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.7vw;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    right: 1%;
+    top: 3%;
+}
+
+.btn_suporte:active{
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .left {
     display: flex;
     flex-direction: column;
