@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2|Quicksand|Open+Sans|Mulish');
+
+.title {
+    padding: 0;
+    margin: 0; 
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 90px;
+    line-height: 113px;
+    color: #000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.left,
+.right {
+    width: 50vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.subtitle {
+    padding: 0;
+    margin: 0;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.5155px;
+    width: 361px;
+    color: #000;
+    margin-top: 10%;
+}
+
+.ilus {
+    position: absolute;
+    width: 40%;
+    right: 5vw;
+    top: 25vh;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 2vw;
+    top: 50vh;
+}
+
+.elipse {
+    width: 25px;
+    height: 25px;
+    margin-top: 45%;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.elipse:hover {
+    background: #EFBA6D;
+}
+
+.box {
+    width: 50%;
+    height: 50%;
+    margin: 50vh auto;
+    transform: translateY(-50%);
+}
+
+.btn {
+    width: 137px;
+    height: 41.07px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: 17px;
+    font-weight: 400;
+    background: #EFBA6D;
+    border-radius: 10px;
+    border: none;
+    color: #000;
+    margin-top: 15%;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.btn:hover {
+    background: #e2b168;
+}
+
+.btn:active{
+    transform: translateY(3px);
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
+}
+
+.background1{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    z-index: -1;
+}
+
+.background2{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    z-index: -1;
+}
+
+.copyright{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%)
+}
