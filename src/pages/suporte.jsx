@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Suporte.module.css'
 import Link from 'next/link'
 
-export default function Index() {
+export default function Suporte() {
   return (
     <div className={styles.container}>
       <Head>
