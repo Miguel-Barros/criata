@@ -114,3 +114,22 @@
     object-fit: cover;
     right: 0;
 }
+
+.navlogs {
+    display: flex;
+    margin-top: 2%;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.navlogs img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s ease-out;
+}
+
+.navlogs img:hover {
+    opacity: 60%;
+}
