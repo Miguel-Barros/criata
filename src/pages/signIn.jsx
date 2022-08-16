@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/SignIn.module.css';
-import useAuth from '../hook/auth';
 import { withPublic } from '../hook/route';
 import Support from '../component/support';
 
  function SignIn({auth}) {
-    const { user, loginWithGoogle, error } = auth;
+    const { loginWithGoogle } = auth;
     return (
         <div className={styles.container}>
             <Head>
@@ -16,7 +15,6 @@ import Support from '../component/support';
                 <Support/>
                 <div className={styles.left}>
                     <h1 className={styles.title}>Login</h1>
-                    {error && <h1>{error}</h1>}
                     <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />
                     <button className={styles.btn} onClick={loginWithGoogle}>Login</button>
