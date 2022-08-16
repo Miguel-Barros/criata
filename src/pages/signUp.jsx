@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/SignUp.module.css'
 import Link from 'next/link'
 import { withPublic } from '../hook/route';
+import Support from '../component/support';
 
 function SignUp({ auth }) {
     const { user, loginWithGoogle, error } = auth;
@@ -11,6 +12,7 @@ function SignUp({ auth }) {
                 <title>Sign Up - Criata</title>
             </Head>
             <main className={styles.main}>
+                <Support/>
                 <div className={styles.left}>
                     <img src="/assets/images/signUp/bg-ilus.svg" className={styles.background} />
                     <img src="/assets/images/signUp/ilus.svg" className={styles.ilus} />

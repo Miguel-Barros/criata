@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Index.module.css'
 import Link from 'next/link'
+import Support from '../component/support'
 import { withPublic } from '../hook/route'
 
 function Index() {
@@ -10,6 +11,7 @@ function Index() {
         <title>Criata</title>
       </Head>
       <main className={styles.main}>
+        <Support/>
         <div className={styles.left}>
           <span className={styles.navigation}>
             <Link href="/">

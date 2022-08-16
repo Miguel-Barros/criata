@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '../styles/SignIn.module.css';
 import useAuth from '../hook/auth';
 import { withPublic } from '../hook/route';
+import Support from '../component/support';
 
  function SignIn({auth}) {
     const { user, loginWithGoogle, error } = auth;
@@ -12,8 +13,9 @@ import { withPublic } from '../hook/route';
                 <title>SignIn - Criata</title>
             </Head>
             <main className={styles.main}>
+                <Support/>
                 <div className={styles.left}>
-                    <h1 className={styles.title}>Login {user?.uid}</h1>
+                    <h1 className={styles.title}>Login</h1>
                     {error && <h1>{error}</h1>}
                     <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />

@@ -1,0 +1,17 @@
+.icon {
+    width: 35px;
+    height: 35px;
+}
+
+.box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .3em;
+
+    right: 3vw;
+    top: 3vh;
+    cursor: pointer;
+}
