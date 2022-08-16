@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import styles from '../styles/SignUp.module.css'
 import Link from 'next/link'
+import { withPublic } from '../hook/route';
 
-export default function SignUp() {
+function SignUp({ auth }) {
+    const { user, loginWithGoogle, error } = auth;
     return (
         <div className={styles.container}>
             <Head>
@@ -30,3 +32,5 @@ export default function SignUp() {
         </div >
     );
 }
+
+export default withPublic(SignUp);

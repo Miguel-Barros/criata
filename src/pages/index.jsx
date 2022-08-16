@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Index.module.css'
 import Link from 'next/link'
+import { withPublic } from '../hook/route'
 
-export default function Index() {
+function Index() {
   return (
     <div className={styles.container}>
       <Head>
@@ -47,3 +48,5 @@ export default function Index() {
     </div >
   )
 }
+
+export default withPublic(Index);
