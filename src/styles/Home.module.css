@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.p {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+    color: #6C6C6C;
+}
+
+.bold {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    color: rgba(31, 13, 0, 0.89);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}   
+
+.info {
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+    bottom: 5vh;
+    font-size: 1.5rem;
+}
+
+.btn {
+    position: absolute;
+    bottom: 10vh;
+    left: 45vw;
+    width: 150px;
+    height: 50px;
+    font-weight: 600;
+    border: none;
+    background: #EFBA6D;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.btn:hover {
+    background: #e2b168;
+}
+
+.btn:active{
+    transform: translateY(3px);
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
+}
