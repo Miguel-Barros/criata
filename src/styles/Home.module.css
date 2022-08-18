@@ -12,6 +12,8 @@
     font-size: 25px;
     line-height: 40px;
     color: #6C6C6C;
+    margin: 20vh auto;
+    width: 40ch;
 }
 
 .bold {
@@ -29,13 +31,6 @@
     flex-direction: column;
 }   
 
-.info {
-    position: absolute;
-    left: 50vw;
-    transform: translateX(-50%);
-    bottom: 5vh;
-    font-size: 1.5rem;
-}
 
 .btn {
     position: absolute;
@@ -59,4 +54,11 @@
 .btn:active{
     transform: translateY(3px);
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
 }

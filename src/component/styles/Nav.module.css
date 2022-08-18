@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+    justify-content: center;
+    align-items: center;
+}
+
+.ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
