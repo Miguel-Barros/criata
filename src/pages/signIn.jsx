@@ -3,9 +3,14 @@ import Link from 'next/link';
 import styles from '../styles/SignIn.module.css';
 import { withPublic } from '../hook/route';
 import Support from '../component/support';
+import { useState } from 'react';
 
 function SignIn({ auth }) {
-    const { loginWithGoogle } = auth;
+    const { loginWithGoogle, signInWithEmailAndPassword } = auth;
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
     return (
         <div className={styles.container}>
             <Head>
@@ -15,9 +20,9 @@ function SignIn({ auth }) {
                 <Support />
                 <div className={styles.left}>
                     <h1 className={styles.title}>Login</h1>
-                    <input type="text" placeholder='E-mail' className={styles.input} />
-                    <input type="password" placeholder='Senha' className={styles.input} />
-                    <button className={styles.btn}>Login</button>
+                    <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => {setEmail(e.target.value)}} value={email}/>
+                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => {setPassword(e.target.value)}} value={password}/>
+                    <button className={styles.btn} onClick={() => {signInWithEmailAndPassword(email, password)}}>Login</button>
                     <Link href='/signUp'>
                         <a className={styles.link}>Criar conta</a>
                     </Link>
