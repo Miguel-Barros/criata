@@ -28,9 +28,16 @@ export function AuthProvider(props) {
 		setError(error ?? "");
 	}
 
+	async function createUserWithEmailAndPassword(email, password) {
+		const { error, user } = await AuthService.createUserWithEmailAndPassword(email, password);
+		setUser(user ?? null);
+		setError(error ?? "");
+	}
+
 	const value = { user, error, 
 		loginWithGoogle, 
 		signInWithEmailAndPassword, 
+		createUserWithEmailAndPassword,
 		logout, 
 		setUser };
 
