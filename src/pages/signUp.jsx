@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import styles from '../styles/SignUp.module.css'
-import Link from 'next/link'
+import Link from 'next/link';
+import styles from '../styles/SignUp.module.css';
 import { withPublic } from '../hook/route';
 import Support from '../component/support';
 import { useState } from 'react';
@@ -27,7 +27,7 @@ function SignUp({ auth }) {
                     {/* <input type="text" placeholder='Nome completo' className={styles.input} /> */}
                     {/* <input type="text" placeholder='Nome de usuario' className={styles.input} /> */}
                     <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => {setEmail(e.target.value)}} value={email}/>
-                    <input type="password" placeholder='Senha' className={styles.input} minLength={6} onChange={(e) => {setPassword(e.target.value)}} value={password}/>
+                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => {setPassword(e.target.value)}} value={password}/>
                     {/* <input type="password" placeholder='Confirmar senha' className={styles.input} /> */}
                     <button className={styles.btn} onClick={() => {createUserWithEmailAndPassword(email, password)}}>Criar conta</button>
                     <Link href='/signIn'>

@@ -23,23 +23,41 @@ export function AuthProvider(props) {
 	}
 
 	async function signInWithEmailAndPassword(email, password) {
+		if(email == null | email == ''){
+			alert('Insira um email válido')
+			return
+		}else if(password == null | password == ''){
+			alert('Insira uma senha válida')
+			return
+		}
+
 		const { error, user } = await AuthService.signInWithEmailAndPassword(email, password);
 		setUser(user ?? null);
 		setError(error ?? "");
 	}
 
 	async function createUserWithEmailAndPassword(email, password) {
+		if(email == null | email == ''){
+			alert('Insira um email válido')
+			return
+		}else if(password == null | password == ''){
+			alert('Insira uma senha válida')
+			return
+		}
+
 		const { error, user } = await AuthService.createUserWithEmailAndPassword(email, password);
 		setUser(user ?? null);
 		setError(error ?? "");
 	}
 
-	const value = { user, error, 
-		loginWithGoogle, 
-		signInWithEmailAndPassword, 
+	const value = {
+		user, error,
+		loginWithGoogle,
+		signInWithEmailAndPassword,
 		createUserWithEmailAndPassword,
-		logout, 
-		setUser };
+		logout,
+		setUser
+	};
 
 	return <authContext.Provider value={value} {...props} />;
 }
