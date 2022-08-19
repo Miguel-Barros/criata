@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap');
+
 .nav {
     display: flex;
     width: 100vw;
-    height: 8vh;
+    height: 8.5vh;
     border-bottom: 1px solid rgba(0, 0, 0, 0.308);
     justify-content: center;
     align-items: center;
@@ -10,5 +12,39 @@
 .ul {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.p_name {
+    font-family: 'Mulish';
+    font-weight: 700;
+    font-size: .99rem;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    margin-left: 2%;
+}
+
+.s_icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 2%;
+}
+
+.search {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 45px;
+    width: 150px;
+    border-radius: 8px;
+}
+
+.search_i {
+    width: 25px;
 }

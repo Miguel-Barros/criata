@@ -8,8 +8,13 @@ export default function Nav() {
                     <li>Item</li>
                 </ul>
                 <ul className={styles.ul}>
-                    <li>Item</li>
+                    <img className={styles.s_icon} src="./assets/components/settings-icon.svg" />
+                    <p className={styles.p_name}>Wanda Django</p>
+                    <img className={styles.profile} src="./assets/components/profile.svg" />
                 </ul>
+                <span className={styles.search}>
+                    <img className={styles.search_i} src="./assets/components/search.svg" alt="" />
+                </span>
             </nav>
         </>
     )
