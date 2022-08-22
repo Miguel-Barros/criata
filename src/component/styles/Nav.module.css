@@ -41,10 +41,19 @@
     align-items: center;
     background: white;
     height: 45px;
-    width: 150px;
+    width: 200px;
     border-radius: 8px;
 }
 
 .search_i {
     width: 25px;
+    margin: 5%;
+}
+
+.text {
+    color: #000;
+    width: 80%;
+    height: 80%;
+    margin: 5%;
+    font-size: 1.1rem;
 }
