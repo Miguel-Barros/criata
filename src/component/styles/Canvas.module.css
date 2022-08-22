@@ -1,0 +1,16 @@
+.container{
+    width: 98vw;
+    border: 2px black solid;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.col2{
+    border: 2px firebrick solid;
+}
+
+.stage{
+    height: 800px;
+}
