@@ -73,7 +73,7 @@
 }
 
 .card {
-    width: 330px;
+    width: 310px;
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     color: white;
@@ -100,4 +100,9 @@
 .plus {
     width: 55px;
     height: 55px;
+    transition: all .5s ease;
+}
+
+.plus:hover {
+    opacity: 75%;
 }
