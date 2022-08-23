@@ -7,7 +7,7 @@ function Home({ auth }) {
 
     const { user } = auth
 
-    return (
+    return ( 
         <div className={styles.container}>
             <Head><title>Criata - Home</title></Head>
             <main className={styles.main}>
