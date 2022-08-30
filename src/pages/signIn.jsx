@@ -6,7 +6,7 @@ import Support from '../component/support';
 import { useState } from 'react';
 
 function SignIn({ auth }) {
-    const { loginWithGoogle, signInWithEmailAndPassword } = auth;
+    const { loginWithGoogle, signInWithEmailAndPassword, logout } = auth;
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
