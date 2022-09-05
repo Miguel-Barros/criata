@@ -22,7 +22,7 @@ export default function Nav(props) {
                     </div>
                     <div className={styles.profile}>
                         <img className={styles.s_icon} src="./assets/components/settings-icon.svg" />
-                        <p className={styles.p_name}>{props.displayName}</p>
+                        <p className={styles.p_name}>{props?.displayName}</p>
                         <img className={styles.p_icon} src="./assets/components/profile.png" alt="" />
                     </div>
                 </span>
