@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import styles from '../styles/Creation.module.css';
 import dynamic from 'next/dynamic';
 
 const Canvas = dynamic(() => import('../component/canvas'), {
@@ -5,7 +7,13 @@ const Canvas = dynamic(() => import('../component/canvas'), {
 })
 
 export default function Creation() {
+    
     return(
-        <Canvas />
+        <div className={styles.container}>
+            <Head>
+                <title> Criação </title>
+            </Head>
+            <Canvas />
+        </div>
     )
 }
