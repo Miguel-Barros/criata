@@ -17,25 +17,24 @@ function SignIn({ auth }) {
                 <title>SignIn - Criata</title>
             </Head>
             <main className={styles.main}>
-                <Support />
-                <div className={styles.left}>
-                    <h1 className={styles.title}>Login</h1>
-                    <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => {setEmail(e.target.value)}} value={email}/>
-                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => {setPassword(e.target.value)}} value={password}/>
-                    <button className={styles.btn} onClick={() => {signInWithEmailAndPassword(email, password)}}>Login</button>
+                <div className={styles.box}>
+                    <h1 className={styles.title}>Entrar</h1>
+                    <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => { setEmail(e.target.value) }} value={email} />
+                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => { setPassword(e.target.value) }} value={password} />
                     <Link href='/signUp'>
-                        <a className={styles.link}>Criar conta</a>
+                        <h3 className={styles.sub}>Esqueceu a senha?</h3>
                     </Link>
-                    <span className={styles.navlogs}>
-                        <img onClick={loginWithGoogle} src="./assets/images/login/google.svg" />
-                        <img src="./assets/images/login/github.svg" />
-                        <img src="./assets/images/login/microsoft.svg" />
+                    <button className={styles.btn} onClick={() => { signInWithEmailAndPassword(email, password) }}>Entrar</button>
+                    <Link href='/signUp'>
+                        <h3 className={styles.sub}>Criar conta</h3>
+                    </Link>
+                    <span className={styles.accounts}>
+                        <img className={styles.icons} src="./assets/icons/google-icon.svg" />
+                        <img className={styles.icons} src="./assets/icons/facebook-icon.svg" />
+                        <img className={styles.icons} src="./assets/icons/linkedin-icon.svg"  />
+                        <img className={styles.icons} src="./assets/icons/github-icon.svg" />
                     </span>
                     <p className={styles.copyright}>Coaraci © 2022</p>
-                </div>
-                <div className={styles.right}>
-                    <img src="/assets/images/login/bg-ilus.svg" className={styles.background} />
-                    <img src="/assets/images/login/ilus.svg" className={styles.ilus} />
                 </div>
             </main >
         </div >

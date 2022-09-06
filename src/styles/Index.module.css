@@ -54,6 +54,10 @@
     cursor: pointer;
 }
 
+.btn:hover {
+    opacity: 75%;
+}
+
 .box {
     width: 25vw;
     display: flex;
@@ -82,10 +86,6 @@
     right: 0;
     object-fit: cover;
     z-index: -1;
-}
-
-.btn:hover {
-    opacity: 75%;
 }
 
 .navigation {
