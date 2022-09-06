@@ -36,6 +36,8 @@ function SignIn({ auth }) {
                     </span>
                     <p className={styles.copyright}>Coaraci © 2022</p>
                 </div>
+                <img className={styles.ilus_bg} src="./assets/images/login/ilus-bg.svg" alt="" />
+            <img className={styles.ilus} src="./assets/images/login/ilus.svg" alt="" />
             </main >
         </div >
     );

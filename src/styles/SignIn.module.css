@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Mulish');
 
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100vh;
+}
+
 .title {
     font-family: 'Mulish';
     font-size: 48px;
@@ -15,7 +22,6 @@
     width: 25vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     min-width: 400px;
 }
@@ -109,4 +115,20 @@
 
 .icons:hover {
     opacity: 70%;
+}
+
+.ilus_bg {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 50vw;
+    object-fit: cover ;
+    z-index: 0;
+}
+
+.ilus {
+    width: 600px;
+    height: 490px;
+    margin: 50vh 5vw 0;
+    transform: translateY(-50%)
 }
