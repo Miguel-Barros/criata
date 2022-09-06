@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Mulish');
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.text {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #888888;
+    margin-bottom: 10%;
+}
 
 .main {
     display: flex;
@@ -10,7 +22,8 @@
 .title {
     font-family: 'Mulish';
     font-size: 48px;
-    padding-bottom: 5%;
+    color: #FF2727;
+    margin-bottom: 10%;
 }
 
 .container {
@@ -23,11 +36,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 10vw;
+    margin-left: 10vw;
 }
 
 .btn {
-    width: 340px;
+    width: 250px;
     height: 50px;
     background: #F6A413;
     border-radius: 10px;
@@ -42,6 +55,10 @@
     transition: all .5s ease;
     cursor: pointer;
     margin-top: 5%;
+}
+
+.btn.delined {
+    background: #DB2727;
 }
 
 .btn:hover {
@@ -62,6 +79,7 @@
     text-align: center;
     font-size: 18px;
     border-radius: 8px;
+    margin-bottom: 10%;
 }
 
 .input:focus {
@@ -71,20 +89,6 @@
 
 .input::placeholder {
     font-size: 18px;
-    opacity: 50%;
-}
-
-.sub {
-    font-family: 'Mulish';
-    font-weight: 400;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all .5s ease;
-    padding-top: 1%;
-    padding-bottom: 8%;
-}
-
-.sub:hover {
     opacity: 50%;
 }
 
@@ -98,7 +102,7 @@
 
 .ilus_bg {
     position: absolute;
-    left: 0;
+    right: 0;
     height: 100vh;
     width: 50vw;
     object-fit: cover ;

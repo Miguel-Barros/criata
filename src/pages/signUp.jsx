@@ -2,36 +2,26 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/SignUp.module.css';
 import { withPublic } from '../hook/route';
-import Support from '../component/support';
-import { useState } from 'react';
 
 function SignUp({ auth }) {
-    const { createUserWithEmailAndPassword } = auth;
-
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>Sign Up - Criata</title>
+                <title>Cadastrar - Criata</title>
             </Head>
             <main className={styles.main}>
-                <Support/>
-                <div className={styles.left}>
-                    <img src="/assets/images/signUp/bg-ilus.svg" className={styles.background} />
-                    <img src="/assets/images/signUp/ilus.svg" className={styles.ilus} />
-                </div>
-                <div className={styles.right}>
-                    <h1 className={styles.title}>Criar conta</h1>
-                    {/* <input type="text" placeholder='Nome completo' className={styles.input} /> */}
-                    {/* <input type="text" placeholder='Nome de usuario' className={styles.input} /> */}
-                    <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => {setEmail(e.target.value)}} value={email}/>
-                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => {setPassword(e.target.value)}} value={password}/>
-                    {/* <input type="password" placeholder='Confirmar senha' className={styles.input} /> */}
-                    <button className={styles.btn} onClick={() => {createUserWithEmailAndPassword(email, password)}}>Criar conta</button>
+                <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt="" />
+                <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt="" />
+                <div className={styles.box}>
+                    <h1 className={styles.title}>Cadastre-se</h1>
+                    <input type="text" placeholder='Nome Completo' className={styles.input} />
+                    <input type="email" placeholder='E-mail' className={styles.input} />
+                    <input type="password" placeholder='Senha' className={styles.input} />
+                    <input type="password" placeholder='Confirmar senha' className={styles.input} />
+                    <button className={styles.btn}>Criar conta</button>
                     <Link href='/signIn'>
-                        <a className={styles.link}>Fazer login</a>
+                        <h3 className={styles.sub}>Já possui uma conta?</h3>
                     </Link>
                     <p className={styles.copyright}>Coaraci © 2022</p>
                 </div>
