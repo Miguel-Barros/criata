@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2|Quicksand|Open+Sans|Mulish');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    color: #5A3612;
+}
+
+.bold {
+    letter-spacing: 0.02em;
+    background: linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card_group {
+    margin-top: 1%;
+    width: 60%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1160px;
+    overflow-x: scroll;
+}
+
+
+.card_group::-webkit-scrollbar {
+    border-radius: 20px;
+    height: 13px;
+    max-width: 5px;
+}
+
+.card_group::-webkit-scrollbar-track {
+    background: #D9D6D2;
+    border-radius: 20px;
+}
+
+.card_group::-webkit-scrollbar-thumb {
+    background: #FDB422;
+    border-radius: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    margin: 3%;
+}
+
+.photo {
+    width: 250px;
+    height: 250px;
+}
+
+.member_name {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 25px;
+}
+
+
+.member_prefix {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.bio {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 233px;
+    background: #EEEDEB;
+    border-radius: 15px;
+}
+
+.bio_text {
+    padding: 5%;
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 18px;
+    color: #585757;
+    overflow: hidden;
+}
+
+.bg {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.ilus_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+}
+
+.arrow {
+    margin-left: 3%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transform: rotate(180deg);
+    display: flex;
+    align-self: center;
+    transition: all .5s ease;
+}
+
+.arrow:hover {
+    margin-left: 2%;
+}
+
+.mini_box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 950px;
+}
