@@ -8,7 +8,7 @@ function SignUp({ auth }) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Cadastrar - Criata</title>
+                <title>Criata - Cadastrar</title>
             </Head>
             <main className={styles.main}>
                 <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt='ilustration-bg' />

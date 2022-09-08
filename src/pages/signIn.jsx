@@ -14,7 +14,7 @@ function SignIn({ auth }) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Logar - Criata</title>
+                <title>Criata - Logar</title>
             </Head>
             <main className={styles.main}>
                 <div className={styles.box}>
