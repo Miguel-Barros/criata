@@ -6,7 +6,7 @@ import Support from '../component/support';
 import { useState } from 'react';
 
 function SignIn({ auth }) {
-    const { loginWithGoogle, signInWithEmailAndPassword, logout } = auth;
+    const { loginWithGoogle, loginWithGithub, signInWithEmailAndPassword, logout } = auth;
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -29,10 +29,10 @@ function SignIn({ auth }) {
                         <h3 className={styles.sub}>Ainda não tem uma conta?</h3>
                     </Link>
                     <span className={styles.accounts}>
-                        <img className={styles.icons} src="./assets/icons/google-icon.svg" />
+                        <img className={styles.icons} src="./assets/icons/google-icon.svg" onClick={() => {loginWithGoogle(auth)}}/>
                         <img className={styles.icons} src="./assets/icons/facebook-icon.svg" />
                         <img className={styles.icons} src="./assets/icons/linkedin-icon.svg" />
-                        <img className={styles.icons} src="./assets/icons/github-icon.svg" />
+                        <img className={styles.icons} src="./assets/icons/github-icon.svg" onClick={() => {loginWithGithub(auth)}}/>
                     </span>
                     <p className={styles.copyright}>Coaraci © 2022</p>
                 </div>

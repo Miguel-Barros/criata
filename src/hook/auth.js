@@ -17,6 +17,12 @@ export function AuthProvider(props) {
 		setError(error ?? "");
 	}
 
+	async function loginWithGithub() {
+		const { error, user } = await AuthService.loginWithGithub();
+		setUser(user ?? null);
+		setError(error ?? "");
+	}
+
 	async function logout() {
 		await AuthService.logout();
 		setUser(null);
@@ -53,6 +59,7 @@ export function AuthProvider(props) {
 	const value = {
 		user, error,
 		loginWithGoogle,
+		loginWithGithub,
 		signInWithEmailAndPassword,
 		createUserWithEmailAndPassword,
 		logout,

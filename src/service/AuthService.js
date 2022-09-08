@@ -3,6 +3,7 @@ import {
 	signInWithPopup,
 	getAuth,
 	GoogleAuthProvider,
+	GithubAuthProvider,
 	signOut,
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
@@ -23,6 +24,19 @@ class AuthService {
 	async loginWithGoogle() {
 		try {
 			const userCred = await signInWithPopup(this.auth, new GoogleAuthProvider());
+			return {
+				user: userCred.user,
+			};
+		} catch (error) {
+			return {
+				error: error.message,
+			};
+		}
+	}
+
+	async loginWithGithub() {
+		try {
+			const userCred = await signInWithPopup(this.auth, new GithubAuthProvider());
 			return {
 				user: userCred.user,
 			};
