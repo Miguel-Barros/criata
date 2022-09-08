@@ -20,8 +20,8 @@ function Forgot({ auth }) {
                     </Link>
                     <p className={styles.copyright}>Coaraci © 2022</p>
                 </div>
-                <img className={styles.ilus_bg} src="./assets/images/forgot/ilus-bg.svg" alt="" />
-                <img className={styles.ilus} src="./assets/images/forgot/ilus.svg" alt="" />
+                <img className={styles.ilus_bg} src="./assets/images/forgot/ilus-bg.svg" alt="ilustration" />
+                <img className={styles.ilus} src="./assets/images/forgot/ilus.svg" alt="ilustration-bg" />
             </main>
         </div>
     )

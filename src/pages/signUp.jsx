@@ -11,8 +11,8 @@ function SignUp({ auth }) {
                 <title>Cadastrar - Criata</title>
             </Head>
             <main className={styles.main}>
-                <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt="" />
-                <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt="" />
+                <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt='ilustration-bg' />
+                <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt='ilustration' />
                 <div className={styles.box}>
                     <h1 className={styles.title}>Cadastre-se</h1>
                     <input type="text" placeholder='Nome Completo' className={styles.input} />

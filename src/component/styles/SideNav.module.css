@@ -1,0 +1,23 @@
+.navigation {
+    position: absolute;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    top: 50vh;
+    margin-left: 2%;
+}
+
+.circle {
+    border: 1px solid gray;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.circle:hover {
+    background: #F6A413;
+}
