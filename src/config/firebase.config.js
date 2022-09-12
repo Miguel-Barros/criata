@@ -11,8 +11,8 @@ const firebaseConfig = {
 	measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
+initializeApp(firebaseConfig);
 if (!getApps.length) {
-	initializeApp(firebaseConfig);
 	if (typeof window !== "undefined") {
 		if ("measurementId" in firebaseConfig) {
 			getAnalytics();
