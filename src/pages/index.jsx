@@ -18,6 +18,8 @@ function Index() {
             <button className={styles.btn}>Vamos começar</button>
           </Link>
         </div>
+        <img className={styles.ilus} src="./assets/images/index/ilus_index.svg" />
+        <img className={styles.ilus_bg} src="./assets/images/index/ilus_bg.svg" />
       </main >
     </div >
   )
