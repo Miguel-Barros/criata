@@ -7,7 +7,7 @@ function Home() {
         <div className={styles.container}>
             <Head><title>Criata - Home</title></Head>
             <main className={styles.main}>
-                <Nav displayName={user?.displayName} />
+                <Nav />
                 <img src="./assets/images/home/bg.svg" className={styles.bg} alt="nav-bg" />
                 <p className={styles.p}><b className={styles.bold}>Crie o seu próprio design</b><br /> e use um dos templetes de exemplo para inspiração!</p>
                 <div className={styles.card_Group}>
