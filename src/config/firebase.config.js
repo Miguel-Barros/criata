@@ -1,4 +1,4 @@
-import { getApps, initializeApp, FirebaseApp } from "firebase/app";
+import { getApps, initializeApp, firebase } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -11,8 +11,8 @@ const firebaseConfig = {
 	measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-initializeApp(firebaseConfig);
 if (!getApps.length) {
+	firebase.initializeApp(firebaseConfig);
 	if (typeof window !== "undefined") {
 		if ("measurementId" in firebaseConfig) {
 			getAnalytics();
