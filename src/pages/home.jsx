@@ -14,7 +14,7 @@ function Home() {
                     <div className={styles.card}><img className={styles.plus} src="./assets/components/plus.svg" alt="" /></div>
                     <div className={styles.card}><p className={styles.text}>Template</p></div>
                     <div className={styles.card}><p className={styles.text}>Template</p></div>
-                    <button onClick={logout}>Pão</button>
+                    <button >Pão</button>
                 </div>
             </main>
         </div>

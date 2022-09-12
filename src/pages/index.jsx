@@ -18,7 +18,6 @@ function Index() {
             <button className={styles.btn}>Vamos começar</button>
           </Link>
         </div>
-        
       </main >
     </div >
   )
