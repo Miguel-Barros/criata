@@ -2,7 +2,7 @@ import Head from 'next/head';
 import SideNav from '../component/side-nav';
 import styles from '../styles/Support.module.css';
 
-export default function Support() {
+function Support() {
     return (
         <div className={styles.container}>
             <Head>
@@ -23,3 +23,4 @@ export default function Support() {
         </div>
     )
 }
+export default Support;

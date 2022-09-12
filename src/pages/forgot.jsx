@@ -1,9 +1,8 @@
 import styles from '../styles/Forgot.module.css'
-import { withPublic } from '../hook/route';
 import Head from 'next/head';
 import Link from 'next/link';
 
-function Forgot({ auth }) {
+function Forgot() {
     return (
         <div className={styles.container}>
             <Head>
@@ -27,4 +26,4 @@ function Forgot({ auth }) {
     )
 }
 
-export default withPublic(Forgot);
+export default Forgot;

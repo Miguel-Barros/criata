@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Index.module.css'
 import Link from 'next/link'
-import Support from '../component/support'
-import { withPublic } from '../hook/route'
 import SideNav from '../component/side-nav'
 
 function Index() {
@@ -20,11 +18,10 @@ function Index() {
             <button className={styles.btn}>Vamos começar</button>
           </Link>
         </div>
-        <img className={styles.ilus} src="./assets/images/index/ilus_index.svg" alt='ilustration' />
-        <img className={styles.ilus_bg} src="./assets/images/index/ilus_bg.svg" alt='ilustration-bg' />
+        
       </main >
     </div >
   )
 }
 
-export default withPublic(Index);
+export default Index;

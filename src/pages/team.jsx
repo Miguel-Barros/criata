@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Team.module.css'
 
-export default function Team() {
+function Team() {
     return (
         <div className={styles.container}>
             <Head>
@@ -63,3 +63,5 @@ export default function Team() {
         </div>
     )
 }
+
+export default Team;

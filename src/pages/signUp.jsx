@@ -1,10 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/SignUp.module.css';
-import { withPublic } from '../hook/route';
 
-function SignUp({ auth }) {
-
+function SignUp() {
     return (
         <div className={styles.container}>
             <Head>
@@ -30,4 +28,4 @@ function SignUp({ auth }) {
     );
 }
 
-export default withPublic(SignUp);
+export default SignUp;
