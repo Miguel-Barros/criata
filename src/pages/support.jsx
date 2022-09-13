@@ -13,7 +13,7 @@ function Support() {
             <main className={styles.main}>
                 <SideNav />
                 <div className={styles.box}>
-                    <h1 className={styles.title}>Suporte <span className={styles.proj_name}>online</span></h1>
+                    <h1 className={styles.title}>Suporte <span className={styles.proj_name}>Online</span></h1>
                     <p className={styles.p}>Qualquer problema em relação ao sistema, você pode solicitar ajuda para o nosso centro de suporte. Assim, poderá visualizar erros comuns e outros que podem te ajudar a solucionar o seu.</p>
                     <p className={styles.p}>Caso não consiga sanar suas dúvidas nos faça um comentário detalhando o ocorrido, para que poçamos visualizar e tentar resolver o mais rápido o  possível.</p>
                     <button className={styles.btn}>Contatar</button>
