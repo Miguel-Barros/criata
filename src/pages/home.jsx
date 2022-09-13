@@ -2,7 +2,12 @@ import styles from '../styles/Home.module.css';
 import Head from "next/head";
 import Nav from "../component/nav";
 
-function Home() {
+import { withProtected } from '../hook/route';
+
+function Home({ auth }) {
+
+    const { logout } = auth;
+
     return (
         <div className={styles.container}>
             <Head><title>Criata - Home</title></Head>
@@ -14,11 +19,11 @@ function Home() {
                     <div className={styles.card}><img className={styles.plus} src="./assets/components/plus.svg" alt="" /></div>
                     <div className={styles.card}><p className={styles.text}>Template</p></div>
                     <div className={styles.card}><p className={styles.text}>Template</p></div>
-                    <button >Pão</button>
+                    <button onClick={() => logout()}>Deslogar</button>
                 </div>
             </main>
         </div>
     )
 }
 
-export default Home;
+export default withProtected(Home);

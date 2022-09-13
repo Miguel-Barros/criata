@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Team.module.css'
 
+import { withPublic } from '../hook/route';
+
 function Team() {
     return (
         <div className={styles.container}>
@@ -64,4 +66,4 @@ function Team() {
     )
 }
 
-export default Team;
+export default withPublic(Team);

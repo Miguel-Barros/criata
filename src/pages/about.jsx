@@ -3,7 +3,9 @@ import SideNav from '../component/side-nav'
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function About() {
+import { withPublic } from '../hook/route';
+
+function About() {
     return (
         <div className={styles.container}>
             <Head>
@@ -30,3 +32,5 @@ export default function About() {
         </div>
     )
 }
+
+export default withPublic(About);

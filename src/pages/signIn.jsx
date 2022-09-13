@@ -2,7 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/SignIn.module.css';
 
-function SignIn() {
+import { withPublic } from '../hook/route';
+
+function SignIn({ auth }) {
+    const { loginWithGoogle } = auth;
+
     return (
         <div className={styles.container}>
             <Head>
@@ -11,7 +15,7 @@ function SignIn() {
             <main className={styles.main}>
                 <div className={styles.box}>
                     <h1 className={styles.title}>Entrar</h1>
-                    <input type="text" placeholder='E-mail' className={styles.input}  />
+                    <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />
                     <Link href='/forgot'>
                         <h3 className={styles.sub}>Esqueceu a senha?</h3>
@@ -21,7 +25,7 @@ function SignIn() {
                         <h3 className={styles.sub}>Ainda não tem uma conta?</h3>
                     </Link>
                     <span className={styles.accounts}>
-                        <img className={styles.icons} src="./assets/icons/google-icon.svg" />
+                        <img className={styles.icons} src="./assets/icons/google-icon.svg" onClick={() => loginWithGoogle(auth)} />
                         <img className={styles.icons} src="./assets/icons/facebook-icon.svg" />
                         <img className={styles.icons} src="./assets/icons/linkedin-icon.svg" />
                         <img className={styles.icons} src="./assets/icons/github-icon.svg" />
@@ -35,4 +39,4 @@ function SignIn() {
     );
 }
 
-export default SignIn;
+export default withPublic(SignIn);

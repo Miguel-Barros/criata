@@ -2,6 +2,8 @@ import Head from 'next/head';
 import SideNav from '../component/side-nav';
 import styles from '../styles/Support.module.css';
 
+import { withPublic } from '../hook/route';
+
 function Support() {
     return (
         <div className={styles.container}>
@@ -23,4 +25,4 @@ function Support() {
         </div>
     )
 }
-export default Support;
+export default withPublic(Support);

@@ -3,6 +3,8 @@ import styles from '../styles/Index.module.css'
 import Link from 'next/link'
 import SideNav from '../component/side-nav'
 
+import { withPublic } from '../hook/route';
+
 function Index() {
   return (
     <div className={styles.container}>
@@ -25,4 +27,4 @@ function Index() {
   )
 }
 
-export default Index;
+export default withPublic(Index);

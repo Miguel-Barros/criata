@@ -2,6 +2,8 @@ import styles from '../styles/Forgot.module.css'
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { withPublic } from '../hook/route';
+
 function Forgot() {
     return (
         <div className={styles.container}>
@@ -26,4 +28,4 @@ function Forgot() {
     )
 }
 
-export default Forgot;
+export default withPublic(Forgot);

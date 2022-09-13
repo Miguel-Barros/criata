@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/SignUp.module.css';
 
+import { withPublic } from '../hook/route';
+
 function SignUp() {
     return (
         <div className={styles.container}>
@@ -28,4 +30,4 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+export default withPublic(SignUp);
