@@ -12,8 +12,16 @@ function SignIn({ auth }) {
             <Head>
                 <title>Criata - Logar</title>
             </Head>
-            <main className={styles.main}>
-                <div className={styles.box}>
+            <main className={styles.main}
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-duration="350"
+            data-aos-offset="100">
+                <div className={styles.box} 
+                data-aos="fade-right"
+                data-aos-offset="500"
+                data-aos-delay="200"
+                data-aos-duration="500">
                     <h1 className={styles.title}>Entrar</h1>
                     <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />

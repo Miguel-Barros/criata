@@ -11,7 +11,11 @@ function Index() {
       <Head>
         <title>Criata</title>
       </Head>
-      <main className={styles.main}>
+      <main className={styles.main}
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-duration="350"
+        data-aos-offset="0">
         <SideNav />
         <div className={styles.box}>
           <h1 className={styles.title}>Bem vindo ao <span className={styles.proj_name}>Criata</span></h1>

@@ -86,8 +86,8 @@
 }
 
 .copyright {
+    top: 70vh;
     position: absolute;
-    bottom: 5vh;
     font-family: 'Mulish';
     font-weight: 400;
     font-size: 18px;

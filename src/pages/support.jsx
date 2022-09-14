@@ -10,7 +10,11 @@ function Support() {
             <Head>
                 <title>Criata - Suporte</title>
             </Head>
-            <main className={styles.main}>
+            <main className={styles.main}
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-duration="350"
+                data-aos-offset="0">
                 <SideNav />
                 <div className={styles.box}>
                     <h1 className={styles.title}>Suporte <span className={styles.proj_name}>Online</span></h1>

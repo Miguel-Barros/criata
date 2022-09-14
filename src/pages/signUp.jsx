@@ -10,10 +10,18 @@ function SignUp() {
             <Head>
                 <title>Criata - Cadastrar</title>
             </Head>
-            <main className={styles.main}>
+            <main className={styles.main}
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-duration="350"
+            data-aos-offset="100">
                 <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt='ilustration-bg' />
                 <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt='ilustration' />
-                <div className={styles.box}>
+                <div className={styles.box}
+                data-aos="fade-left"
+                data-aos-offset="500"
+                data-aos-delay="200"
+                data-aos-duration="500">
                     <h1 className={styles.title}>Cadastre-se</h1>
                     <input type="text" placeholder='Nome Completo' className={styles.input} />
                     <input type="email" placeholder='E-mail' className={styles.input} />

@@ -12,7 +12,11 @@ function About() {
                 <title>Criata - Sobre nós</title>
             </Head>
             <section className={`${styles.intro} ${styles.section}`}>
-                <div className={styles.main}>
+                <div className={styles.main}
+                    data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back"
+                    data-aos-duration="350"
+                    data-aos-offset="0">
                     <SideNav />
                     <img className={styles.bg} src="./assets/images/about/bg.svg" alt="background" />
                     <span className={styles.logo}>

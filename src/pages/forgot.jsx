@@ -10,7 +10,11 @@ function Forgot() {
             <Head>
                 <title>Esqueceu a senha - Criata</title>
             </Head>
-            <main className={styles.main}>
+            <main className={styles.main} 
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="50"
+                data-aos-offset="100">
                 <div className={styles.box}>
                     <h1 className={styles.title}>Esqueci a senha</h1>
                     <p className={styles.text}>Envie seu email cadastrado para que um código te redirecione para a alteração de senha</p>
