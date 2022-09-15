@@ -13,22 +13,30 @@ function SignIn({ auth }) {
                 <title>Criata - Logar</title>
             </Head>
             <main className={styles.main}
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-duration="350"
-            data-aos-offset="100">
-                <div className={styles.box} 
-                data-aos="fade-right"
-                data-aos-offset="500"
-                data-aos-delay="200"
-                data-aos-duration="500">
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-duration="350"
+                data-aos-offset="100">
+                <div className={styles.box}
+                    data-aos="fade-right"
+                    data-aos-offset="500"
+                    data-aos-delay="200"
+                    data-aos-duration="500">
                     <h1 className={styles.title}>Entrar</h1>
                     <input type="text" placeholder='E-mail' className={styles.input} />
                     <input type="password" placeholder='Senha' className={styles.input} />
                     <Link href='/forgot'>
                         <h3 className={styles.sub}>Esqueceu a senha?</h3>
                     </Link>
-                    <button className={styles.btn}>Entrar</button>
+                    <button className={styles.btn} onClick={() => swal({
+                        icon: 'error',
+                        title: 'Login invalido',
+                        text: 'Parece que você preencheu os campos de forma incorreta, tente novamente',
+                        buttons: false,
+                        dangerMode: true,
+                        timer: 1000,
+                        className: `${styles.alert}`
+                    })}>Entrar</button>
                     <Link href='/signUp'>
                         <h3 className={styles.sub}>Ainda não tem uma conta?</h3>
                     </Link>

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Index.module.css'
 import Link from 'next/link'
 import SideNav from '../component/side-nav'
-
 import { withPublic } from '../hook/route';
 
 function Index() {
