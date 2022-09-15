@@ -58,7 +58,14 @@
 }
 
 .btn.delined {
-    background: #464646;
+    background: none;
+    color: #000;
+}
+
+.btn.delined:hover{
+    background: #00000050;
+    border: 1px solid #464646;
+    color: #fff;
 }
 
 .btn:hover {
