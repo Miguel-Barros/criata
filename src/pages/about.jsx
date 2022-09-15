@@ -17,7 +17,7 @@ function About() {
                     data-aos-easing="ease-in-back"
                     data-aos-duration="350"
                     data-aos-offset="0">
-                    <SideNav />
+                    <SideNav page={'about'}/>
                     <img className={styles.bg} src="./assets/images/about/bg.svg" alt="background" />
                     <span className={styles.logo}>
                         <img className={styles.team_logo} src="./assets/images/about/team-logo.svg" alt="team-logo" />

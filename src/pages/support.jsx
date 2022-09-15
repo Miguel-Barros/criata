@@ -15,7 +15,7 @@ function Support() {
                 data-aos-easing="ease-in-back"
                 data-aos-duration="350"
                 data-aos-offset="0">
-                <SideNav />
+                <SideNav page={'support'}/>
                 <div className={styles.box}>
                     <h1 className={styles.title}>Suporte <span className={styles.proj_name}>Online</span></h1>
                     <p className={styles.p}>Qualquer problema em relação ao sistema, você pode solicitar ajuda para o nosso centro de suporte. Assim, poderá visualizar erros comuns e outros que podem te ajudar a solucionar o seu.</p>

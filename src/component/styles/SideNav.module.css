@@ -21,3 +21,37 @@
 .circle:hover {
     background: #FFEA5F;
 }
+
+.circle:nth-child(1):hover:before{
+    content: 'Suporte';
+    font-family: 'mulish';
+    font-weight: 700;
+    margin-top: 10%;
+    margin-left: 120%;
+    display: flex;
+    align-items: center;
+}
+
+.circle:nth-child(2):hover:before{
+    content: 'Principal';
+    font-family: 'mulish';
+    font-weight: 700;
+    margin-top: 10%;
+    margin-left: 120%;
+    display: flex;
+    align-items: center;
+}
+
+.circle:nth-child(3):hover:before{
+    content: 'Sobre';
+    font-family: 'mulish';
+    font-weight: 700;
+    margin-top: 10%;
+    margin-left: 120%;
+    display: flex;
+    align-items: center;
+}
+
+.circle:is(.active){
+    background: #FFEA5F;
+}

@@ -1,7 +1,7 @@
 import styles from './styles/SideNav.module.css'
 import Link from 'next/link'
 
-export default function SideNav() {
+export default function SideNav( props ) {
     return (
         <>
             <span className={styles.navigation}>

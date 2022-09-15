@@ -16,7 +16,7 @@ function Index() {
         data-aos-easing="ease-in-back"
         data-aos-duration="350"
         data-aos-offset="0">
-        <SideNav />
+        <SideNav page={'index'}/>
         <div className={styles.box}>
           <h1 className={styles.title}>Bem vindo ao <span className={styles.proj_name}>Criata</span></h1>
           <p className={styles.text}>Somos uma plataforma para criação e personalização de currículos e portifólios online. Faça o seu próprio design e crie uma página exclusiva para você, sem se preocupar com  a programação!</p>
