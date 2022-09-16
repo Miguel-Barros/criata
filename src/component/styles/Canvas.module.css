@@ -13,24 +13,20 @@
 }
 
 .logo{
-    width: 13vw;
-    height: 7vh;
-    /*background-image: url(logo.png);
-    background-size: 13vw 7vh;*/
     position: absolute;
     left: 1%;
 }
 
 .navbar{
-    width: 30vw;
-    height: 5vh;
+    width: 435px;
+    height: 52px;
     background: #656565;
     border-radius: 10px;
     color: #FFF;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-right: 4%;
+    margin-right: 2%;
 }
 
 .separador{
@@ -62,7 +58,7 @@
     background: #0087C0;
     border-radius: 10px;
     border: none;
-    margin-right: 2%;
+    margin-right: 1%;
 }
 
 .row2{
@@ -80,15 +76,31 @@
 
 .retangulo{
     height: 100%;
-    width: 6vw;
+    width: 90px;
     background: #E9E9E9;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon{
+    margin-top: 25px;
+    width: 100%;
+    color: #AFAFAF;
+    background: #E9E9E9;
+}
+
+.icon:hover{
+    width: 150%;
+    color:#595858;
+    background: #F2F5F6;
 }
 
 .col2{
     height: 500px;
-    border: 2px firebrick solid;
+    height: 100%;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     margin-right: 3vw;
 }
@@ -96,9 +108,4 @@
 .stage{
     background-color: #FFF;
     height: 500px;
-}
-
-.btn{
-    width: 80%;
-    height: 5%;
 }

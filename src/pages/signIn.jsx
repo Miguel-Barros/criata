@@ -11,8 +11,15 @@ function SignIn({ auth }) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
+    window.onload = () => {
+        document.getElementById("container").style.animationName = "animacao";
+        document.getElementById("container").style.animationDuration = "1s";
+        document.getElementById("container").style.animationTimingFunction = "ease-in";
+        document.getElementById("container").style.animationDirection = "reverse";
+    }
+
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="container">
             <Head>
                 <title>SignIn - Criata</title>
             </Head>
