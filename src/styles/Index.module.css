@@ -1,27 +1,56 @@
-.container {
-    width: 100vw;
+.main {
+    display: grid;
+    grid-template-columns: auto 56vw;
     height: 100vh;
 }
 
+.col1{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-content: center;
+}
+
+.row1, .row2, .row3{
+    width: 55%;
+    margin: auto;
+    text-align: center;
+}
+
+.row1{
+    margin-bottom: 0;
+}
+
+.row2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row3{
+    margin-top: 0;
+}
+
 .title {
+    text-align: initial;
     font-family: 'Baloo 2';
-    line-height: 80px;
     font-weight: 400;
     color: #595555;
-    font-size: 80px;
+    font-size: 65px;
+    line-height: 65px;
+    white-space: nowrap;
 }
 
 .proj_name {
     font-family: 'Quicksand';
     letter-spacing: 0.02em;
-    background: linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
+    background: linear-gradient(89.78deg, #FF8200 5.2%, #FFC039 99.72%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .text {
-    margin: 70px 0 ;
+    margin: 0;
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
@@ -31,47 +60,38 @@
 }
 
 .btn {
-    width: 254px;
-    height: 65px;
+    width: 245px;
+    height: 60px;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
     background: #F6A413;
     border-radius: 10px;
     font-family: 'Mulish';
     color: #fff;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    transition: all .5s ease;
     cursor: pointer;
+    margin: auto;
 }
 
 .btn:hover {
     opacity: 75%;
 }
 
-.box {
-    width: 25vw;
-    display: flex;
-    flex-direction: column;
-    margin: 50vh 10vw 0;
-    transform: translateY(-50%)
+.btn:active {
+    transition: transform, 5ms;
+    transform: translateY(3px);
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
 }
 
-.main {
+.col2 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-height: 100vh;
+    justify-content: center;
 }
 
 .ilus {
     width: 600px;
     height: 490px;
-    margin: 50vh 5vw 0;
-    transform: translateY(-50%)
 }
 
 .ilus_bg {
