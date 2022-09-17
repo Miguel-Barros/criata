@@ -1,5 +1,5 @@
 .navigation {
-    height: 20%;
+    height: 17%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -17,7 +17,8 @@
 }
 
 .circle:hover {
-    background: #FFEA5F;
+    background: #F6A413;
+    border: 1px solid #F6A413;
 }
 
 .circle:nth-child(1):hover:before{

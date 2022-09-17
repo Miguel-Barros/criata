@@ -17,9 +17,9 @@ function About() {
                     data-aos-easing="ease-in-back"
                     data-aos-duration="350"
                     data-aos-offset="0">
-                    <SideNav page={'about'}/>
                     <img className={styles.bg} src="./assets/images/about/bg.svg" alt="background" />
                     <span className={styles.logo}>
+                    <SideNav page={'about'}/>
                         <img className={styles.team_logo} src="./assets/images/about/team-logo.svg" alt="team-logo" />
                         <h3 className={styles.team_name} >COARACI</h3>
                     </span>

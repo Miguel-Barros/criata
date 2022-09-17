@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import styles from '../styles/Index.module.css'
 import Link from 'next/link'
+import styles from '../styles/Index.module.css'
 import SideNav from '../component/side-nav'
+import Support from '../component/support'
 import { withPublic } from '../hook/route';
 
 function Index() {
@@ -31,6 +32,7 @@ function Index() {
           </div>
         </div>
         <div className={styles.col2}>
+          <Support/>
           <img className={styles.ilus} src="./assets/images/index/ilus_index.svg" />
           <img className={styles.ilus_bg} src="./assets/images/index/ilus_bg.svg" />
         </div>

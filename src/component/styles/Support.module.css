@@ -5,13 +5,15 @@
 
 .box {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Mulish';
+    font-weight: 700;
     font-size: .3em;
-
-    right: 3vw;
-    top: 3vh;
+    right: 15px;
+    top: 15px;
+    text-align: center;
     cursor: pointer;
+}
+
+.box:hover {
+    opacity: 60%;
 }
