@@ -83,6 +83,35 @@
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
 }
 
+.about {
+    width: 150px;
+    line-height: 40px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    color: #393838;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: calc(22vw - 75px);
+    transition: transform 0.5s;
+}
+
+
+.about:hover{
+    opacity: 70%;
+}
+
+.about:active{
+    transform: translateY(20%);
+}
+
+
+.about > span {
+    transform: translateY(10px);
+}
+
 .col2 {
     display: flex;
     align-items: center;

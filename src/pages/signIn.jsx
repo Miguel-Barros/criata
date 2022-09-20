@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Support from '../component/support';
 import styles from '../styles/SignIn.module.css';
 
 import { withPublic } from '../hook/route';
@@ -17,6 +18,7 @@ function SignIn({ auth }) {
                 data-aos-easing="ease-in-back"
                 data-aos-duration="350"
                 data-aos-offset="100">
+                <Support></Support>
                 <div className={styles.box}
                     data-aos="fade-right"
                     data-aos-offset="500"

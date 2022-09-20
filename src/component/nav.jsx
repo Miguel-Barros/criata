@@ -1,4 +1,5 @@
 import styles from './styles/Nav.module.css'
+import Link from 'next/link'
 
 export default function Nav(props) {
     function Search() {
@@ -18,10 +19,12 @@ export default function Nav(props) {
                 <span className={styles.box}>
                     <div className={styles.logo}>
                         <img className={styles.l_icon} src="./assets/components/criata_logo.svg" alt="" />
-                        <p className={styles.l_text}>Criata</p>
+                        <p className={styles.l_text}>&nbsp;Criata</p>
                     </div>
                     <div className={styles.profile}>
-                        <img className={styles.s_icon} src="./assets/components/settings-icon.svg" />
+                        <Link href={'/config'}>
+                            <img className={styles.s_icon} src="./assets/components/settings-icon.svg" />
+                        </Link>
                         <p className={styles.p_name}>{props?.displayName}</p>
                         <img className={styles.p_icon} src="./assets/components/profile.png" alt="" />
                     </div>

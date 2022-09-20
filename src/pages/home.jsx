@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css';
 import Head from "next/head";
 import Nav from "../component/nav";
 
-import { withProtected } from '../hook/route';
+import { withPublic } from '../hook/route';
 
 function Home({ auth }) {
 
@@ -19,11 +19,10 @@ function Home({ auth }) {
                     <div className={styles.card}><img className={styles.plus} src="./assets/components/plus.svg" alt="" /></div>
                     <div className={styles.card}><p className={styles.text}>Template</p></div>
                     <div className={styles.card}><p className={styles.text}>Template</p></div>
-                    <button onClick={() => logout()}>Deslogar</button>
                 </div>
             </main>
         </div>
     )
 }
 
-export default withProtected(Home);
+export default withPublic(Home);

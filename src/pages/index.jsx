@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Index.module.css'
+import ArrowIcon from '../../public/assets/icons/arrow-down-right.svg'
 import SideNav from '../component/side-nav'
 import Support from '../component/support'
 import { withPublic } from '../hook/route';
@@ -28,6 +30,16 @@ function Index() {
           <div className={styles.row3}>
             <Link href='/signIn'>
               <button className={styles.btn}>Vamos começar</button>
+            </Link>
+            <Link href='/about'>
+              <p className={styles.about}> Quem somos
+                <Image
+                  className={styles.icon}
+                  src={ArrowIcon}
+                  width={24}
+                  height={24}
+                />
+              </p> 
             </Link>
           </div>
         </div>

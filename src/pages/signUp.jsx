@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Support from '../component/support';
 import styles from '../styles/SignUp.module.css';
 
 import { withPublic } from '../hook/route';
@@ -10,6 +11,7 @@ function SignUp() {
             <Head>
                 <title>Criata - Cadastrar</title>
             </Head>
+            <Support></Support>
             <main className={styles.main}
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"

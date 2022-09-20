@@ -1,5 +1,6 @@
 import styles from '../styles/About.module.css'
 import SideNav from '../component/side-nav'
+import Support from '../component/support'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -11,12 +12,14 @@ function About() {
             <Head>
                 <title>Criata - Sobre nós</title>
             </Head>
+            <Support></Support>
             <section className={`${styles.intro} ${styles.section}`}>
                 <div className={styles.main}
                     data-aos="fade-zoom-in"
                     data-aos-easing="ease-in-back"
                     data-aos-duration="350"
                     data-aos-offset="0">
+                    
                     <img className={styles.bg} src="./assets/images/about/bg.svg" alt="background" />
                     <span className={styles.logo}>
                     <SideNav page={'about'}/>
