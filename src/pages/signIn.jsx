@@ -2,11 +2,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Support from '../component/support';
 import styles from '../styles/SignIn.module.css';
-
 import { withPublic } from '../hook/route';
+import { useState } from 'react';
 
 function SignIn({ auth }) {
-    const { loginWithGoogle } = auth;
+    const { loginWithGoogle, loginWithEmailAndPassword } = auth;
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
     return (
         <div className={styles.container}>
@@ -25,20 +27,12 @@ function SignIn({ auth }) {
                     data-aos-delay="200"
                     data-aos-duration="500">
                     <h1 className={styles.title}>Entrar</h1>
-                    <input type="text" placeholder='E-mail' className={styles.input} />
-                    <input type="password" placeholder='Senha' className={styles.input} />
+                    <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => { setEmail(e.target.value) }} value={email} />
+                    <input type="password" placeholder='Senha' className={styles.input}  onChange={(e) => { setPassword(e.target.value) }} value={password}/>
                     <Link href='/forgot'>
                         <h3 className={styles.sub}>Esqueceu a senha?</h3>
                     </Link>
-                    <button className={styles.btn} onClick={() => swal({
-                        icon: 'error',
-                        title: 'Login invalido',
-                        text: 'Parece que você preencheu os campos de forma incorreta, tente novamente',
-                        buttons: false,
-                        dangerMode: true,
-                        timer: 1000,
-                        className: `${styles.alert}`
-                    })}>Entrar</button>
+                    <button className={styles.btn} onClick={() => loginWithEmailAndPassword(email, password)}>Entrar</button>
                     <Link href='/signUp'>
                         <h3 className={styles.sub}>Ainda não tem uma conta?</h3>
                     </Link>

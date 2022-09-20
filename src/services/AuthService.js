@@ -2,7 +2,8 @@ import { getApp } from "firebase/app";
 import {
     signInWithPopup, onAuthStateChanged,
     getAuth, signOut,
-    GoogleAuthProvider
+    GoogleAuthProvider,
+    signInWithEmailAndPassword
 } from "firebase/auth";
 
 class AuthService {
@@ -19,6 +20,19 @@ class AuthService {
     async loginWithGoogle() {
         try {
             const userCred = await signInWithPopup(this.auth, new GoogleAuthProvider());
+            return {
+                user: userCred.user,
+            };
+        } catch (error) {
+            return {
+                error: error.message,
+            };
+        }
+    }
+
+    async loginWithEmailAndPassword(email, password) {
+        try {
+            const userCred = await signInWithEmailAndPassword(this.auth, email, password);
             return {
                 user: userCred.user,
             };
