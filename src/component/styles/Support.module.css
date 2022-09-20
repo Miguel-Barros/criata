@@ -1,6 +1,6 @@
 .icon {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
 }
 
 .box {
@@ -8,12 +8,13 @@
     font-family: 'Mulish';
     font-weight: 700;
     font-size: .3em;
-    right: 15px;
-    top: 15px;
+    right: 2vw;
+    top: 2vh;
     text-align: center;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
 .box:hover {
-    opacity: 60%;
+    opacity: 50%;
 }

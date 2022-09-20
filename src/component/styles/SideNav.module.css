@@ -1,19 +1,20 @@
 .navigation {
-    height: 17%;
+    height: 15vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     position: absolute;
-    left: 15px;
+    left: 2vw;
 }
 
 .circle {
-    height: 20px;
-    width: 20px;
+    height: 23px;
+    width: 23px;
     background-color: #FFF;
     border-radius: 50%;
     border: 1px solid #6C6C6C;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
 .circle:hover {
