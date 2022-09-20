@@ -1,0 +1,8 @@
+.container{
+    margin: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-image: linear-gradient(181.55deg, #FB9701 6.56%, #FEEC61 134.53%);;
+    background-size: 100vw 31vh;
+    background-repeat: no-repeat;
+}

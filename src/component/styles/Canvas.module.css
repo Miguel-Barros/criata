@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Mulish');
+
+.container{
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 11vh auto;
+}
+
+.row1{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.logo{
+    position: absolute;
+    left: 1%;
+}
+
+.navbar{
+    width: 435px;
+    height: 52px;
+    background: #656565;
+    border-radius: 10px;
+    color: #FFF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2%;
+}
+
+.separador{
+    width: 1px;
+    height: 60%;
+    background-color: #A7A7A7;
+}
+
+.btnRemove, .cor{
+    padding: 0;
+    border: none;
+    background: none;
+    color: #FFF;
+}
+
+.btnRemove:hover{
+    color: #d9d9d9;
+}
+
+.visualizar, .publicar{
+    width: 142px;
+    height: 31px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFF;
+    background: #0087C0;
+    border-radius: 10px;
+    border: none;
+    margin-right: 1%;
+}
+
+.row2{
+    display: grid;
+    grid-template-columns: 23vw 71vw;
+    justify-content: space-between;
+}
+
+.col1{
+    background: #F2F5F6;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 89vh;
+}
+
+.retangulo{
+    height: 100%;
+    width: 90px;
+    background: #E9E9E9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon{
+    margin-top: 25px;
+    width: 100%;
+    color: #AFAFAF;
+    background: #E9E9E9;
+}
+
+.icon:hover{
+    width: 150%;
+    color:#595858;
+    background: #F2F5F6;
+}
+
+.col2{
+    height: 500px;
+    height: 100%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    margin-right: 3vw;
+}
+
+.stage{
+    background-color: #FFF;
+    height: 500px;
+}
