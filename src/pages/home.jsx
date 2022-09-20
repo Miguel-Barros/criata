@@ -1,13 +1,10 @@
 import styles from '../styles/Home.module.css';
 import Head from "next/head";
 import Nav from "../component/nav";
+//import { withProtected } from '../hook/route';
+import { withPublic } from '../hook/route';//debug
 
-import { withPublic } from '../hook/route';
-
-function Home({ auth }) {
-
-    const { logout } = auth;
-
+function Home() {
     return (
         <div className={styles.container}>
             <Head><title>Criata - Home</title></Head>
@@ -25,4 +22,5 @@ function Home({ auth }) {
     )
 }
 
-export default withPublic(Home);
+//import { withProtected } from '../hook/route';
+export default withPublic(Home);//debug
