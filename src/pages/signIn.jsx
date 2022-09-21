@@ -28,7 +28,7 @@ function SignIn({ auth }) {
                     data-aos-duration="500">
                     <h1 className={styles.title}>Entrar</h1>
                     <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => { setEmail(e.target.value) }} value={email} />
-                    <input type="password" placeholder='Senha' className={styles.input}  onChange={(e) => { setPassword(e.target.value) }} value={password}/>
+                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => { setPassword(e.target.value) }} value={password} />
                     <Link href='/forgot'>
                         <h3 className={styles.sub}>Esqueceu a senha?</h3>
                     </Link>
@@ -36,6 +36,7 @@ function SignIn({ auth }) {
                     <Link href='/signUp'>
                         <h3 className={styles.sub}>Ainda não tem uma conta?</h3>
                     </Link>
+
                     <span className={styles.accounts}>
                         <img className={styles.icons} src="./assets/icons/google-icon.svg" onClick={() => loginWithGoogle(auth)} />
                         <img className={styles.icons} src="./assets/icons/facebook-icon.svg" />
@@ -46,6 +47,7 @@ function SignIn({ auth }) {
                 </div>
                 <img className={styles.ilus_bg} src="./assets/images/login/ilus-bg.svg" alt='ilustration-bg' />
                 <img className={styles.ilus} src="./assets/images/login/ilus.svg" alt='ilustration' />
+                
             </main >
         </div >
     );

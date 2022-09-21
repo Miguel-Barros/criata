@@ -38,7 +38,7 @@ class AuthService {
             };
         } catch (error) {
             return {
-                error: error.message,
+                error
             };
         }
     }
