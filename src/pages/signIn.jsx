@@ -7,8 +7,8 @@ import { useState } from 'react';
 
 function SignIn({ auth }) {
     const { loginWithGoogle, loginWithEmailAndPassword } = auth;
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     return (
         <div className={styles.container}>

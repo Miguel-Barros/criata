@@ -3,7 +3,8 @@ import {
     signInWithPopup, onAuthStateChanged,
     getAuth, signOut,
     GoogleAuthProvider,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword
 } from "firebase/auth";
 
 class AuthService {
@@ -33,6 +34,19 @@ class AuthService {
     async loginWithEmailAndPassword(email, password) {
         try {
             const userCred = await signInWithEmailAndPassword(this.auth, email, password);
+            return {
+                user: userCred.user,
+            };
+        } catch (error) {
+            return {
+                error
+            };
+        }
+    }
+
+    async createUserWithEmailAndPassword(email, password){
+        try {
+            const userCred = await createUserWithEmailAndPassword(this.auth, email, password);
             return {
                 user: userCred.user,
             };
