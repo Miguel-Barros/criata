@@ -101,7 +101,6 @@ export function AuthProvider(props) {
 	}
 
 	async function signUpWithEmailAndPassword(name, email, password, cpassword) {
-		console.log(username);
 		if (email === "" || email == null || password == "" || password == null || cpassword == "" || cpassword == null || name == "" || name == null) {
 			return Swal.fire({
 				icon: "error",
