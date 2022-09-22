@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Creation.module.css';
 import dynamic from 'next/dynamic';
 import { withProtected } from '../hook/route';
 
@@ -10,7 +9,7 @@ const Canvas = dynamic(() => import('../component/canvas'), {
 function Creation({ auth }) {
     
     return(
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title> Criata - Criação </title>
             </Head>

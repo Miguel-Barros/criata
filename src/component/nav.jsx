@@ -1,40 +1,34 @@
 import styles from './styles/Nav.module.css'
 import Link from 'next/link'
+import { Icon } from '@iconify/react';
 
 export default function Nav(props) {
-    function Search() {
-        const input = document.getElementById('input')
-        const box = document.getElementById('search')
-        if (!input) {
-            box.style.width = '250px'
-            box.innerHTML += `
-                <input className={styles.input} id='input' placeholder="Buscar usuario" type="text" />
-            `
-        }
-    }
-
     return (
         <>
-            <nav className={styles.nav}>
-                <span className={styles.box}>
-                    <div className={styles.logo}>
-                        <img className={styles.l_icon} src="./assets/components/criata_logo.svg" alt="" />
-                        <p className={styles.l_text}>&nbsp;Criata</p>
-                    </div>
-                    <div className={styles.profile}>
-                        <Link href={'/config'}>
-                            <img className={styles.s_icon} src="./assets/components/settings-icon.svg" />
-                        </Link>
-                        <p className={styles.p_name}>{props?.displayName}</p>
-                        <img className={styles.p_icon} src="./assets/components/profile.png" alt="" />
-                    </div>
+            <header className={styles.header}>
+                <span className={styles.left}>
+                    <Link href={'/home'}>
+                        <div className={styles.logo}>
+                            <img src="./assets/components/criata_logo.svg" alt="criata-logo" />
+                            <p>Criata</p>
+                        </div>
+                    </Link>
                 </span>
-                <span className={styles.search}>
-                    <span className={styles.s_box} id={'search'} onClick={Search}>
-                        <img className={styles.s_icon} src="./assets/components/search.svg" alt="" />
+                <span className={styles.right}>
+                    <span className={styles.settings}>
+                        <Icon className={styles.icon} icon="mdi:cog-outline" />
+                        <span className={styles.user}>
+                            <p>{props.name}</p>
+                            <img className={styles.profile_icon} src="./assets/components/profile.png" alt="profile-icon" />
+                        </span>
                     </span>
+                    <span className={styles.split}></span>
+                    <div className={styles.search}>
+                        <Icon className={styles.search_icon} icon="mdi:magnify" />
+                        <input type="text" placeholder={'Buscar'}/>
+                    </div>
                 </span>
-            </nav>
+            </header>
         </>
     )
 }
