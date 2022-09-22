@@ -11,7 +11,7 @@ export default function Creation() {
     return(
         <div className={styles.container}>
             <Head>
-                <title> Criação </title>
+                <title> Criata - Criação </title>
             </Head>
             <Canvas />
         </div>
