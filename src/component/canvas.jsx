@@ -37,7 +37,7 @@ export default function Canvas() {
                 </header>
                 <main className={styles.main}>
                     <div className={styles.side_menu}>
-                        <div className={styles.split}>
+                        <div className={styles.split} id={'tools'}>
                             <div className={styles.tool}>
                                 <Icon icon="mdi:dots-horizontal" className={styles.tool_icon} />
                             </div>

@@ -82,12 +82,12 @@
 }
 
 .side_menu {
+    display: flex;
     height: 100%;
     width: 18.3%;
     background: #F2F5F6;
-    border-radius: 5px;
-    display: flex;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 .split {
@@ -111,6 +111,7 @@
     align-items: center;
     justify-content: center;
     transition: all .5s ease;
+    border-radius: 5px;
 }
 
 .tool_icon {
@@ -119,15 +120,13 @@
 }
 
 .support_icon {
-    position: absolute;
-    max-width: 80px;
-    width: 100%;
-    bottom: 0;
+    margin-top: 200%;
 }
 
 .tool:hover {
     color: #000;
     background: #F2F5F6;
+    border-radius: 5px;
 }
 
 .content {
