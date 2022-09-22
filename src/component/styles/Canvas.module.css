@@ -5,7 +5,9 @@
 
 .main {
     width: 100%;
-    height: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .background {
@@ -22,7 +24,6 @@
     height: 10%;
     justify-content: center;
     align-items: center;
-    background: red;
 }
 
 .left p {
@@ -42,7 +43,128 @@
 }
 
 .right {
-    background: blue;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    margin-left: 5%;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    width: 140px;
+    height: 30px;
+    border-radius: 10px;
+    background: #0087C0;
+    color: #fff;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.logo {
+    display: flex;
+    cursor: pointer;
+}
+
+.side_menu {
+    height: 100%;
+    width: 18.3%;
+    background: #F2F5F6;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.split {
+    width: 23%;
+    height: 100%;
+    border-radius: 5px;
+    background: #E9E9E9;
+    display: flex;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tool {
+    width: 100%;
+    height: 9%;
+    color: #AFAFAF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
+}
+
+.tool_icon {
+    width: 45px;
+    height: 45px;
+}
+
+.support_icon {
+    position: absolute;
+    max-width: 80px;
+    width: 100%;
+    bottom: 0;
+}
+
+.tool:hover {
+    color: #000;
+    background: #F2F5F6;
+}
+
+.content {
+    width: 70%;
+    margin-right: 5%;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.slice {
+    width: 1px;
+    height: 60%;
+    background-color: #A7A7A7;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 530px;
+    height: 50px;
+    background: #656565;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.icon:hover {
+    opacity: 80%;
+    border-bottom: 1px solid #fff;
 }

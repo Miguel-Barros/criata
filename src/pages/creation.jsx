@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/Creation.module.css';
 import dynamic from 'next/dynamic';
+import { withProtected } from '../hook/route';
 
 const Canvas = dynamic(() => import('../component/canvas'), {
     ssr: false,
 })
 
-export default function Creation() {
+function Creation({ auth }) {
     
     return(
         <div className={styles.container}>
@@ -17,3 +18,5 @@ export default function Creation() {
         </div>
     )
 }
+
+export default withProtected(Creation)
