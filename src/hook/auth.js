@@ -89,6 +89,12 @@ export function AuthProvider(props) {
 		if (error) {
 			ifError(error)
 		} else {
+			await Swal.fire({
+				icon: "success",
+				title: "Login feito com sucesso!",
+				showConfirmButton: false,
+				timer: 5000
+			})
 			setUser(user ?? null);
 			setError(error ?? "");
 		}
