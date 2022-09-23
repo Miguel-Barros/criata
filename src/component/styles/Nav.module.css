@@ -49,6 +49,12 @@
     height: 40px;
     color: #00000080;
     cursor: pointer;
+    transition: all .5s ease;
+}
+
+.icon:hover {
+    transform: scale(1.09);
+    color: #000;
 }
 
 .profile_icon {
@@ -117,4 +123,22 @@
 
 .user p, .profile_icon{
     cursor: pointer;
+}
+
+
+/* Laptop */
+
+@media (min-width: 1024px){
+    .logo p {
+        font-size: 1.9rem;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .profile_icon {
+        width: 55px;
+        height: 55px;
+    }
 }

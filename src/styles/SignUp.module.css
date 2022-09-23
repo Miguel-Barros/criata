@@ -109,3 +109,34 @@
     margin: 50vh 5vw 0;
     transform: translateY(-50%)
 }
+
+/* Celular */
+
+@media (max-width: 425px){
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+ 
+    .copyright{
+        display: none;
+    }
+ 
+    .ilus_bg {
+        display: none;
+    }
+ 
+    .ilus {
+     display: none;
+    }
+ }

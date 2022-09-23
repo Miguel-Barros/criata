@@ -167,3 +167,24 @@
     opacity: 80%;
     border-bottom: 1px solid #fff;
 }
+
+/* Laptop */
+
+@media (min-width: 1024px){
+    .split .tool > .tool_icon{
+        width: 35px;
+        height: 35px;
+    }
+
+    .buttons {
+        width: 25vw;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .logo p {
+        font-size: 1.9rem
+    }
+}

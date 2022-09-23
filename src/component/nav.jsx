@@ -16,7 +16,9 @@ export default function Nav(props) {
                 </span>
                 <span className={styles.right}>
                     <span className={styles.settings}>
-                        <Icon className={styles.icon} icon="mdi:cog-outline" />
+                        <Link href={'/settings'}>
+                            <Icon className={styles.icon} icon="mdi:cog-outline" />
+                        </Link>
                         <span className={styles.user}>
                             <p>{props.name}</p>
                             <img className={styles.profile_icon} src="./assets/components/profile.png" alt="profile-icon" />
