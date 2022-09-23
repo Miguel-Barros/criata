@@ -2,8 +2,10 @@ import Link from 'next/link';
 import styles from './styles/Canvas.module.css';
 import { Icon } from '@iconify/react';
 import { showBox } from '../services/CreationService';
+import { useState } from 'react';
 
 export default function Canvas() {
+    const [sliderValue, setSliderValue] = useState(18)
 
     return (
         <>
@@ -75,6 +77,26 @@ export default function Canvas() {
                                     <option value="">Titulo 1</option>
                                 </select>
                             </span>
+                            <span>
+                                <h3>Fonte</h3>
+                                <select className={styles.dropdown}>
+                                    <option value="">Mulish</option>
+                                </select>
+                            </span>
+                            <span className={styles.slider}>
+                                <h3>Tamanho</h3>
+                                <input type="range" name="" id="" className={styles.slider_sty} min='1' max='100' onChange={(e) => setSliderValue(e.target.value)} />
+                                <p>{sliderValue}px</p>
+                            </span>
+                            <span className={styles.division} />
+                            <span>
+                                <Icon icon="mdi:format-bold" className={styles.icon} />
+                                <Icon icon="mdi:format-italic" className={styles.icon} />
+                                <Icon icon="mdi:format-underline" className={styles.icon} />
+                                <Icon icon="mdi:palette" className={styles.icon} />
+                                <Icon icon="mdi:format-color-highlight" className={styles.icon} />
+                            </span>
+                            <span className={styles.division} />
                         </div>
                     </div>
                     <div className={styles.content}>
