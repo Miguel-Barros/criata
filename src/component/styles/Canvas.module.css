@@ -88,10 +88,11 @@
     background: #F2F5F6;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .split {
-    width: 23%;
+    min-width: 23%;
     height: 100%;
     border-radius: 5px;
     background: #E9E9E9;
@@ -168,10 +169,38 @@
     border-bottom: 1px solid #fff;
 }
 
+.showMenu {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+.showMenu h3 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.showMenu .dropdown {
+    width: 201px;
+    height: 36px;
+    background: #EBEBEB;
+    border-radius: 5px;
+
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    color: #000000;
+}
+
 /* Laptop */
 
-@media (min-width: 1024px){
-    .split .tool > .tool_icon{
+@media (max-width: 1024px) {
+    .split .tool>.tool_icon {
         width: 35px;
         height: 35px;
     }
