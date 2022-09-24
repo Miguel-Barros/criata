@@ -45,7 +45,7 @@ export default function Canvas() {
                             <div className={styles.tool} onClick={() => { }}>
                                 <Icon icon="mdi:dots-horizontal" className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => showBox('text')}>
+                            <div className={`${styles.tool} ${styles.active}`} onClick={() => showBox('text')}>
                                 <Icon icon="mdi:format-size" className={styles.tool_icon} />
                             </div>
                             <div className={styles.tool} onClick={() => { }}>
@@ -89,7 +89,7 @@ export default function Canvas() {
                                 <p>{sliderValue}px</p>
                             </span>
                             <span className={styles.division} />
-                            <span>
+                            <span className={styles.icons}>
                                 <Icon icon="mdi:format-bold" className={styles.icon} />
                                 <Icon icon="mdi:format-italic" className={styles.icon} />
                                 <Icon icon="mdi:format-underline" className={styles.icon} />
@@ -97,6 +97,29 @@ export default function Canvas() {
                                 <Icon icon="mdi:format-color-highlight" className={styles.icon} />
                             </span>
                             <span className={styles.division} />
+                            <span className={styles.formats}>
+                                <Icon icon="mdi:format-align-left" className={styles.icon} />   
+                                <Icon icon="mdi:format-align-center" className={styles.icon} />
+                                <Icon icon="mdi:format-align-right" className={styles.icon} />
+                                <Icon icon="mdi:format-align-justify" className={styles.icon} /><br/>
+                                <Icon icon="mdi:format-horizontal-align-center" className={styles.icon} />
+                                <Icon icon="mdi:format-vertical-align-bottom" className={styles.icon} />
+                                <Icon icon="mdi:format-vertical-align-center" className={styles.icon} />
+                                <Icon icon="mdi:format-vertical-align-top" className={styles.icon} />
+                            </span>
+                            <span className={styles.division} />
+                            <span className={styles.models}>
+                                <h3>Modelos</h3>
+                                <div className={styles.model}>
+                                    Modelo 1
+                                </div>
+                                <div className={styles.model}>
+                                    Modelo 2
+                                </div>
+                                <div className={styles.model}>
+                                    Modelo 3
+                                </div>
+                            </span>
                         </div>
                     </div>
                     <div className={styles.content}>
