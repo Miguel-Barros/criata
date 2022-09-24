@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import styles from './styles/Canvas.module.css';
 import { Icon } from '@iconify/react';
-import CreationService from '../services/CreationService';
+import { CreateText, ShowBox, } from '../services/CreationService';
 import { useState } from 'react';
+import { Stage } from 'react-konva';
 
 export default function Canvas() {
     const [useTool, setTool] = useState('text')
+    let content = document.querySelector('#content')
 
     return (
         <>
@@ -70,12 +72,15 @@ export default function Canvas() {
                                 <Icon icon="mdi:help-circle-outline" className={styles.tool_icon} />
                             </div>
                         </div>
-                        <CreationService func={useTool} />
+                        <ShowBox func={useTool} />
                     </div>
-                    <div className={styles.content}>
+                    <div className={styles.content} id={'content'}>
+                        <Stage width={content.clientWidth} height={content.clientHeight}>
+                            <CreateText/>
+                        </Stage>
                     </div>
                 </main>
-            </div>
+            </div >
         </>
     )
 }
