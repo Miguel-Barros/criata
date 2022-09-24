@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import styles from './styles/Canvas.module.css';
 import { Icon } from '@iconify/react';
-import { showBox } from '../services/CreationService';
+import CreationService from '../services/CreationService';
 import { useState } from 'react';
 
 export default function Canvas() {
-    const [sliderValue, setSliderValue] = useState(18)
+    const [useTool, setTool] = useState('text')
 
     return (
         <>
@@ -42,85 +42,35 @@ export default function Canvas() {
                 <main className={styles.main}>
                     <div className={styles.side_menu}>
                         <div className={styles.split} id={'tools'}>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('dots')}>
                                 <Icon icon="mdi:dots-horizontal" className={styles.tool_icon} />
                             </div>
-                            <div className={`${styles.tool} ${styles.active}`} onClick={() => showBox('text')}>
+                            <div className={styles.tool} onClick={() => setTool('text')}>
                                 <Icon icon="mdi:format-size" className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('collage')}>
                                 <Icon icon="mdi:collage" hFlip={true} className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('ratio')}>
                                 <Icon icon="mdi:aspect-ratio" className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('auto-fix')}>
                                 <Icon icon="mdi:auto-fix" className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('texture')}>
                                 <Icon icon="mdi:texture" className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('cloud-upload')}>
                                 <Icon icon="mdi:cloud-upload" className={styles.tool_icon} />
                             </div>
-                            <div className={styles.tool} onClick={() => { }}>
+                            <div className={styles.tool} onClick={() => setTool('radio-box')}>
                                 <Icon icon="mdi:radiobox-marked" className={styles.tool_icon} />
                             </div>
                             <div className={`${styles.tool} ${styles.support_icon}`}>
                                 <Icon icon="mdi:help-circle-outline" className={styles.tool_icon} />
                             </div>
                         </div>
-                        <div className={styles.showMenu}>
-                            <span>
-                                <h3>Temas</h3>
-                                <select className={styles.dropdown}>
-                                    <option value="">Titulo 1</option>
-                                </select>
-                            </span>
-                            <span>
-                                <h3>Fonte</h3>
-                                <select className={styles.dropdown}>
-                                    <option value="">Mulish</option>
-                                </select>
-                            </span>
-                            <span className={styles.slider}>
-                                <h3>Tamanho</h3>
-                                <input type="range" name="" id="" className={styles.slider_sty} min='1' max='100' onChange={(e) => setSliderValue(e.target.value)} />
-                                <p>{sliderValue}px</p>
-                            </span>
-                            <span className={styles.division} />
-                            <span className={styles.icons}>
-                                <Icon icon="mdi:format-bold" className={styles.icon} />
-                                <Icon icon="mdi:format-italic" className={styles.icon} />
-                                <Icon icon="mdi:format-underline" className={styles.icon} />
-                                <Icon icon="mdi:palette" className={styles.icon} />
-                                <Icon icon="mdi:format-color-highlight" className={styles.icon} />
-                            </span>
-                            <span className={styles.division} />
-                            <span className={styles.formats}>
-                                <Icon icon="mdi:format-align-left" className={styles.icon} />   
-                                <Icon icon="mdi:format-align-center" className={styles.icon} />
-                                <Icon icon="mdi:format-align-right" className={styles.icon} />
-                                <Icon icon="mdi:format-align-justify" className={styles.icon} /><br/>
-                                <Icon icon="mdi:format-horizontal-align-center" className={styles.icon} />
-                                <Icon icon="mdi:format-vertical-align-bottom" className={styles.icon} />
-                                <Icon icon="mdi:format-vertical-align-center" className={styles.icon} />
-                                <Icon icon="mdi:format-vertical-align-top" className={styles.icon} />
-                            </span>
-                            <span className={styles.division} />
-                            <span className={styles.models}>
-                                <h3>Modelos</h3>
-                                <div className={styles.model}>
-                                    Modelo 1
-                                </div>
-                                <div className={styles.model}>
-                                    Modelo 2
-                                </div>
-                                <div className={styles.model}>
-                                    Modelo 3
-                                </div>
-                            </span>
-                        </div>
+                        <CreationService func={useTool} />
                     </div>
                     <div className={styles.content}>
                     </div>

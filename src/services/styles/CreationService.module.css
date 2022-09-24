@@ -1,0 +1,121 @@
+.showMenu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.showMenu h3 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.showMenu h3 {
+    margin-left: -10px;
+    padding: 10% 0 10% 0;
+}
+
+.showMenu .icon:not(.icon:first-child) {
+    margin-left: 5%;
+}
+
+.showMenu .dropdown {
+    width: 100%;
+    height: 50%;
+    background: #EBEBEB;
+    border-radius: 5px;
+
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    color: #000000;
+    cursor: pointer;
+    padding-left: 5%;
+}
+
+.slider {
+    width: 80%;
+}
+
+.slider p {
+    color: #000;
+    font-family: 'Mulish';
+    font-size: .9em;
+}
+
+.slider_sty {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #b4b4b4;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider_sty:hover {
+    opacity: 1;
+}
+
+.slider_sty::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background: #d3d3d3;
+    cursor: pointer;
+}
+
+.division {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 114%;
+    align-self: center;
+    border-radius: 100px;
+    height: 0px;
+    border: .5px solid #00000033;
+}
+
+.icons {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.formats {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.models {
+    width: 80%;
+}
+
+.model {
+    width: 100%;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 15%;
+}
+
+.tool:is(.active) {
+    background: #F2F5F6;
+    color: #000;
+}
