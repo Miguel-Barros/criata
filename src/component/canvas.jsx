@@ -75,7 +75,7 @@ export default function Canvas() {
                         <ShowBox func={useTool} />
                     </div>
                     <div className={styles.content} id={'content'}>
-                        <Stage width={content.clientWidth} height={content.clientHeight}>
+                        <Stage width={800} height={600}>
                             <CreateText/>
                         </Stage>
                     </div>
