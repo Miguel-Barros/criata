@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styles from './styles/CreationService.module.css'
 import { Icon } from '@iconify/react'
-import { Text, Layer, Rect, Transformer } from 'react-konva';
 
-function ShowBox(props) {
+export default function ShowBox(props) {
 
     if (props.func === 'dots') {
         return (
@@ -118,116 +117,3 @@ function ShowBox(props) {
         )
     }
 }
-
-function CreateText(props) {
-    let state = {
-        isDragging: false,
-        x: 50,
-        y: 50,
-    }
-
-    const Rectangle = ({ shapeProps, isSelected, onSelect, onChange}) => {
-        const shapeRef = React.useRef();
-        const trRef = React.useRef();
-
-        React.useEffect(() => {
-            if(isSelected) {
-                trRef.current.nodes([shapeRef.current])
-                trRef.current.getLayer().batchDraw()
-            }
-        }, [isSelected])
-
-        return(
-            <React.Fragment>
-                <Rect 
-                    onClick={onSelect}
-                    onTap={onSelect}
-                    ref={shapeRef}
-                    {...shapeProps}
-                    draggable
-                    onDragEnd={(e) => {
-                        onChange({
-                            ...shapeProps,
-                            x: e.target.x(),
-                            y: e.target.y(),
-                        })
-                    }}
-                    onTransformEnd={(e) => {
-                        const node = shapeRef.current
-                        const scaleX = node.scaleX()
-                        const scaleY = node.scaleY()
-
-                        node.scaleX(1)
-                        node.scaleY(1)
-                        onChange({
-                            ...shapeProps,
-                            x: node.x(),
-                            y: node.y(),
-
-                            width: Math.max(5, node.width() * scaleX),
-                            height: Math.max(node.height() * scaleY),
-                        })
-                    }}
-                />
-                {isSelected && (
-                    <Transformer 
-                        ref={trRef}
-                        boundBoxFunc={(oldBox, newBox) => {
-                            if(newBox.width < 5 || newBox.height < 5){
-                                return oldBox
-                            }
-                            return newBox
-                        }}
-                    />
-                )}
-            </React.Fragment>
-        )
-    }
-
-    const initialRectangles = [
-        {
-            x: 10,
-            y: 10,
-            width: 100,
-            height: 100,
-            fill: 'red',
-            id: 'rect1',
-        },
-    ]
-
-    const [rectangles, setRectangles] = useState(initialRectangles)
-    const [selectedId, selectedShape] = useState(null)
-
-    const checkDeselect = (e) => {
-        const clickedOnEmpty = e.target === e.target.getStage();
-        if(clickedOnEmpty){
-            selectedShape(null)
-        }
-    }
-
-    return (
-        <>
-            <Layer>
-                {rectangles.map((rect, i) => {
-                    return (
-                        <Rectangle
-                            key={i}
-                            shapeProps={rect}
-                            isSelected={rect.id === selectedId}
-                            onSelect={() => {
-                                selectedShape(rect.id)
-                            }}
-                            onChange={(newAttrs) => {
-                                const rects = rectangles.slice()
-                                rects[i] = newAttrs
-                                setRectangles(rects)
-                            }}
-                        />
-                    )
-                })}
-            </Layer>
-        </>
-    )
-}
-
-export { ShowBox, CreateText}

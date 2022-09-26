@@ -1,126 +1,74 @@
-.main {
-    display: grid;
-    grid-template-columns: auto 56vw;
+.container {
+    width: 100vw;
     height: 100vh;
 }
 
-.col1{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    align-content: center;
-}
-
-.row1, .row2, .row3{
-    width: 55%;
-    margin: auto;
-    text-align: center;
-}
-
-.row1{
-    margin-bottom: 0;
-}
-
-.row2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.row3{
-    margin-top: 0;
-}
-
 .title {
-    text-align: initial;
     font-family: 'Baloo 2';
+    line-height: 80px;
     font-weight: 400;
     color: #595555;
-    font-size: 65px;
-    line-height: 65px;
-    white-space: nowrap;
+    font-size: 4.5em;
 }
 
 .proj_name {
     font-family: 'Quicksand';
     letter-spacing: 0.02em;
-    background: linear-gradient(89.78deg, #FF8200 5.2%, #FFC039 99.72%);
+    background: linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .text {
-    margin: 0;
+    width: 80%;
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1em;
     text-align: justify;
     color: #595555;
 }
 
 .btn {
-    width: 245px;
-    height: 60px;
+    width: 25vw;
+    height: 10vh;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
     background: #F6A413;
     border-radius: 10px;
     font-family: 'Mulish';
     color: #fff;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 400;
+    transition: all .5s ease;
     cursor: pointer;
-    margin: auto;
 }
 
 .btn:hover {
     opacity: 75%;
 }
 
-.btn:active {
-    transition: transform, 5ms;
-    transform: translateY(3px);
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
-}
-
-.about {
-    width: 150px;
-    line-height: 40px;
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    color: #393838;
-    cursor: pointer;
-    position: absolute;
-    bottom: 5px;
-    left: calc(22vw - 75px);
-    transition: transform 0.5s;
-}
-
-
-.about:hover{
-    opacity: 70%;
-}
-
-.about:active{
-    transform: translateY(20%);
-}
-
-
-.about > span {
-    transform: translateY(10px);
-}
-
-.col2 {
+.box {
+    width: 50vw;
+    height: 80vh;
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    max-height: 100vh;
 }
 
 .ilus {
-    width: 600px;
-    height: 490px;
+    width: 60vw;
+    height: 49vh;
+    margin: 50vh 0 0 10vw;
+    transform: translateY(-50%)
 }
 
 .ilus_bg {
@@ -130,4 +78,9 @@
     right: 0;
     object-fit: cover;
     z-index: -1;
+}
+
+/* Small laptop */
+
+@media (max-width: 1024px){
 }

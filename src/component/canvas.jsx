@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import styles from './styles/Canvas.module.css';
 import { Icon } from '@iconify/react';
-import { CreateText, ShowBox, } from '../services/CreationService';
+import ShowBox from '../services/CreationService';
 import { useState } from 'react';
 import { Stage } from 'react-konva';
 
 export default function Canvas() {
     const [useTool, setTool] = useState('text')
-    let content = document.querySelector('#content')
-
+   
     return (
         <>
             <div className={styles.container}>
@@ -76,7 +75,7 @@ export default function Canvas() {
                     </div>
                     <div className={styles.content} id={'content'}>
                         <Stage width={800} height={600}>
-                            <CreateText/>
+                            {}
                         </Stage>
                     </div>
                 </main>
