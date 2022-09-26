@@ -34,6 +34,7 @@ function About() {
                             <img className={styles.icon} src="./assets/components/arrow.svg" alt="arrow" />
                     </Link>
                 </span>
+                <p className={styles.copyright}>Coaraci © 2022</p>
             </div>
         </div>
     )

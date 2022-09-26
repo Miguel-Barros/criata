@@ -23,7 +23,7 @@
 
 .ilus {
     width: 60vw;
-    height: 49vh;
+    height: 60vh;
     margin: 50vh 0 0 10vw;
     transform: translateY(-50%)
 }
@@ -39,10 +39,9 @@
 
 .title {
     font-family: 'Baloo 2';
-    line-height: 80px;
     font-weight: 400;
     color: #595555;
-    font-size: 80px;
+    font-size: 5vw;
 }
 
 .proj_name {
@@ -58,24 +57,25 @@
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.0em;
+    font-size: 1.5vw;
     text-align: justify;
     color: #595555;
 }
 
 .btn {
-    width: 25vw;
+    width: 22vw;
     height: 10vh;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
     background: #F6A413;
-    border-radius: 10px;
+    border-radius: .8vw;
     font-family: 'Mulish';
     color: #fff;
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: 400;
-    align-self: center;
     transition: all .5s ease;
     cursor: pointer;
+    margin-top: 5%;
+    align-self: center;
 }
 
 .btn:hover {
@@ -86,7 +86,8 @@
     position: absolute;
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.3vw;
     right: 23vw;
     bottom: 5vh;
+    color: #4e4e4e;
 }

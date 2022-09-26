@@ -6,23 +6,23 @@
     height: 15vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     position: absolute;
 }
 
 .circle {
     background-color: #ffffff60;
-    height: 23px;
-    width: 23px;
+    width: 2vw;
+    height: 4vh;
     border-radius: 50%;
-    border: 1px solid #6C6C6C;
+    border: .1vw solid #6C6C6C;
     cursor: pointer;
     transition: all .5s ease;
 }
 
 .circle:hover {
     background: #ff6b00;
-    border: 1px solid #F6A413;
+    border: .1vw solid #F6A413;
 }
 
 .circle:nth-child(1):hover:before{
@@ -35,6 +35,7 @@
     align-items: center;
     color: #00000095;
     text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.11vw;
 }
 
 .circle:nth-child(2):hover:before{
@@ -47,6 +48,7 @@
     align-items: center;
     color: #00000095;
     text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.11vw;
 }
 
 .circle:nth-child(3):hover:before{
@@ -59,4 +61,5 @@
     align-items: center;
     color: #00000095;
     text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.11vw;
 }

@@ -27,7 +27,6 @@
 }
 
 .logo img {
-    margin-left: 5%;
     width: 40vw;
     height: 40vh;
 }
@@ -36,7 +35,7 @@
     margin-left: 15%;
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 7vw;
+    font-size: 5.5vw;
     color: #935907;
     text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -52,7 +51,7 @@
     width: 100%;
     font-family: 'Baloo 2';
     font-weight: 400;
-    font-size: 7vw;
+    font-size: 5vw;
     color: #3d3939;
 }
 
@@ -60,8 +59,7 @@
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
-    font-size: 7vw;
-    line-height: 90px;
+    font-size: 5vw;
     color: #FF9C00;
     background: linear-gradient(89.78deg, #FF8200 5.2%, #dbcb1d 99.72%);
     -webkit-background-clip: text;
@@ -73,7 +71,7 @@
     width: 80%;
     font-family: 'Mulish';
     text-align: justify;
-    font-size: 1.7vw;
+    font-size: 1.5vw;
     line-height: 4.5vh;
     color: #494646;
 }
@@ -83,11 +81,21 @@
     height: 10vh;
     display: flex;
     align-self: flex-end;
-    margin-right: 35%;
+    margin-right: 40%;
     transition: all .5s ease;
     cursor: pointer;
 }
 
 .icon:hover {
-    margin-right: 34%;
+    margin-right: 39%;
+}
+
+.copyright {
+    position: absolute;
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 1.3vw;
+    right: 23vw;
+    bottom: 5vh;
+    color: #4e4e4e;
 }

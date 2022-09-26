@@ -5,10 +5,10 @@
 
 .title {
     font-family: 'Baloo 2';
-    line-height: 80px;
+    line-height: 12vh;
     font-weight: 400;
     color: #595555;
-    font-size: 4.5em;
+    font-size: 5vw;
 }
 
 .proj_name {
@@ -25,23 +25,24 @@
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.5vw;
     text-align: justify;
     color: #595555;
 }
 
 .btn {
-    width: 25vw;
+    width: 22vw;
     height: 10vh;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
     background: #F6A413;
-    border-radius: 10px;
+    border-radius: .8vw;
     font-family: 'Mulish';
     color: #fff;
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: 400;
     transition: all .5s ease;
     cursor: pointer;
+    margin-top: 5%;
 }
 
 .btn:hover {
@@ -66,7 +67,7 @@
 
 .ilus {
     width: 60vw;
-    height: 49vh;
+    height: 60vh;
     margin: 50vh 0 0 10vw;
     transform: translateY(-50%)
 }
@@ -80,7 +81,9 @@
     z-index: -1;
 }
 
-/* Small laptop */
+
+/* Large laptop */
 
 @media (max-width: 1024px){
+    
 }
