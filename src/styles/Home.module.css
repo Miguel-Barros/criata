@@ -5,14 +5,14 @@
 }
 
 .background {
+    margin-top: -20vh;
     width: 100%;
     height: 70%;
     object-fit: cover;
 }
 
 .welcome {
-    margin-top: -15%;
-    width: 100%;
+    margin-top: -32vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,14 +22,61 @@
     font-family: 'Baloo 2';
     font-weight: 700;
     font-size: 3vw;
-    line-height: 40px;
     color: #AE4900;
 }
 
 .welcome p {
     font-family: 'Baloo 2';
+    text-align: justify;
     font-style: normal;
     font-weight: 400;
+    line-height: 1.5vw;
     font-size: 1.5vw;
     color: #6C6C6C;
+}
+
+.card_group {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    margin-top: 10%;
+}
+
+.container .card_group:first-child{
+    display: none;
+}
+
+.card_group:last-child {
+    margin-bottom: 5%;
+}
+
+.card_group .card {
+    width: 15vw;
+    height: 40vh;
+    border: .1vw solid #bebebe;
+    background: #d3d3d3;;
+    border-radius: .5vw;
+    transition: all .8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .plus {
+    width: 7vw;
+    height: 7vh;
+    color: #fff;
+    transition: all .5s ease;
+}
+
+
+.card:hover {
+    background: #00000040;
+    cursor: pointer;
+}
+
+.card:hover > .plus {
+    color: #000;
 }
