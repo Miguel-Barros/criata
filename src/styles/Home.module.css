@@ -1,13 +1,35 @@
 .container {
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
-.bg {
-    position: absolute;
-    z-index: -1;
+.background {
     width: 100%;
-    top: 0;
+    height: 70%;
+    object-fit: cover;
 }
 
-/* Laptop */
+.welcome {
+    margin-top: -15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome h1 {
+    font-family: 'Baloo 2';
+    font-weight: 700;
+    font-size: 3vw;
+    line-height: 40px;
+    color: #AE4900;
+}
+
+.welcome p {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    color: #6C6C6C;
+}

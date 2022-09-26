@@ -70,7 +70,7 @@
 .btn.secundary {
     margin-left: 2%;
     box-sizing: border-box;
-    border: 1px solid #000000;
+    border: .1vw solid #000000;
     border-radius: 20px;
     background: none;
     color: #000;

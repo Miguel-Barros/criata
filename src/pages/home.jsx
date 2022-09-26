@@ -8,10 +8,16 @@ function Home({ auth }) {
 
     return (
         <div className={styles.container}>
-            <Head><title>Criata - Home</title></Head>
-            <Nav name={user.email} />
-            <main className={styles.main}>
-                <img src="./assets/images/home/bg.svg" alt="background" className={styles.bg} />
+            <Head>
+                <title>Criata - Home</title>
+            </Head>
+            <Nav />
+            <main style={styles.main}>
+                <img src="./assets/images/home/bg.svg" alt="background" className={styles.background} />
+                <span className={styles.welcome}>
+                    <h1>Crie o seu próprio design!</h1>
+                    <p>e use um dos h de exemplo para inspiração</p>
+                </span>
             </main>
         </div>
     )
