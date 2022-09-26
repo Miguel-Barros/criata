@@ -1,37 +1,96 @@
-.main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-height: 100vh;
-}
-
-.title {
-    font-family: 'Mulish';
-    font-size: 48px;
-    padding-bottom: 5%;
-}
-
 .container {
     width: 100vw;
     height: 100vh;
 }
 
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ilus_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.ilus {
+    display: flex;
+    align-self: center;
+    width: 50vw;
+    height: 60vh;
+}
+
 .box {
-    width: 25vw;
+    width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-left: 10vw;
+}
+
+.title {
+    font-family: 'Mulish';
+    font-size: 3vw;
+    color: #595555;
+    margin-bottom: 3%;
+}
+
+.input {
+    width: 20vw;
+    height: 6vh;
+    background: #d3d3d3;
+    border-radius: .5vw;
+    margin: 2%;
+    padding: 1%;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.3vw;
+    color: #000;
+}
+
+.input:focus {
+    border: solid rgb(197, 197, 197) 1px;
+    transition: all .3s ease-out;
+}
+
+.input::placeholder {
+    font-size: 1.3vw;
+    opacity: 50%;
+}
+
+.forgot {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 1.3vw;
+    cursor: pointer;
+    transition: all .5s ease;
+    padding-top: 1%;
+    margin-bottom: 5%;
+    opacity: 50%;
+}
+
+.forgot:hover {
+    opacity: 100%;
 }
 
 .btn {
-    width: 340px;
-    height: 50px;
+    width: 20vw;
+    height: 8vh;
     background: #F6A413;
-    border-radius: 10px;
+    border-radius: .5vw;
     font-family: 'Mulish';
     color: #fff;
-    font-size: 20px;
+    font-size: 1.3vw;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -45,67 +104,21 @@
     opacity: 75%;
 }
 
-.input {
-    width: 340px;
-    height: 50px;
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.45);
-    background: #F5F5F4;
-    border: 8px;
-    margin: 2%;
-    padding: 1%;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 8px;
-}
-
-.input:focus {
-    border: solid rgb(197, 197, 197) 1px;
-    transition: all .3s ease-out;
-}
-
-.input::placeholder {
-    font-size: 18px;
-    opacity: 50%;
-}
-
-.sub {
-    font-family: 'Mulish';
-    font-weight: 400;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all .5s ease;
-    padding-top: 1%;
-    margin-bottom: 8%;
-}
-
-.sub:hover {
-    opacity: 50%;
-}
-
-.copyright {
-    top: 70vh;
-    position: absolute;
-    font-family: 'Mulish';
-    font-weight: 400;
-    font-size: 18px;
+.split {
+    width: 40%;
+    height: 0;
+    border-top: .1vw solid #b8b8b8;
+    margin-bottom: 2%;
 }
 
 .accounts {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 350px;
-    height: 100px;
-    border-top: 1px solid #D0D0D0;
-    overflow: hidden;
+    justify-content: space-evenly;
+    width: 20vw;
+    height: 6vh;
 }
 
 .icons {
-    width: 45px;
-    height: 45px;
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -114,49 +127,12 @@
     opacity: 70%;
 }
 
-.ilus_bg {
+.copyright {
+    bottom: 3vh;
+    left: 20vw;
+    color: #595555;
     position: absolute;
-    right: 0;
-    height: 100vh;
-    width: 50vw;
-    object-fit: cover ;
-    z-index: -1;
-}
-
-.ilus {
-    width: 600px;
-    height: 490px;
-    margin: 50vh 5vw 0;
-    transform: translateY(-50%)
-}
-
-/* Celular */
-
-@media (max-width: 425px){
-   .main {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100vw;
-        height: 100vh;
-   }
-   
-   .box {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-   }
-
-   .copyright{
-    display: none;
-   }
-
-   .ilus_bg {
-    display: none;
-   }
-
-   .ilus {
-    display: none;
-   }
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 1.2vw;
 }

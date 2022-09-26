@@ -5,9 +5,7 @@ export default function Support() {
     return (
         <>
             <Link href='/support'>
-                <span className={styles.box}>
-                    <img className={styles.icon} src="./assets/images/support/icon.svg" />
-                </span>
+                <img className={styles.icon} src="./assets/images/support/icon.svg" />
             </Link>
         </>
     )

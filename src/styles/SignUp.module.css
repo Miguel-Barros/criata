@@ -1,65 +1,62 @@
-.main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-height: 100vh;
-}
-
-.title {
-    font-family: 'Mulish';
-    font-size: 48px;
-    padding-bottom: 5%;
-}
-
 .container {
     width: 100vw;
     height: 100vh;
 }
 
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ilus_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.ilus {
+    display: flex;
+    align-self: center;
+    width: 50vw;
+    height: 50vh;
+    margin-right: 10%;
+}
+
 .box {
-    width: 25vw;
+    width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-right: 10vw;
-}
-
-.btn {
-    width: 340px;
-    height: 50px;
-    background: #F6A413;
-    border-radius: 10px;
-    font-family: 'Mulish';
-    color: #fff;
-    font-size: 20px;
-    font-weight: 400;
-    display: flex;
     justify-content: center;
     align-items: center;
-    align-self: center;
-    transition: all .5s ease;
-    cursor: pointer;
-    margin-top: 5%;
 }
 
-.btn:hover {
-    opacity: 75%;
+.title {
+    font-family: 'Mulish';
+    font-size: 3vw;
+    color: #595555;
+    margin-bottom: 3%;
 }
 
 .input {
-    width: 340px;
-    height: 50px;
+    width: 20vw;
+    height: 6vh;
+    background: #d3d3d3;
+    border-radius: .5vw;
+    margin: 2%;
+    padding: 1%;
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.45);
-    background: #F5F5F4;
-    border: 8px;
-    margin: 2%;
-    padding: 1%;
     text-align: center;
-    font-size: 18px;
-    border-radius: 8px;
+    font-size: 1.3vw;
+    color: #000;
 }
 
 .input:focus {
@@ -68,75 +65,53 @@
 }
 
 .input::placeholder {
-    font-size: 18px;
+    font-size: 1.3vw;
     opacity: 50%;
 }
 
-.sub {
+.forgot {
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.3vw;
     cursor: pointer;
     transition: all .5s ease;
     padding-top: 1%;
-    padding-bottom: 8%;
-}
-
-.sub:hover {
+    margin-bottom: 5%;
     opacity: 50%;
 }
 
+.forgot:hover {
+    opacity: 100%;
+}
+
+.btn {
+    margin-top: 2%;
+    width: 21vw;
+    height: 8vh;
+    background: #F6A413;
+    border-radius: .5vw;
+    font-family: 'Mulish';
+    color: #fff;
+    font-size: 1.3vw;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 75%;
+}
+
 .copyright {
+    bottom: 3vh;
+    right: 18.5vw;
+    color: #595555;
     position: absolute;
-    top: 70vh;
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.2vw;
 }
-
-.ilus_bg {
-    position: absolute;
-    left: 0;
-    height: 100vh;
-    width: 50vw;
-    object-fit: cover ;
-    z-index: -1;
-}
-
-.ilus {
-    width: 600px;
-    height: 490px;
-    margin: 50vh 5vw 0;
-    transform: translateY(-50%)
-}
-
-/* Celular */
-
-@media (max-width: 425px){
-    .main {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100vw;
-        height: 100vh;
-    }
-    
-    .box {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        margin: 0 auto;
-    }
- 
-    .copyright{
-        display: none;
-    }
- 
-    .ilus_bg {
-        display: none;
-    }
- 
-    .ilus {
-     display: none;
-    }
- }
