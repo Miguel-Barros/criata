@@ -46,7 +46,8 @@
 .input {
     width: 20vw;
     height: 6vh;
-    background: #d3d3d3;
+    border: .01vw solid #c9c9c9;
+    background: #F5F5F4;
     border-radius: .5vw;
     margin: 2%;
     padding: 1%;
@@ -59,7 +60,7 @@
 }
 
 .input:focus {
-    border: solid rgb(197, 197, 197) 1px;
+    border: solid #00000085 1px;
     transition: all .3s ease-out;
 }
 
@@ -119,6 +120,8 @@
 }
 
 .icons {
+    width: 5vw;
+    height: 5vh;
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -135,4 +138,43 @@
     font-family: 'Mulish';
     font-weight: 400;
     font-size: 1.2vw;
+}
+
+
+/* Large desktop */
+
+@media (max-width: 1920px) {
+    .btn {
+        width: 15vw;
+        height: 5vh;
+        font-size: 1vw;
+    }
+
+    .input {
+        width: 18vw;
+        height: 5vh;
+        font-size: 1vw;
+    }
+
+    .input::placeholder {
+        font-size: 1vw;
+    }
+
+    .forgot {
+        font-size: .95vw;
+    }
+
+    .icons {
+        width: 5vw;
+        height: 5vh;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+
+    .ilus {
+        display: flex;
+        align-self: center;
+        width: 50vw;
+        height: 50vh;
+    }
 }

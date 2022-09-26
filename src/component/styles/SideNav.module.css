@@ -25,7 +25,7 @@
     border: .1vw solid #F6A413;
 }
 
-.circle:nth-child(1):hover:before{
+.circle:nth-child(1):hover:before {
     content: 'Suporte';
     font-family: 'mulish';
     font-weight: 700;
@@ -38,7 +38,7 @@
     font-size: 1.11vw;
 }
 
-.circle:nth-child(2):hover:before{
+.circle:nth-child(2):hover:before {
     content: 'Principal';
     font-family: 'mulish';
     font-weight: 700;
@@ -51,7 +51,7 @@
     font-size: 1.11vw;
 }
 
-.circle:nth-child(3):hover:before{
+.circle:nth-child(3):hover:before {
     content: 'Sobre';
     font-family: 'mulish';
     font-weight: 700;
@@ -62,4 +62,17 @@
     color: #00000095;
     text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
     font-size: 1.11vw;
+}
+
+/* Large desktop */
+
+@media (max-width: 1920px) {
+    .circle {
+        width: 1.5vw;
+        height: 3vh;
+    }
+
+    .circle:nth-child(1):hover:before, .circle:nth-child(2):hover:before, .circle:nth-child(3):hover:before {
+        font-size: 1vw;
+    }
 }

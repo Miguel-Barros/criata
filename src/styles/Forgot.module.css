@@ -3,50 +3,91 @@
     height: 100vh;
 }
 
-.text {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    color: #888888;
-    margin-bottom: 10%;
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.main {
+.ilus_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.ilus {
     display: flex;
-    justify-content: space-between;
+    align-self: center;
+    width: 50vw;
+    height: 60vh;
+}
+
+.box {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    max-height: 100vh;
 }
 
 .title {
     font-family: 'Mulish';
-    font-size: 48px;
+    font-size: 3vw;
     color: #FF7B00;
-    margin-bottom: 10%;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
+.text {
+    color: #888888;
+    text-align: justify;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    color: #888888;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.box {
-    width: 25vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 10vw;
+.input {
+    width: 20vw;
+    height: 6vh;
+    border: .01vw solid #c9c9c9;
+    background: #F5F5F4;
+    border-radius: .5vw;
+    margin: 2%;
+    padding: 1%;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.3vw;
+    color: #000;
+}
+
+.input:focus {
+    border: solid #00000085 1px;
+    transition: all .3s ease-out;
+}
+
+.input::placeholder {
+    font-size: 1.3vw;
+    opacity: 50%;
 }
 
 .btn {
-    width: 250px;
-    height: 50px;
+    width: 20vw;
+    height: 8vh;
     background: #F6A413;
-    border-radius: 10px;
+    border-radius: .5vw;
     font-family: 'Mulish';
     color: #fff;
-    font-size: 20px;
+    font-size: 1.3vw;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -54,7 +95,11 @@
     align-self: center;
     transition: all .5s ease;
     cursor: pointer;
-    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.btn:hover {
+    opacity: 75%;
 }
 
 .btn.delined {
@@ -64,61 +109,63 @@
 
 .btn.delined:hover{
     background: #00000050;
-    border: 1px solid #464646;
+    border: .01vw solid #464646;
     color: #fff;
 }
 
-.btn:hover {
-    opacity: 75%;
-}
-
-.input {
-    width: 340px;
-    height: 50px;
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.45);
-    background: #F5F5F4;
-    border: 8px;
-    margin: 2%;
-    padding: 1%;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 8px;
-    margin-bottom: 10%;
-}
-
-.input:focus {
-    border: solid rgb(197, 197, 197) 1px;
-    transition: all .3s ease-out;
-}
-
-.input::placeholder {
-    font-size: 18px;
-    opacity: 50%;
-}
-
 .copyright {
+    bottom: 3vh;
+    left: 20vw;
+    color: #595555;
     position: absolute;
-    bottom: 5vh;
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.2vw;
 }
 
-.ilus_bg {
-    position: absolute;
-    right: 0;
-    height: 100vh;
-    width: 50vw;
-    object-fit: cover ;
-    z-index: -1;
-}
+/* Large desktop */
 
-.ilus {
-    width: 600px;
-    height: 490px;
-    margin: 50vh 5vw 0;
-    transform: translateY(-50%)
+@media (max-width: 1920px) {
+    .btn {
+        width: 15vw;
+        height: 5vh;
+        font-size: 1vw;
+    }
+
+    .input {
+        width: 18vw;
+        height: 5vh;
+        font-size: 1vw;
+    }
+
+    .input::placeholder {
+        font-size: 1vw;
+    }
+
+    .forgot {
+        font-size: .95vw;
+    }
+
+    .icons {
+        width: 5vw;
+        height: 5vh;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+
+    .ilus {
+        display: flex;
+        align-self: center;
+        width: 50vw;
+        height: 50vh;
+    }
+
+    .text {
+        width: 50%;
+        font-size: 1vw;
+    }
+
+    .btn:not(.btn.delined){
+        margin-bottom: 2%;
+    }
 }

@@ -22,11 +22,13 @@ export default function Found() {
                 data-aos-duration="500">
                     <h1 className={styles.title}>Error 404</h1>
                     <h3 className={styles.sub_title}>PAGINA NÃO ENCONTRADA</h3>
-                    <p className={styles.text}>Desculpe mas a página que você esta procurando não existe!<br />
-                        Se você acha que algo está quebrado, nos relate um problema.</p>
+                    <p className={styles.text}>
+                        Desculpe, mas parece que a página solicitada <b>Não Existe</b>. Por favor, volte para a <b>Pagina Principal</b>. 
+                        <br/>Caso você ache que algo está quebrado entre em <b>Contato </b> 
+                        com nosso suporte e nos relate um problema. Se você acha que algo está quebrado, nos relate um problema.</p>
                     <span className={styles.buttons}>
                         <Link href={'/'}>
-                            <button className={styles.btn}>Voltar para o inicio</button>
+                            <button className={styles.btn}>Pagina Principal</button>
                         </Link>
                         <Link href={'/support'}>
                             <button className={`${styles.btn} ${styles.secundary}`}>Contate-nos</button>

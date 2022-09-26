@@ -18,8 +18,8 @@ function Support() {
                 <SideNav page={'support'}/>
                 <div className={styles.box}>
                     <h1 className={styles.title}>Suporte <span className={styles.proj_name}>Online</span></h1>
-                    <p className={styles.p}>Qualquer problema em relação ao sistema, você pode solicitar ajuda para o nosso centro de suporte. Assim, poderá visualizar erros comuns e outros que podem te ajudar a solucionar o seu.</p>
-                    <p className={styles.p}>Caso não consiga sanar suas dúvidas nos faça um comentário detalhando o ocorrido, para que poçamos visualizar e tentar resolver o mais rápido o  possível.</p>
+                    <p className={styles.text}>Qualquer problema em relação ao sistema, você pode solicitar ajuda para o nosso centro de suporte. Assim, poderá visualizar erros comuns e outros que podem te ajudar a solucionar o seu.</p>
+                    <p className={styles.text}>Caso não consiga sanar suas dúvidas nos faça um comentário detalhando o ocorrido, para que poçamos visualizar e tentar resolver o mais rápido o  possível.</p>
                     <button className={styles.btn}>Contatar</button>
                 </div>
                 <img className={styles.ilus_bg} src="./assets/images/support/ilus-bg.svg" alt='ilustration' />

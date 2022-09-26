@@ -29,7 +29,7 @@ function SignUp({ auth }) {
                 <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt='ilustration-bg' />
                 <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt='ilustration' />
                 <div className={styles.box}
-                data-aos="fade-left"
+                data-aos="fade-right"
                 data-aos-offset="500"
                 data-aos-delay="200"
                 data-aos-duration="500">

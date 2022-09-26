@@ -16,9 +16,10 @@ function Forgot({ auth }) {
                 data-aos-offset="100">
                 <div className={styles.box}>
                     <h1 className={styles.title}>Esqueci a senha</h1>
-                    <p className={styles.text}>Envie seu email cadastrado para que um código te redirecione para a alteração de senha</p>
+                    <p className={styles.text}>Insira seu <b>Email Cadastrado</b> para que seja enviado um código de verificação para sua <b>Caixa de Entrada</b>,
+                    e assim possamos te redirecionar para a alteração de senha</p>
                     <input className={styles.input} type="email" placeholder='Insira seu Email' />
-                    <button className={styles.btn} onClick={() => {}}>Entrar</button>
+                    <button className={styles.btn} onClick={() => {}}>Enviar</button>
                     <Link href={'/signIn'}>
                         <button className={`${styles.btn} ${styles.delined}`}>Voltar</button>
                     </Link>

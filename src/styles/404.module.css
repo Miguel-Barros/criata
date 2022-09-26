@@ -15,7 +15,7 @@
 .title {
     font-family: 'Mulish';
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3vw;
     text-align: center;
     color: #CC0000;
 }
@@ -23,18 +23,19 @@
 .sub_title {
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.8vw;
     text-align: center;
 }
 
 .text {
     width: 80%;
     font-family: 'Mulish';
+    text-align: justify;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.5vw;
+    line-height: 2.5vw;
     color: rgba(0, 0, 0, 0.5);
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 .buttons {
@@ -44,14 +45,14 @@
 }
 
 .btn {
-    width: 225px;
-    height: 45px;
+    width: 15vw;
+    height: 5vh;
     border-radius: 20px;
     background: #464646;
     color: #fff;
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.3vw;
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -67,6 +68,7 @@
 }
 
 .btn.secundary {
+    margin-left: 2%;
     box-sizing: border-box;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -82,7 +84,7 @@
     z-index: -1;
     background: linear-gradient(270.68deg, rgba(255, 199, 0, 0.8) 0.62%,
             rgba(255, 171, 54, 0.8) 99.46%);
-    filter: blur(50px);
+    filter: blur(5vw);
     border-radius: 10000px;
 }
 
@@ -98,6 +100,31 @@
 .copyright {
     font-family: 'Mulish';
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1.2vw;
+    color: #595555;
     text-align: center;
+}
+
+/* Large desktop */
+
+@media (max-width: 1920px) {
+    .btn {
+        width: 15vw;
+        height: 5vh;
+        font-size: 1vw;
+    }
+
+    .ilus {
+        display: flex;
+        align-self: center;
+        width: 50vw;
+        height: 60vh;
+    }
+
+    .text {
+        width: 80%;
+        align-self: center;
+        line-height: 1.8vw;
+        font-size: 1.2vw;
+    }
 }

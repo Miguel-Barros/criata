@@ -81,9 +81,29 @@
     z-index: -1;
 }
 
+/* Large desktop */
 
-/* Large laptop */
+@media (max-width: 1920px) {
+    .btn {
+        width: 15vw;
+        height: 7vh;
+        font-size: 1vw;
+    }
 
-@media (max-width: 1024px){
-    
+    .ilus {
+        display: flex;
+        align-self: center;
+        width: 50vw;
+        height: 50vh;
+    }
+
+    .text {
+        width: 65%;
+        font-size: 1.2vw;
+    }
+
+    .title {
+        font-size: 4.5vw;
+        line-height: 4.5vw;
+    }
 }

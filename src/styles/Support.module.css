@@ -53,7 +53,7 @@
     background-clip: text;
 }
 
-.p {
+.text {
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
@@ -90,4 +90,34 @@
     right: 23vw;
     bottom: 5vh;
     color: #4e4e4e;
+}
+
+/* Large desktop */
+
+@media (max-width: 1920px) {
+    .btn {
+        width: 15vw;
+        height: 7vh;
+        font-size: 1vw;
+        align-self: flex-start;
+    }
+
+    .ilus {
+        display: flex;
+        align-self: center;
+        width: 50vw;
+        height: 50vh;
+        margin-right: 5%;
+    }
+
+    .text {
+        width: 70%;
+        font-size: 1.2vw;
+    }
+
+    .title {
+        width: 50%;
+        font-size: 4.5vw;
+        line-height: 4.5vw;
+    }
 }
