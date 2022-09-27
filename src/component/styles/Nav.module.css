@@ -54,7 +54,7 @@
 .header .box p {
     font-family: 'Mulish';
     font-weight: 700;
-    font-size: 1vw;
+    font-size: 1.3vw;
     color: #000000;
 }
 
@@ -65,7 +65,7 @@
 
 .header .box .profile {
     width: 7vw;
-    height: 7vh;
+    height: 8vh;
 }
 
 .header .box .split {
@@ -82,16 +82,15 @@
     border-radius: .3vw;
     padding: .5vw;
     font-size: 1vw;
-    padding-left: 5%;
-    
+    padding-left: 8%;
 }
 
 .header .box .search_icon {
     position: absolute;
     color: rgba(0, 0, 0, 0.75);
     width: 2vw;
-    height: 4vh;
-    right: 17vw;
+    height: 5vh;
+    right: 17.5vw;
     cursor: pointer;
     transition: all .4s ease;
 }

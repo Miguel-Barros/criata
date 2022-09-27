@@ -3,9 +3,14 @@ import Head from "next/head";
 import { withProtected } from '../hook/route';
 import Nav from '../component/nav';
 import { Icon } from '@iconify/react';
+import Router from 'next/router';
 
 function Home({ auth }) {
     const { logout, user } = auth
+
+    function click() {
+        Router.push('/creation')
+    }
 
     return (
         <div className={styles.container}>
@@ -20,34 +25,36 @@ function Home({ auth }) {
                     <p>Utilize um de nossos <b>templates</b> para inspiração<br />
                         e <b>diferencie-se</b> das outras pessoas!</p>
                 </span>
-                <div className={styles.card_group}>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                <section>
+                    <div className={styles.card_group}>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
                     </div>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                    <div className={styles.card_group}>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
+                        <div className={styles.card} onClick={click}>
+                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                        </div>
                     </div>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
-                    </div>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
-                    </div>
-                </div>
-                <div className={styles.card_group}>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
-                    </div>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
-                    </div>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
-                    </div>
-                    <div className={styles.card}>
-                        <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
-                    </div>
-                </div>
+                </section>
             </main>
         </div>
     )

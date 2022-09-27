@@ -1,0 +1,120 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main .info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 12.5vw;
+    width: 25vw;
+    height: 15vh;
+}
+
+.info .profile {
+    width: 5vw;
+    height: 10vh;
+}
+
+.info span p:first-child{
+    font-size: 1.3vw;
+    font-family: "Mulish";
+}
+
+.info span p:last-child {
+    font-size: 1.1vw;
+    font-family: "Mulish";
+    color: #00000080;
+}
+
+.title {
+    font-size: 3vw;
+    font-family: 'Mulish';
+    font-weight: 600;
+    margin-bottom: 5%;
+    text-shadow: 0px .4vh .4vh rgba(0, 0, 0, 0.25);
+}
+
+.box {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box span {
+    width: 50%;
+    height: 65%;
+}
+
+.box span h2 {
+    font-size: 1.8vw;
+    font-family: 'Mulish';
+    font-weight: 400;
+    color: #00000090;
+    margin-bottom: 5%;
+    margin-left: -5%;
+}
+
+.box span h3 {
+    width: 55%;
+    font-size: 1.3vw;
+    font-family: 'Mulish';
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 5%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.box span h3:hover {
+    transform: scale(1.02);
+    text-shadow: 0px .4vh .4vh rgba(0, 0, 0, .5);
+}
+
+.box span .logout {
+    margin-top: 15%;
+}
+
+.logout {
+    background: none;
+    border-radius: .5vw;
+    font-size: 1.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.logout:hover {
+    transform: scale(1.1);
+    text-shadow: 0px .4vh .4vh rgba(0, 0, 0, .5);
+}
+
+.arrow {
+    width: 3vw;
+    height: 4vw;
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    cursor: pointer;
+    transition: all .5s ease;
+    z-index: 2;
+}
+
+.arrow:hover {
+    left: .8vw;
+    top: .7vh;
+    transform: scale(1.01);
+}

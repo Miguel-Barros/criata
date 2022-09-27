@@ -30,7 +30,7 @@ function Team() {
                         <img src="./assets/images/team/bruno.svg" alt="bruno" />
                         <h2>Bruno Salinas</h2>
                         <h3>@brunosalinas</h3>
-                        <p><b>Desenvolvedor de software</b> e <b>Gerente de projetos</b>.x <b>Programador em Java</b>, <b>React Native</b> e <b>PHP</b>.
+                        <p><b>Desenvolvedor de software</b> e <b>Gerente de projetos</b>. <b>Programador em Java</b>, <b>React Native</b> e <b>PHP</b>.
                             Recém formado em serviço de tecnologia da informação (TI) na Universidade de São Paulo (USP).
                         </p>
                     </div>

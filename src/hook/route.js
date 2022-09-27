@@ -8,6 +8,10 @@ export function withPublic(Component) {
 
 		if (auth.user) {
 			router.replace("/home");
+			return(
+				<>
+				</>
+			)
 		}
 		return <Component auth={auth} {...props} />;
 	};
@@ -20,7 +24,10 @@ export function withProtected(Component) {
 
 		if (!auth.user) {
 			router.replace("/signIn");
-			// return <h1>Loading...</h1>; Loading
+			return(
+				<>
+				</>
+			)
 		}
 		return <Component auth={auth} {...props} />;
 	};
