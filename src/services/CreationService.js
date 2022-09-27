@@ -42,11 +42,13 @@ export default function ShowBox(props) {
                     <Icon icon="mdi:format-color-highlight" className={styles.icon} />
                 </span>
                 <span className={styles.division} />
-                <span className={styles.formats}>
+                <span className={styles.icons}>
                     <Icon icon="mdi:format-align-left" className={styles.icon} />
                     <Icon icon="mdi:format-align-center" className={styles.icon} />
                     <Icon icon="mdi:format-align-right" className={styles.icon} />
-                    <Icon icon="mdi:format-align-justify" className={styles.icon} /><br />
+                    <Icon icon="mdi:format-align-justify" className={styles.icon} />
+                </span>
+                <span className={styles.icons}>
                     <Icon icon="mdi:format-horizontal-align-center" className={styles.icon} />
                     <Icon icon="mdi:format-vertical-align-bottom" className={styles.icon} />
                     <Icon icon="mdi:format-vertical-align-center" className={styles.icon} />

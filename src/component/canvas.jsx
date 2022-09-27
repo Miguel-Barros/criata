@@ -35,7 +35,7 @@ export default function Canvas() {
                             <Icon className={styles.icon} icon="mdi:dots-vertical" color="white" height="25" />
                         </div>
                         <span className={styles.buttons}>
-                            <button className={styles.btn}>Vizualizar</button>
+                            <button className={styles.btn}>Visualizar</button>
                             <button className={styles.btn}>Publicar</button>
                         </span>
                     </span>

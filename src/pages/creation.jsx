@@ -9,7 +9,11 @@ const Canvas = dynamic(() => import('../component/canvas'), {
 function Creation({ auth }) {
     
     return(
-        <div>
+        <div 
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-duration="600"
+        data-aos-offset="100">
             <Head>
                 <title> Criata - Criação </title>
             </Head>
