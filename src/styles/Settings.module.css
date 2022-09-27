@@ -8,6 +8,12 @@
     align-items: center;
 }
 
+.bg {
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+
 .main .info {
     position: absolute;
     display: flex;
@@ -117,4 +123,11 @@
     left: .8vw;
     top: .7vh;
     transform: scale(1.01);
+}
+
+.ilus {
+    width: 35vw;
+    height: 45vh;
+    position: absolute;
+    right: 15vw;
 }

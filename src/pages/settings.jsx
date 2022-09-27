@@ -14,8 +14,9 @@ function Settings({ auth }) {
       icon: 'error',
       text: 'Parece que essa função foi desabilitada por um desenvolvedor',
       showConfirmButton: false,
-      timer: 2500})
-    }
+      timer: 2500
+    })
+  }
 
   return (
     <div className={styles.container}>
@@ -24,11 +25,16 @@ function Settings({ auth }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <main className={styles.main}
-      data-aos="fade-zoom-in"
-      data-aos-easing="ease-in-back"
-      data-aos-delay="50"
-      data-aos-offset="100">
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="50"
+        data-aos-offset="100">
         <Support />
+        <img className={styles.bg} src="./assets/images/settings/bg.svg" alt="background" 
+        data-aos="fade-right"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="50"
+        data-aos-offset="100"/>
         <Link href={'/home'}>
           <Icon icon={'mdi:arrow-up-left'} className={styles.arrow} />
         </Link>
@@ -40,10 +46,10 @@ function Settings({ auth }) {
           </span>
         </span>
         <div className={styles.box}
-        data-aos="fade-left"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="300"
-        data-aos-offset="50">
+          data-aos="fade-left"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="300"
+          data-aos-offset="50">
           <span>
             <h1 className={styles.title}>Configurações</h1>
             <h2>Conta</h2>
@@ -56,6 +62,7 @@ function Settings({ auth }) {
             <button className={styles.logout} onClick={() => logout()}>Sair</button>
           </span>
         </div>
+        <img className={styles.ilus} src="./assets/images/settings/ilus.svg" alt="ilustration" />
       </main>
     </div >
   )
