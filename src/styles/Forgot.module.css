@@ -43,6 +43,7 @@
 }
 
 .text {
+    width: 80%;
     color: #888888;
     text-align: justify;
     font-family: 'Mulish';
@@ -125,7 +126,7 @@
 
 /* Large desktop */
 
-@media (max-width: 1920px) {
+@media (min-width: 1920px) {
     .btn {
         width: 15vw;
         height: 5vh;

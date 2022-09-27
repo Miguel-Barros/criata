@@ -120,8 +120,8 @@
 }
 
 .icons {
-    width: 5vw;
-    height: 5vh;
+    width: 6vw;
+    height: 6vh;
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -143,7 +143,7 @@
 
 /* Large desktop */
 
-@media (max-width: 1920px) {
+@media (min-width: 1920px) {
     .btn {
         width: 15vw;
         height: 5vh;

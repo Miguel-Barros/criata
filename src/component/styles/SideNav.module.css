@@ -66,7 +66,7 @@
 
 /* Large desktop */
 
-@media (max-width: 1920px) {
+@media (min-width: 1920px) {
     .circle {
         width: 1.5vw;
         height: 3vh;

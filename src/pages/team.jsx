@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from '../styles/Team.module.css'
 
 import { withPublic } from '../hook/route';
+import { Icon } from '@iconify/react';
 
 function Team() {
     return (
@@ -10,57 +11,57 @@ function Team() {
             <Head>
                 <title>Criata - Nossa equipe</title>
             </Head>
-            <span className={styles.mini_box}>
+            <div className={styles.main}
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-duration="350"
+            data-aos-offset="0">
+                <img src="./assets/images/team/bg.svg" alt="background" className={styles.bg} />
                 <Link href={'/about'}>
-                    <img className={styles.arrow} src="./assets/components/arrow.svg" alt="arrow" />
+                    <Icon icon={'mdi:arrow-left'} className={styles.arrow} />
                 </Link>
-                <h1 className={styles.title}>Conheça a nossa <span className={styles.bold}>equipe</span></h1>
-            </span>
-            <div className={styles.main}>
-                <div className={styles.card_group}>
+                <h1 className={styles.title}>Conheça nossa equipe <span>Coaraci</span></h1>
+                <div className={styles.card_group}
+                data-aos="fade-up"
+                data-aos-easing="ease-in-back"
+                data-aos-duration="700"
+                data-aos-offset="20">
                     <div className={styles.card}>
-                        <img className={styles.photo} src="./assets/images/team/bruno.svg" alt="" />
-                        <p className={styles.member_name}>Bruno Salinas</p>
-                        <p className={styles.member_prefix}>@brunosalinas</p>
-                        <div className={styles.bio}>
-                            <p className={styles.bio_text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet cursus tellus, accumsan aliquet turpis. Ut vitae sodales erat. </p>
-                        </div>
+                        <img src="./assets/images/team/bruno.svg" alt="bruno" />
+                        <h2>Bruno Salinas</h2>
+                        <h3>@brunosalinas</h3>
+                        <p><b>Desenvolvedor de software</b> e <b>Gerente de projetos</b>.x <b>Programador em Java</b>, <b>React Native</b> e <b>PHP</b>.
+                            Recém formado em serviço de tecnologia da informação (TI) na Universidade de São Paulo (USP).
+                        </p>
                     </div>
                     <div className={styles.card}>
-                        <img className={styles.photo} src="./assets/images/team/david.svg" alt="" />
-                        <p className={styles.member_name}>David Larrosa</p>
-                        <p className={styles.member_prefix}>@davidlarrosa</p>
-                        <div className={styles.bio}>
-                            <p className={styles.bio_text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet cursus tellus, accumsan aliquet turpis. Ut vitae sodales erat. </p>
-                        </div>
+                        <img src="./assets/images/team/david.svg" alt="david" />
+                        <h2>David Larrosa</h2>
+                        <h3>@davidlarrosa</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni natus explicabo quia, nemo aspernatur eligendi commodi veniam laboriosam perspiciatis eum voluptatum, nihil ipsum fuga nisi esse exercitationem quidem earum!</p>
                     </div>
                     <div className={styles.card}>
-                        <img className={styles.photo} src="./assets/images/team/lorena.svg" alt="" />
-                        <p className={styles.member_name}>Lorena Sobral</p>
-                        <p className={styles.member_prefix}>@lorenasobral</p>
-                        <div className={styles.bio}>
-                            <p className={styles.bio_text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet cursus tellus, accumsan aliquet turpis. Ut vitae sodales erat. </p>
-                        </div>
+                        <img src="./assets/images/team/lorena.svg" alt="lorena" />
+                        <h2>Lorena Sobral</h2>
+                        <h3>@lorenasobral</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni natus explicabo quia, nemo aspernatur eligendi commodi veniam laboriosam perspiciatis eum voluptatum, nihil ipsum fuga nisi esse exercitationem quidem earum!</p>
                     </div>
                     <div className={styles.card}>
-                        <img className={styles.photo} src="./assets/images/team/maria.svg" alt="" />
-                        <p className={styles.member_name}>Maria Ramos</p>
-                        <p className={styles.member_prefix}>@mariaramos</p>
-                        <div className={styles.bio}>
-                            <p className={styles.bio_text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet cursus tellus, accumsan aliquet turpis. Ut vitae sodales erat. </p>
-                        </div>
+                        <img src="./assets/images/team/maria.svg" alt="maria" />
+                        <h2>Maria Ramos</h2>
+                        <h3>@mariaramos</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni natus explicabo quia, nemo aspernatur eligendi commodi veniam laboriosam perspiciatis eum voluptatum, nihil ipsum fuga nisi esse exercitationem quidem earum!</p>
                     </div>
                     <div className={styles.card}>
-                        <img className={styles.photo} src="./assets/images/team/miguel.svg" alt="" />
-                        <p className={styles.member_name}>Miguel de Barros</p>
-                        <p className={styles.member_prefix}>@miguelbarros</p>
-                        <div className={styles.bio}>
-                            <p className={styles.bio_text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet cursus tellus, accumsan aliquet turpis. Ut vitae sodales erat. </p>
-                        </div>
+                        <img src="./assets/images/team/miguel.svg" alt="miguel" />
+                        <h2>Miguel de Barros</h2>
+                        <h3>@miguelbarros</h3>
+                        <p><b>Desenvolvedor Full-Stack</b>, <b>UI/UX Design</b> & <b>CTO</b>.
+                            Pra mim, você só pode descobrir o quão ambicioso é, somente na sua falha.
+                            Pois é dai que se tem a certeza se você vai desistir ou continuar.
+                        </p>
                     </div>
                 </div>
-                <img className={styles.ilus_bg} src="./assets/images/team/bg-ilus.svg" alt="background" />
-                <img className={styles.bg} src="./assets/images/team/bg.svg" alt="background" />
             </div>
         </div>
     )
