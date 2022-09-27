@@ -64,8 +64,25 @@
 }
 
 .header .box .profile {
-    width: 7vw;
+    width: 4vw;
     height: 8vh;
+}
+
+.header .edit {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.edit p, .profile{
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.edit p:hover, .profile:hover {
+    transform: scale(1.01);
+    opacity: 50%;
 }
 
 .header .box .split {
@@ -90,7 +107,7 @@
     color: rgba(0, 0, 0, 0.75);
     width: 2vw;
     height: 5vh;
-    right: 17.5vw;
+    right: 16.5vw;
     cursor: pointer;
     transition: all .4s ease;
 }

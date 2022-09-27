@@ -18,7 +18,7 @@ function About() {
                 data-aos-easing="ease-in-back"
                 data-aos-duration="350"
                 data-aos-offset="0">
-                <SideNav page={'about'}/>
+                <SideNav page={'about'} />
                 <img className={styles.bg} src="./assets/images/about/bg.svg" alt="background" />
                 <span className={styles.logo}>
                     <img src="./assets/images/about/team-logo.svg" alt="team-logo" />
@@ -26,12 +26,12 @@ function About() {
                 </span>
                 <span className={styles.content}>
                     <h1 className={styles.title}>Equipe <span className={styles.bold}>Coaraci</span></h1>
-                    <p className={styles.text}>Somos uma equipe de 5 (cinco) integrantes, 
-                    trazendo suas brasilidades e as cores, tendo como meta, possibilitar que qualquer pessoa tenha seu trabalho 
-                    profissional organizado, de forma única e referente a sua identidade sem perder a praticidade.<br/>
-                    Nos conheça mais a seguir!</p>
+                    <p className={styles.text}>Somos uma equipe de 5 (cinco) integrantes,
+                        trazendo suas brasilidades e as cores, tendo como meta, possibilitar que qualquer pessoa tenha seu trabalho
+                        profissional organizado, de forma única e referente a sua identidade sem perder a praticidade.<br />
+                        Nos conheça mais a seguir!</p>
                     <Link href='/team'>
-                            <img className={styles.icon} src="./assets/components/arrow.svg" alt="arrow" />
+                        <img className={styles.icon} src="./assets/components/arrow.svg" alt="arrow" />
                     </Link>
                 </span>
                 <p className={styles.copyright}>Coaraci © 2022</p>

@@ -30,9 +30,7 @@ function Team() {
                         <img src="./assets/images/team/bruno.svg" alt="bruno" />
                         <h2>Bruno Salinas</h2>
                         <h3>@brunosalinas</h3>
-                        <p><b>Desenvolvedor de software</b> e <b>Gerente de projetos</b>. <b>Programador em Java</b>, <b>React Native</b> e <b>PHP</b>.
-                            Recém formado em serviço de tecnologia da informação (TI) na Universidade de São Paulo (USP).
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni natus explicabo quia, nemo aspernatur eligendi commodi veniam laboriosam perspiciatis eum voluptatum, nihil ipsum fuga nisi esse exercitationem quidem earum!</p>
                     </div>
                     <div className={styles.card}>
                         <img src="./assets/images/team/david.svg" alt="david" />
@@ -56,10 +54,7 @@ function Team() {
                         <img src="./assets/images/team/miguel.svg" alt="miguel" />
                         <h2>Miguel de Barros</h2>
                         <h3>@miguelbarros</h3>
-                        <p><b>Desenvolvedor Full-Stack</b>, <b>UI/UX Design</b> & <b>CTO</b>.
-                            Pra mim, você só pode descobrir o quão ambicioso é, somente na sua falha.
-                            Pois é dai que se tem a certeza se você vai desistir ou continuar.
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni natus explicabo quia, nemo aspernatur eligendi commodi veniam laboriosam perspiciatis eum voluptatum, nihil ipsum fuga nisi esse exercitationem quidem earum!</p>
                     </div>
                 </div>
             </div>

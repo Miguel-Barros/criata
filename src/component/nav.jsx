@@ -18,8 +18,10 @@ export default function Nav(props) {
                         <Link href={'/settings'}>
                             <Icon icon={'mdi:cog-outline'} className={styles.icons} />
                         </Link>
-                        <p>{props.name}</p>
-                        <Icon icon={'mdi:account-circle'} className={styles.profile} />
+                        <span className={styles.edit}>
+                            <p>{props.name}</p>
+                            <Icon icon={'mdi:account-circle'} className={styles.profile} />
+                        </span>
                         <span className={styles.split} />
                         <input type="text" placeholder={'Buscar'} className={styles.search} />
                         <Icon icon={'mdi:magnify'} className={styles.search_icon} onClick={() => {
