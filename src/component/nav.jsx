@@ -2,16 +2,20 @@ import styles from './styles/Nav.module.css'
 import Link from 'next/link'
 import { Icon } from '@iconify/react';
 import Swal from 'sweetalert2';
+import useAuth from "../hook/auth";
 
 export default function Nav(props) {
+    const { user } = useAuth();
     return (
         <>
             <header className={styles.header}>
                 <span className={styles.left}>
-                    <span className={styles.logo}>
-                        <img src="./assets/components/criata_logo.svg" alt="criata-logo" />
-                        <p>Criata</p>
-                    </span>
+                    <Link href={'/'}>
+                        <span className={styles.logo}>
+                            <img src="./assets/components/criata_logo.svg" alt="criata-logo" />
+                            <p>Criata</p>
+                        </span>
+                    </Link>
                 </span>
                 <span className={styles.right}>
                     <span className={styles.box}>
@@ -19,15 +23,19 @@ export default function Nav(props) {
                             <Icon icon={'mdi:cog-outline'} className={styles.icons} />
                         </Link>
                         <span className={styles.edit}>
-                            <p>{props.name}</p>
-                            <Icon icon={'mdi:account-circle'} className={styles.profile} />
+                            <Link href={'/profile'}>
+                                <p>{user.email}</p>
+                            </Link>
+                            <Link href={'/profile'}>
+                                <Icon icon={'mdi:account-circle'} className={styles.profile} />
+                            </Link>
                         </span>
                         <span className={styles.split} />
                         <input type="text" placeholder={'Buscar'} className={styles.search} />
                         <Icon icon={'mdi:magnify'} className={styles.search_icon} onClick={() => {
                             Swal.fire({
                                 icon: 'error',
-                                text: 'Não foi possivel realizar sua busca',
+                                text: 'Parece que essa função foi desabilitada por um desenvolvedor',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

@@ -25,7 +25,7 @@ export default function Found() {
                     <p className={styles.text}>
                         Desculpe, mas parece que a página solicitada <b>Não Existe</b>. Por favor, volte para a <b>Pagina Principal</b>.
                         <br />Caso você ache que algo está quebrado entre em <b>Contato </b>
-                        com nosso suporte e nos relate um problema. Se você acha que algo está quebrado, nos relate um problema.</p>
+                        com nosso suporte e nos relate um problema.</p>
                     <span className={styles.buttons}>
                         <Link href={'/'}>
                             <button className={styles.btn}>Pagina Principal</button>

@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Support from '../component/support';
+import { Icon } from '@iconify/react';
 import styles from '../styles/SignUp.module.css';
 
 import { withPublic } from '../hook/route';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function SignUp({ auth }) {
@@ -14,6 +15,24 @@ function SignUp({ auth }) {
     const [cpassword, setCPassword] = useState('');
 
     const { signUpWithEmailAndPassword } = auth;
+
+    let [visible, isVisible] = useState(false);
+    
+    function setVisible() {
+        const pass = document.querySelector('#password')
+        const cpass = document.querySelector('#cpassword')
+        const eye = document.querySelector('#eye')
+
+        if(visible == false){
+            pass.setAttribute('type', 'text')
+            cpass.setAttribute('type', 'text')
+            isVisible(true)
+        }else{
+            pass.setAttribute('type', 'password')
+            cpass.setAttribute('type', 'password')
+            isVisible(false)
+        } 
+    }
 
     return (
         <div className={styles.container}>
@@ -34,10 +53,15 @@ function SignUp({ auth }) {
                 data-aos-delay="200"
                 data-aos-duration="500">
                     <h1 className={styles.title}>Cadastre-se</h1>
-                    <input type="text" placeholder='Nome Completo' className={styles.input} onChange={(e) => setName(e.target.value)} value={name} />
-                    <input type="email" placeholder='E-mail' className={styles.input} onChange={(e) => setEmail(e.target.value)} value={email} />
-                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => setPassword(e.target.value)} value={password} />
-                    <input type="password" placeholder='Confirmar senha' className={styles.input} onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
+                    <input  type="text" placeholder='Nome Completo' className={styles.input} onChange={(e) => setName(e.target.value)} value={name} />
+                    <input  type="email" placeholder='E-mail' className={styles.input} onChange={(e) => setEmail(e.target.value)} value={email} />
+                    {visible ?
+                            <Icon icon={'mdi:eye'} className={styles.eye} onClick={() => setVisible()}/>
+                        :
+                            <Icon icon={'mdi:eye-off'} className={styles.eye} onClick={() => setVisible()}/>
+                    }
+                    <input maxLength={16} type="password" id={'password'} placeholder='Senha' className={styles.input} onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <input maxLength={16} type="password" id={'cpassword'} placeholder='Confirmar senha' className={styles.input} onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
                     <button className={styles.btn} onClick={() => signUpWithEmailAndPassword(name, email, password, cpassword)}>Criar conta</button>
                     <Link href='/signIn'>
                         <h3 className={styles.forgot}>Já possui uma conta?</h3>

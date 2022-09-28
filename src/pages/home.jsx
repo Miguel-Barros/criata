@@ -17,7 +17,7 @@ function Home({ auth }) {
             <Head>
                 <title>Criata - Home</title>
             </Head>
-            <Nav name={user.email} />
+            <Nav />
             <main style={styles.main}>
                 <img src="./assets/images/home/bg.svg" alt="background" className={styles.background} />
                 <span className={styles.welcome}>

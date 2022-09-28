@@ -29,12 +29,11 @@ function Settings({ auth }) {
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
         data-aos-offset="100">
-        <Support />
-        <img className={styles.bg} src="./assets/images/settings/bg.svg" alt="background" 
-        data-aos="fade-right"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="50"
-        data-aos-offset="100"/>
+        <img className={styles.bg} src="./assets/images/settings/bg.svg" alt="background"
+          data-aos="fade-right"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="50"
+          data-aos-offset="100" />
         <Link href={'/home'}>
           <Icon icon={'mdi:arrow-up-left'} className={styles.arrow} />
         </Link>

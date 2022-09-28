@@ -55,13 +55,12 @@
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
-    text-align: center;
     font-size: 1.3vw;
     color: #000;
 }
 
 .input:focus {
-    border: solid #00000085 1px;
+    border: solid #00000085 .01vw;
     transition: all .3s ease-out;
 }
 
@@ -103,7 +102,7 @@
     cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover, .eye:hover {
     opacity: 75%;
 }
 
@@ -115,6 +114,16 @@
     font-family: 'Mulish';
     font-weight: 400;
     font-size: 1.2vw;
+}
+
+.eye {
+    width: 3vw;
+    height: 5vh;
+    position: absolute;
+    right: 13vw;
+    top: 49.5vh;
+    cursor: pointer;
+    transition: all .5s ease;
 }
 
 /* Large desktop */
@@ -130,6 +139,16 @@
         width: 18vw;
         height: 5vh;
         font-size: 1vw;
+    }
+
+    .input:is(.password){
+        width: 14vw;
+        padding-right: 10%;
+    }
+
+    .eye{
+        right: 14vw;
+        top: 51vh;
     }
 
     .input::placeholder {

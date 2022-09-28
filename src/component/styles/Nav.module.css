@@ -6,11 +6,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(180deg, #FB9700 1%, #FEE85D 211%);
 }
 
 .right, .left {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .header .logo img {
@@ -29,9 +30,8 @@
 }
 
 .header .logo {
-    width: 15vw;
+    width: 12vw;
     display: flex;
-    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
@@ -71,8 +71,13 @@
 .header .edit {
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+.header .edit p {
+    max-width: 48ch;
+    overflow: hidden;
 }
 
 .edit p, .profile{
@@ -94,12 +99,13 @@
 
 .header .right .box .search {
     width: 15vw;
-    height: 4vh;
+    max-width: 15vw;
+    height: 6vh;
     background: #F5F5F4;
     border-radius: .3vw;
-    padding: .5vw;
     font-size: 1vw;
-    padding-left: 8%;
+    padding-left: 3vw;
+    padding-right: 1vw;
 }
 
 .header .box .search_icon {
@@ -107,7 +113,7 @@
     color: rgba(0, 0, 0, 0.75);
     width: 2vw;
     height: 5vh;
-    right: 16.5vw;
+    right: 19vw;
     cursor: pointer;
     transition: all .4s ease;
 }
