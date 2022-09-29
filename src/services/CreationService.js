@@ -4,15 +4,15 @@ import { Icon } from '@iconify/react'
 
 export default function ShowBox(props) {
 
-    if (props.func === 'dots') {
+    if (props.func === 'dots-horizontal') {
         return (
             <div className={styles.showMenu}>
                 dots
             </div>
         )
     }
-
-    if (props.func === 'text') {
+ 
+    if (props.func === 'format-size') {
         const [sliderValue, setSliderValue] = useState(12);
         return (
             <div className={styles.showMenu}>
@@ -79,10 +79,10 @@ export default function ShowBox(props) {
         )
     }
 
-    if (props.func === 'ratio') {
+    if (props.func === 'aspect-ratio') {
         return (
             <div className={styles.showMenu}>
-                ratio
+                aspect-ratio
             </div>
         )
     }
@@ -102,7 +102,7 @@ export default function ShowBox(props) {
             </div>
         )
     }
-
+    
     if (props.func === 'cloud-upload') {
         return (
             <div className={styles.showMenu}>
@@ -111,10 +111,18 @@ export default function ShowBox(props) {
         )
     }
 
-    if (props.func === 'radio-box') {
+    if (props.func === 'radiobox-marked') {
         return (
             <div className={styles.showMenu}>
-                radiobox
+                radiobox-marked
+            </div>
+        )
+    }
+
+    if (props.func === 'help-circle-outline') {
+        return (
+            <div className={styles.showMenu}>
+                help-circle-outline
             </div>
         )
     }

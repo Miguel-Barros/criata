@@ -3,6 +3,7 @@ import styles from "../styles/Profile.module.css"
 import Nav from "../component/nav"
 import { Icon } from "@iconify/react";
 import Swal from "sweetalert2";
+import Head from "next/head";
 
 function Profile({ auth }) {
     const { user } = auth;
@@ -18,6 +19,9 @@ function Profile({ auth }) {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>Criata - Perfil</title>
+            </Head>
             <Nav />
             <img className={styles.background} src="./assets/images/team/bg.svg" alt="background" />
             <main className={styles.main}>

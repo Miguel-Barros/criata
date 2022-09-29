@@ -1,0 +1,173 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.header .logo {
+    width: 12vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header .logo img {
+    width: 4vw;
+    height: 8vh;
+    align-self: center;
+}
+
+.header .logo p {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5vw;
+    color: #2D2D2D;
+    text-shadow: 0px .4vh .4vh rgba(0, 0, 0, 0.25);
+}
+
+.header .top_bar {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.top_bar span:first-child {
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: .5vw;
+    background: #555555;
+}
+
+.top_bar span .icon {
+    width: 2vw;
+    height: 100%;
+    align-self: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all .5 ease;
+}
+
+.top_bar span .icon:hover {
+    transform: scale(1.1);
+}
+
+.top_bar .slice {
+    width: 5%;
+    transform: rotate(90deg);
+    height: 0;
+    align-self: center;
+    border-top: .1vw solid #A7A7A7;
+}
+
+.top_bar span:last-child {
+    width: 25%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_bar span .btn {
+    width: 45%;
+    height: 100%;
+    border-radius: .5vw;
+    font-size: 1vw;
+    font-family: 'Mulish';
+    color: #fff;
+    background: #0075a7;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.top_bar span .btn:hover {
+    transform: scale(1.1);
+}
+
+.main {
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+
+.side_menu {
+    width: 21%;
+    height: 100%;
+    border-radius: 0 .5vw 0 0;
+    display: flex;
+    background: #eceff0;
+    text-shadow: 0px .5vh .5vh rgba(0, 0, 0, 0.25);
+    box-shadow: 0px .5vw .5vw rgba(0, 0, 0, 0.5);
+}
+
+.side_menu .tools {
+    height: 100%;
+    width: 20%;
+    border-radius: 0 .5vw 0 0;
+    display: flex;
+    flex-direction: column;
+    background: #d4d4d4;
+    box-shadow: 0px .5vw .5vw rgba(0, 0, 0, 0.5);
+}
+
+.side_menu span .tool {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    color: #6d6d6d;
+    transition: all .3s ease;
+}
+
+.side_menu span .tool:hover {
+    color: black;
+    background: #f3f3f3;
+}
+
+.side_menu .tools .tool:first-child {
+    padding-top: 10%;
+    display: flex;
+    align-self: center;
+    border-radius: 0 .5vw 0 0;
+}
+
+.side_menu span .tool:last-child {
+    margin-top: 50%;
+    display: flex;
+    align-self: center;
+}
+
+.side_menu span .tool .icon {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    align-self: center;
+}
+
+.main .content {
+    width: 63%;
+    height: 100%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0px .5vw .5vw rgba(0, 0, 0, 0.5);
+    border-radius: .5vw;
+}
