@@ -24,7 +24,7 @@ export default function Nav(props) {
                         </Link>
                         <span className={styles.edit}>
                             <Link href={'/profile'}>
-                                <p>{user.email}</p>
+                                <p>{user.uid}</p>
                             </Link>
                             <Link href={'/profile'}>
                                 <Icon icon={'mdi:account-circle'} className={styles.profile} />

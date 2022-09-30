@@ -51,7 +51,7 @@
 
 .top_bar span:first-child {
     width: 50%;
-    height: 60%;
+    height: 70%;
     display: flex;
     justify-content: space-evenly;
     border-radius: .5vw;
@@ -81,7 +81,7 @@
 
 .top_bar span:last-child {
     width: 25%;
-    height: 35%;
+    height: 45%;
     display: flex;
     justify-content: space-between;
 }
