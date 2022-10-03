@@ -9,7 +9,8 @@
     background: linear-gradient(180deg, #FB9700 1%, #FEE85D 211%);
 }
 
-.right, .left {
+.right,
+.left {
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -80,12 +81,14 @@
     overflow: hidden;
 }
 
-.edit p, .profile{
+.edit p,
+.profile {
     cursor: pointer;
     transition: all .5s ease;
 }
 
-.edit p:hover, .profile:hover {
+.edit p:hover,
+.profile:hover {
     transform: scale(1.01);
     opacity: 50%;
 }
@@ -120,4 +123,44 @@
 
 .header .box .search_icon:hover {
     opacity: 50%;
+}
+
+/* Large desktop */
+
+@media (min-width: 1920px) {
+    .header .logo img {
+        width: 3.5vw;
+        height: 7vh;
+    }
+
+    .header .logo p {
+        font-size: 2vw;
+    }
+
+    .header .edit p {
+        font-size: 2.2vh;
+        margin-left: -.5vw;
+        margin-right: -1.2vw;
+    }
+
+    .header .box .profile {
+        width: 3.5vw;
+        height: 7vh;
+    }
+
+    .header .box .icons {
+        width: 3vw;
+        height: 3vh;
+    }
+
+    .header .box .search_icon {
+        width: 2vw;
+        height: 3.5vh;
+        right: 17.5vw;
+    }
+
+    .header .right .box .search {
+        height: 6vh;
+        font-size: .9vw;
+    }
 }

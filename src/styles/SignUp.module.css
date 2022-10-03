@@ -147,6 +147,8 @@
     }
 
     .eye{
+        width: 2vw;
+        height: 4vh;
         right: 14vw;
         top: 51vh;
     }

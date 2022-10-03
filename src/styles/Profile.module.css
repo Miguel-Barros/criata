@@ -136,7 +136,7 @@
     color: #fff;
 }
 
-.content .project[aria-disabled]{
+.content .project[aria-disabled] {
     opacity: 20%;
 }
 
@@ -156,7 +156,7 @@
     margin-top: 50%;
 }
 
-.content .project .icon:hover{
+.content .project .icon:hover {
     transform: scale(1.1);
 }
 
@@ -176,4 +176,40 @@
 
 .content .project .btn:hover {
     transform: scale(1.05);
+}
+
+
+/* Large desktop */
+
+@media (min-width: 1920px) {
+    .content .project {
+        width: 25%;
+        height: 90%;
+    }
+
+    .main .account_icon {
+        width: 11vw;
+        height: 22vh;
+    }
+
+    .content .project .icon {
+        width: 4vw;
+        height: 8vh;
+    }
+
+    .content .project .btn {
+        width: 50%;
+        height: 10%;
+        font-size: .8vw;
+    }
+
+    .content .buttons .btn {
+        width: 35%;
+        height: 80%;
+        font-size: .8vw;
+    }
+
+    .main .profile {
+        margin-top: 3%;
+    }
 }

@@ -80,3 +80,13 @@
 .card:hover > .plus {
     color: #000;
 }
+
+/* Large desktop */
+
+@media (min-width: 1920px) {
+
+    .welcome {
+        margin-top: -30vh;
+    }
+    
+}
