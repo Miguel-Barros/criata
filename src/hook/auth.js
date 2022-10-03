@@ -105,7 +105,7 @@ export function AuthProvider(props) {
 		setError(error ?? "");
 	}
 
-	async function signUpWithEmailAndPassword(name, email, password, cpassword) {
+	async function signUpWithEmailAndPassword(name, username, email, password, cpassword) {
 		if (email === "" || email == null || password == "" || password == null || cpassword == "" || cpassword == null || name == "" || name == null) {
 			return Toast.fire({
 				icon: 'warning',
@@ -126,13 +126,10 @@ export function AuthProvider(props) {
 				if (error) {
 					ifError(error)
 				} else {
-					const firstName = name.split(" ")[0];
-					const lastName = name.split(" ")[((name.split(' ').length) -1)]
-					const username = firstName + lastName
 
 					await Database.setData('/users/' + user.uid, {
 						fullName: name,
-						username: `@${username.toLowerCase()}`,
+						username: username,
 						bio: "",
 						email: email,
 						phone: '',
@@ -142,7 +139,7 @@ export function AuthProvider(props) {
 					Toast.fire({
 						icon: 'success',
 						title: "Você foi cadastrado com sucesso",
-						text: `Olá ${firstName}, seja bem vindo`,
+						text: `Olá ${name.split(" ")[0]}, seja bem vindo`,
 						position: 'top-start',
 						timer: 5000
 					})

@@ -18,38 +18,44 @@ function SignUp({ auth }) {
     const { signUpWithEmailAndPassword } = auth;
 
     let [visible, isVisible] = useState(false);
-    
+
     function setVisible() {
         const pass = document.querySelector('#password')
         const cpass = document.querySelector('#cpassword')
         const eye = document.querySelector('#eye')
 
-        if(visible == false){
+        if (visible == false) {
             pass.setAttribute('type', 'text')
             cpass.setAttribute('type', 'text')
             isVisible(true)
-        }else{
+        } else {
             pass.setAttribute('type', 'password')
             cpass.setAttribute('type', 'password')
             isVisible(false)
-        } 
+        }
     }
 
-    useLayoutEffect(() => {
+    const [username, setUsername] = useState('');
+
+    const firstName = name.split(" ")[0];
+    const lastName = name.split(" ")[((name.split(' ').length) - 1)]
+
+    useEffect(() => {
+        setUsername(('@' + firstName + lastName).toLowerCase())
         verify.forEach((obj) => {
-            if(obj.username == name){
-                alert('IGUAL')
+            if (obj.username == username) {
+                setUsername(username + Math.floor(Math.random() * 100))
                 return
             }
         })
-    })
+    }, [name])
 
     useEffect(() => {
         Database.getData().then((e) => {
             setVerify(e)
         })
     }, [])
-    
+
     return (
         <div className={styles.container}>
             <Head>
@@ -60,30 +66,30 @@ function SignUp({ auth }) {
                 data-aos-easing="ease-in-back"
                 data-aos-duration="350"
                 data-aos-offset="100">
-                <Support/>
+                <Support />
                 <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt='ilustration-bg' />
                 <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt='ilustration' />
                 <div className={styles.box}
-                data-aos="fade-right"
-                data-aos-offset="500"
-                data-aos-delay="200"
-                data-aos-duration="500">
+                    data-aos="fade-right"
+                    data-aos-offset="500"
+                    data-aos-delay="200"
+                    data-aos-duration="500">
                     <h1 className={styles.title}>Cadastre-se</h1>
-                    <input  type="text" placeholder='Nome Completo' className={styles.input} onChange={(e) => setName(e.target.value)} value={name} />
-                    <input  type="email" placeholder='E-mail' className={styles.input} onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <input type="text" placeholder='Nome Completo' className={styles.input} onChange={(e) => setName(e.target.value)} value={name} />
+                    <input type="email" placeholder='E-mail' className={styles.input} onChange={(e) => setEmail(e.target.value)} value={email} />
                     {visible ?
-                            <Icon icon={'mdi:eye'} className={styles.eye} onClick={() => setVisible()}/>
+                        <Icon icon={'mdi:eye'} className={styles.eye} onClick={() => setVisible()} />
                         :
-                            <Icon icon={'mdi:eye-off'} className={styles.eye} onClick={() => setVisible()}/>
+                        <Icon icon={'mdi:eye-off'} className={styles.eye} onClick={() => setVisible()} />
                     }
                     <input maxLength={16} type="password" id={'password'} placeholder='Senha' className={styles.input} onChange={(e) => setPassword(e.target.value)} value={password} />
                     <input maxLength={16} type="password" id={'cpassword'} placeholder='Confirmar senha' className={styles.input} onChange={(e) => setCPassword(e.target.value)} value={cpassword} />
-                    <button className={styles.btn} onClick={() => signUpWithEmailAndPassword(name, email, password, cpassword)}>Criar conta</button>
+                    <button className={styles.btn} onClick={() => signUpWithEmailAndPassword(name, username, email, password, cpassword)}>Criar conta</button>
                     <Link href='/signIn'>
                         <h3 className={styles.forgot}>Já possui uma conta?</h3>
-                    </Link>                 
+                    </Link>
                 </div>
-            <p className={styles.copyright}>Coaraci © 2022</p>
+                <p className={styles.copyright}>Coaraci © 2022</p>
             </main >
         </div >
     );
