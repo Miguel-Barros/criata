@@ -9,6 +9,11 @@ import { useState } from 'react';
 
 function Profile({ auth }) {
     const { user } = auth;
+    const [userData, setUserData] = useState('')
+
+    Database.getUserData(user.uid).then((e) => {
+        setUserData(e)
+    })
 
     function Disabled() {
         Swal.fire({
@@ -18,8 +23,6 @@ function Profile({ auth }) {
             text: "Parece que essa função foi desabilitada por um desenvolvedor"
         })
     }
-
-    Database
 
     return (
         <div className={styles.container}>
@@ -61,5 +64,12 @@ function Profile({ auth }) {
         </div>
     )
 }
-
 export default withProtected(Profile);
+
+
+// export async function getServerSideProps() {
+//     const res = await fetch(`https://.../data`)
+//     const data = await res.json()
+//     return { props: { data } }
+//   }
+  
