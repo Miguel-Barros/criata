@@ -3,9 +3,17 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react';
 import Swal from 'sweetalert2';
 import useAuth from "../hook/auth";
+import Database from "../services/Database"
+import { useState } from 'react';
 
 export default function Nav(props) {
     const { user } = useAuth();
+    const [username, setUsername] = useState('')
+
+    Database.getData(user.uid, 'username').then((value) => {
+        setUsername(value)
+    })
+
     return (
         <>
             <header className={styles.header}>
@@ -24,7 +32,7 @@ export default function Nav(props) {
                         </Link>
                         <span className={styles.edit}>
                             <Link href={'/profile'}>
-                                <p>{user.uid}</p>
+                                <p>{username}</p>
                             </Link>
                             <Link href={'/profile'}>
                                 <Icon icon={'mdi:account-circle'} className={styles.profile} />

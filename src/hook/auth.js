@@ -128,11 +128,11 @@ export function AuthProvider(props) {
 				} else {
 					const firstName = name.split(" ")[0];
 					const lastName = name.split(" ")[((name.split(' ').length) -1)]
+					const username = firstName + lastName
 
 					await Database.setData('/users/' + user.uid, {
 						fullName: name,
-						firstName: firstName,
-						lastName: lastName,
+						username: `@${username.toLowerCase()}`,
 						bio: "",
 						email: email,
 						phone: '',
@@ -142,13 +142,16 @@ export function AuthProvider(props) {
 					Toast.fire({
 						icon: 'success',
 						title: "Você foi cadastrado com sucesso",
-						text: `Seja bem vindo ${firstName}`,
+						text: `Olá ${firstName}, seja bem vindo`,
 						position: 'top-start',
 						timer: 5000
 					})
 				}
 			}
 		}
+
+
+
 	}
 
 	async function logout() {

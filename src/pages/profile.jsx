@@ -4,6 +4,8 @@ import Nav from "../component/nav"
 import { Icon } from "@iconify/react";
 import Swal from "sweetalert2";
 import Head from "next/head";
+import Database from "../services/Database"
+import { useState } from 'react';
 
 function Profile({ auth }) {
     const { user } = auth;
@@ -17,6 +19,8 @@ function Profile({ auth }) {
         })
     }
 
+    Database
+
     return (
         <div className={styles.container}>
             <Head>
@@ -27,7 +31,7 @@ function Profile({ auth }) {
             <main className={styles.main}>
                 <div className={styles.profile}>
                     <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
-                    <h2>Username</h2>
+                    <h2>username</h2>
                     <h3>@useprefix</h3>
                     <p>For user biography.</p>
                 </div>
