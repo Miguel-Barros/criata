@@ -19,13 +19,13 @@ class Database {
         }
     }
 
-    async getData(uid, data) {
+    async getData(data) {
         try {
-            let result = await get(ref(this.database, `/users/${uid}/${data}`)).then((e) => {
+            let result = await get(ref(this.database, `/users/`)).then((e) => {
                 if (e.exists()) {
-                    return e.val()
+                    return Object.values(e.val())
                 } else {
-                    console.log('O dado requerido não existe')
+                    console.log('O dado requerido não foi encotrado')
                 }
             })
             return result
@@ -36,7 +36,14 @@ class Database {
 
     async getUserData(uid) {
         try {
-            return
+            let result = await get(ref(this.database, `/users/${uid}/`)).then((e) => {
+                if (e.exists()) {
+                    return e.val()
+                } else {
+                    console.log('Os dados requeridos não foram encotrados')
+                }
+            })
+            return result
         } catch (error) {
             return error
         }

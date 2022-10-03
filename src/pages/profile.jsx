@@ -5,15 +5,18 @@ import { Icon } from "@iconify/react";
 import Swal from "sweetalert2";
 import Head from "next/head";
 import Database from "../services/Database"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Profile({ auth }) {
     const { user } = auth;
     const [userData, setUserData] = useState('')
 
-    Database.getUserData(user.uid).then((e) => {
-        setUserData(e)
-    })
+    useEffect(() => {
+        Database.getUserData(user.uid).then((e) => {
+            setUserData(e)
+        })
+
+    }, [])
 
     function Disabled() {
         Swal.fire({
@@ -34,9 +37,9 @@ function Profile({ auth }) {
             <main className={styles.main}>
                 <div className={styles.profile}>
                     <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
-                    <h2>username</h2>
-                    <h3>@useprefix</h3>
-                    <p>For user biography.</p>
+                    <h2>{userData.fullName ?? '...'}</h2>
+                    <h3>{userData.username ?? '...'}</h3>
+                    <p>{userData.bio ?? '...'}</p>
                 </div>
                 <div className={styles.content}>
                     <h1>Meus projetos</h1>
@@ -72,4 +75,3 @@ export default withProtected(Profile);
 //     const data = await res.json()
 //     return { props: { data } }
 //   }
-  

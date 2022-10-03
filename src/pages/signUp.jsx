@@ -3,13 +3,14 @@ import Link from 'next/link';
 import Support from '../component/support';
 import { Icon } from '@iconify/react';
 import styles from '../styles/SignUp.module.css';
-
+import Database from '../services/Database';
 import { withPublic } from '../hook/route';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 
 function SignUp({ auth }) {
     const [name, setName] = useState('');
+    const [verify, setVerify] = useState([]);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [cpassword, setCPassword] = useState('');
@@ -34,6 +35,21 @@ function SignUp({ auth }) {
         } 
     }
 
+    useLayoutEffect(() => {
+        verify.forEach((obj) => {
+            if(obj.username == name){
+                alert('IGUAL')
+                return
+            }
+        })
+    })
+
+    useEffect(() => {
+        Database.getData().then((e) => {
+            setVerify(e)
+        })
+    }, [])
+    
     return (
         <div className={styles.container}>
             <Head>
