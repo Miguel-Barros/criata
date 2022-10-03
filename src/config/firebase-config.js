@@ -12,8 +12,6 @@ const firebaseConfig = {
 	databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
 };
 
-initializeApp(firebaseConfig);
-
 if (!getApps.length) {
 	const app = initializeApp(firebaseConfig);
 	if (typeof window !== "undefined") {
