@@ -12,7 +12,7 @@ const firebaseConfig = {
 	databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
 };
 
-if (!getApps.length) {
+if (getApps.length) {
 	const app = initializeApp(firebaseConfig);
 	if (typeof window !== "undefined") {
 		if ("measurementId" in firebaseConfig) {
