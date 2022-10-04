@@ -40,14 +40,17 @@ function SignUp({ auth }) {
     const firstName = name.split(" ")[0];
     const lastName = name.split(" ")[((name.split(' ').length) - 1)]
 
-    useEffect(() => {
-        setUsername(('@' + firstName + lastName).toLowerCase())
+    useLayoutEffect(() => {
         verify.forEach((obj) => {
             if (obj.username == username) {
-                setUsername(username + Math.floor(Math.random() * 100))
+                setUsername(username + Math.floor(Math.random() * 9))
                 return
             }
         })
+    })
+
+    useEffect(() => {
+        setUsername(('@' + firstName + lastName).toLowerCase())
     }, [name])
 
     useEffect(() => {

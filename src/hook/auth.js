@@ -132,7 +132,6 @@ export function AuthProvider(props) {
 						username: username,
 						bio: "",
 						email: email,
-						phone: '',
 						verified: false
 					})
 

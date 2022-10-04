@@ -6,16 +6,17 @@ import Swal from "sweetalert2";
 import Head from "next/head";
 import Database from "../services/Database"
 import { useState, useEffect } from 'react';
+import EditProfile from "../component/editProfile";
 
 function Profile({ auth }) {
     const { user } = auth;
     const [userData, setUserData] = useState('')
+    const [edit, setEdit] = useState(false)
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
             setUserData(e)
         })
-
     }, [])
 
     function Disabled() {
@@ -42,9 +43,10 @@ function Profile({ auth }) {
                     <p>{userData.bio ?? '...'}</p>
                 </div>
                 <div className={styles.content}>
+                    {(edit) ? <EditProfile auth={auth} inEditing={edit} /> : ''}
                     <h1>Meus projetos</h1>
                     <span className={styles.buttons}>
-                        <button className={styles.btn} onClick={() => Disabled()}>
+                        <button className={styles.btn} onClick={() => {(edit) ? setEdit(false) : setEdit(true)}}>
                             <Icon className={styles.icon} icon={'mdi:edit-outline'} />Editar perfil</button>
                         <button disabled className={styles.btn} >
                             <Icon className={styles.icon} icon={'mdi:plus-circle-outline'} />Adicionar projeto</button>

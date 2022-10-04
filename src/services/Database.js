@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, push, get, query, onValue } from "firebase/database";
+import { getDatabase, ref, set, push, get, update, query, onValue } from "firebase/database";
 import { getApp } from "firebase/app";
 
 const app = getApp();
@@ -19,7 +19,7 @@ class Database {
         }
     }
 
-    async getData(data) {
+    async getData() {
         try {
             let result = await get(ref(this.database, `/users/`)).then((e) => {
                 if (e.exists()) {
@@ -44,6 +44,15 @@ class Database {
                 }
             })
             return result
+        } catch (error) {
+            return error
+        }
+    }
+
+    async updateUserData(uid, keyData, data){
+        try {
+            await update(ref(this.database, `/users/${uid}/${keyData}`), ...data)
+            return console.log(`As atualizações em ${data} foram feitas com sucesso!`)
         } catch (error) {
             return error
         }

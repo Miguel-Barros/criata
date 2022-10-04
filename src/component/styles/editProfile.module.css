@@ -1,0 +1,184 @@
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000000d8;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.left, .right {
+    box-shadow: 0px 0 1vw rgba(255, 255, 255, 0.25);
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 60%;
+    border-radius: .5vw;
+    background: #fff;
+}
+
+.left h2 {
+    font-family: 'Mulish';
+    font-weight: 600;
+    width: 80%;
+    font-size: 1.3vw;
+    margin-top: 5%;
+    color: #000000;
+}
+
+.left h3 {
+    font-family: 'Mulish';
+    font-weight: 500;
+    margin-top: 3%;
+    font-size: 1.2vw;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.left .account_icon {
+    width: 60%;
+    height: 60%;
+}
+
+.left h3:last-child {
+    margin-top: 10%;
+    font-size: 1vw;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    margin-left: 5%;
+    height: 60%;
+    border-radius: .5vw;
+    background: #fff;
+}
+
+.right span:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60%;
+    margin-left: 10%;
+}
+
+.right span p {
+    font-size: .9vw;
+    font-family: 'Mulish';
+    color: #5F5F5F;
+}
+
+.right span input {
+    font-family: 'Mulish';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: .3vw;
+    width: 85%;
+    height: 15%;
+    background: #E7E7E7;
+    color: #000;
+    font-size: .9vw;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: 1%;
+}
+
+.right span input:not(:first-child) {
+    margin-top: 5%;
+}
+
+.right span p:not(:first-child) {
+    margin-top: 5%;
+}
+
+
+.right span input::placeholder {
+    font-size: .8vw;
+}
+
+.right span:nth-child(2) {
+    background: none;
+    width: 45%;
+    height: 60%;
+    border: .15vw solid #E7E7E7;
+    border-radius: .5vw;
+}
+
+.right span:nth-child(2) p {
+    position: absolute;
+    margin-top: -1.5%;
+    font-size: .9vw;
+}
+
+.right span:nth-child(2) p:nth-child(2) {
+    position: absolute;
+    right: 18%;
+    font-size: .8vw;
+}
+
+.right span:nth-child(2) textarea {
+    resize: none;
+    border-radius: .5vw;
+    width: 90%;
+    height: 90%;
+    text-align: justify;
+    font-size: .9vw;
+    padding: 5%;
+    font-family: 'Mulish';
+}
+
+.right span:nth-child(3) {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: .5vw;
+    bottom: 23vh;
+    right: 25vw;
+    width: 20%;
+    height: 5%;
+}
+
+.right span:nth-child(3) button:last-child {
+   background: #F6A413;
+   color: #fff;
+   width: 50%;
+   height: 100%;
+   border-radius: .5vw;
+   cursor: pointer;
+   font-size: .8vw;
+   transition: all .5s ease;
+}
+
+.right span:nth-child(3) button:last-child:hover {
+    transform: scale(1.02);
+    opacity: 70%;
+}
+
+.right span:nth-child(3) button:first-child {
+    background: none;
+    color: #000;
+    width: 30%;
+    height: 80%;
+    border-radius: .5vw;
+    cursor: pointer;
+    font-size: .8vw;
+    transition: all .5s ease;
+ }
+
+.right span:nth-child(3) button:first-child:hover {
+    border: 0.5px solid #00000050;
+    background: #00000050;
+    color: #fff;
+}
+
