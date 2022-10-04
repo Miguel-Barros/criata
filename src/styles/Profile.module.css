@@ -83,12 +83,12 @@
     justify-content: center;
     width: 45%;
     height: 80%;
-    background: none;
+    background: #F6A21B;
     font-family: 'Mulish';
     font-size: 1vw;
-    border: .1vw solid rgb(122, 122, 122);
-    color: rgb(122, 122, 122);
-    border-radius: 1vw;
+    border: .1vw solid rgba(202, 202, 202, 0.432);
+    color: rgb(255, 255, 255);
+    border-radius: .6vw;
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -104,12 +104,13 @@
 
 .content .buttons .btn:disabled {
     border: .1vw solid #00000075;
+    background: none;
     color: #00000075;
     cursor: default;
 }
 
 .content .buttons .btn:not(:disabled):hover {
-    background: #dddddd;
+    background: #f6a21b9f;
     color: #000;
 }
 
