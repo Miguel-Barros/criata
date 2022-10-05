@@ -1,7 +1,7 @@
-import { getStorage, ref } from "firebase/storage";
+import { getStorage, ref, put} from "firebase/storage";
 
 const storage = getStorage()
-const usersRef = ref(storage, '/users')
+const usersRef = ref(storage, '/users/')
 
 class Storage {
 	constructor(Storage){
@@ -10,10 +10,8 @@ class Storage {
 
 	async setUserImg(uid, img){
 		try {
-			const result = await uploadBytes(usersRef, `/${uid}/${img}`).then((e) => {
-				// Caso der certo
-				return console.log(`O upload de ${img} de bom`)
-			})
+			const result = await this.storage.ref().put(img)
+			return alert('Cavalo')
 		} catch (error){
 			return error
 		}

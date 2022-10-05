@@ -28,7 +28,6 @@ export default function editProfile(props) {
         Database.getData().then((e) => {
             setVerify(e)
         })
-
     }, [])
 
     useEffect(() => {
@@ -46,34 +45,34 @@ export default function editProfile(props) {
     }, [username])
 
     function Update() {
-        verify.forEach((e) => {
-            if (e.username == "@" + username) {
-                // Usuario já utilizado
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Usuario já utilizado',
-                    text: 'Esse nome de usuario já esta sendo utilizado',
-                    showConfirmButton: false,
-                    timer: 2500
-                })
-                setCheck(false)
-                return
-            }
+        // verify.forEach((e) => {
+        //     if (e.username == "@" + username) {
+        //         // Usuario já utilizado
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: 'Usuario já utilizado',
+        //             text: 'Esse nome de usuario já esta sendo utilizado',
+        //             showConfirmButton: false,
+        //             timer: 2500
+        //         })
+        //         setCheck(false)
+        //         return
+        //     }
 
-            if (e.email == email) {
-                // email já utilizado
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Email já utilizado',
-                    text: 'Esse email já esta sendo utilizado',
-                    showConfirmButton: false,
-                    timer: 2500
-                })
-                setCheck(false)
-                return
-            }
+        //     if (e.email == email) {
+        //         // email já utilizado
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: 'Email já utilizado',
+        //             text: 'Esse email já esta sendo utilizado',
+        //             showConfirmButton: false,
+        //             timer: 2500
+        //         })
+        //         setCheck(false)
+        //         return
+        //     }
             setCheck(true)
-        })
+        // })
 
         if (check) {
             Database.updateUserData(user.uid, {
@@ -82,14 +81,34 @@ export default function editProfile(props) {
                 'bio': bio,
                 'fullName': fullName,
             }).then(() => {
-                window.location.reload();
+                // window.location.reload();
             })
+
+            Storage.setUserImg(user.uid, img)
         }
     }
 
     useLayoutEffect(() => {
         setChar(bio?.length)
     }, [bio])
+
+    function handleChangeImg() {
+        if (img) {
+            return (
+                <>
+                    <img src={URL.createObjectURL(img)} alt="profile-img" className={styles.account_icon} />
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <Icon icon={'mdi:edit'} className={styles.icon_edit} />
+                    <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
+                    <input type={"file"} name={`${user.uid}-profileIcon`} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
+                </>
+            )
+        }
+    }
 
     if (edit) {
         return (
@@ -104,8 +123,7 @@ export default function editProfile(props) {
                         <h2>{fullName}</h2>
                         <h3>{"@" + username}</h3>
                         <span>
-                            <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
-                            <input type={"file"} name={`${user.uid}-profileIcon`} accept="image/png, image/jpeg" title=" " />
+                            {(img) ? handleChangeImg() : handleChangeImg() }
                         </span>
                         <h3>Ultimo login: 30-30-2030 - 22:50</h3>
                     </div>
