@@ -38,9 +38,9 @@ function Profile({ auth }) {
             <main className={styles.main}>
                 <div className={styles.profile}>
                     <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
-                    <h2>{userData.fullName ?? '...'}</h2>
-                    <h3>{userData.username ?? '...'}</h3>
-                    <p>{userData.bio ?? '...'}</p>
+                    <h2>{userData?.fullName ?? '...'}</h2>
+                    <h3>{userData?.username ?? '...'}</h3>
+                    <p>{userData?.bio ?? '...'}</p>
                 </div>
                 <div className={styles.content}>
                     {(edit) ? <EditProfile auth={auth} inEditing={edit} /> : ''}

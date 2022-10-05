@@ -1,8 +1,9 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import styles from './styles/editProfile.module.css'
-import Database from '../services/Database'
 import { Icon } from '@iconify/react';
 import Swal from 'sweetalert2';
+import Database from '../services/Database'
+import Storage from '../services/Storage'
 
 export default function editProfile(props) {
     const { user } = props.auth
@@ -17,6 +18,7 @@ export default function editProfile(props) {
     const [email, setEmail] = useState()
     const [fullName, setFullName] = useState()
     const [bio, setBio] = useState()
+    const [img, setImg] = useState(null)
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
@@ -26,6 +28,7 @@ export default function editProfile(props) {
         Database.getData().then((e) => {
             setVerify(e)
         })
+
     }, [])
 
     useEffect(() => {
@@ -100,7 +103,10 @@ export default function editProfile(props) {
                     <div className={styles.left}>
                         <h2>{fullName}</h2>
                         <h3>{"@" + username}</h3>
-                        <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
+                        <span>
+                            <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
+                            <input type={"file"} name={`${user.uid}-profileIcon`} accept="image/png, image/jpeg" title=" " />
+                        </span>
                         <h3>Ultimo login: 30-30-2030 - 22:50</h3>
                     </div>
                     <div className={styles.right}>

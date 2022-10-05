@@ -33,14 +33,14 @@
 
 .main .profile h2 {
     font-family: "Mulsih";
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     font-weight: 500;
 }
 
 .main .profile h3 {
     margin-top: 2%;
     font-family: "Mulsih";
-    font-size: 1vw;
+    font-size: .9vw;
     font-weight: 500;
 }
 
@@ -86,7 +86,6 @@
     background: #F6A21B;
     font-family: 'Mulish';
     font-size: 1vw;
-    border: .1vw solid rgba(202, 202, 202, 0.432);
     color: rgb(255, 255, 255);
     border-radius: .6vw;
     cursor: pointer;

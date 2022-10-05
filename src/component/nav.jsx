@@ -4,11 +4,27 @@ import { Icon } from '@iconify/react';
 import Swal from 'sweetalert2';
 import useAuth from "../hook/auth";
 import Database from "../services/Database"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Nav(props) {
     const { user } = useAuth();
-    const [username, setUsername] = useState('')
+
+    const [userData, setUserData] = useState([])
+    const [formatName, setFormatName] = useState('')
+
+    useEffect(() => {
+        Database.getUserData(user.uid).then((e) =>{
+            setUserData(e)
+        })
+
+    }, [])
+
+    useEffect(() => {
+        const firstName = userData?.fullName?.split(" ")[0];
+        const lastName = userData?.fullName?.split(" ")[((userData?.fullName?.split(' ').length) - 1)]
+        setFormatName(`${firstName ?? '...'} ${lastName ?? '...'}`)
+
+    }, [userData])
 
     return (
         <>
@@ -28,7 +44,7 @@ export default function Nav(props) {
                         </Link>
                         <span className={styles.edit}>
                             <Link href={'/profile'}>
-                                <p>{username ?? '...'}</p>
+                                <p>{formatName ?? '...'}</p>
                             </Link>
                             <Link href={'/profile'}>
                                 <Icon icon={'mdi:account-circle'} className={styles.profile} />

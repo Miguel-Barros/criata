@@ -43,13 +43,7 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.left .account_icon {
-    width: 60%;
-    height: 60%;
-}
-
 .left h3:last-child {
-    margin-top: 10%;
     font-size: 1vw;
 }
 
@@ -183,3 +177,25 @@
     color: #fff;
 }
 
+.left span .account_icon {
+    width: 100%;
+    height: 100%;
+}
+
+.left span{
+    width: 75%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left span input[type='file']{
+    opacity: 0;
+    cursor: pointer;
+    left: 18vw;
+    width: 19%;
+    height: 39%;
+    position: absolute;
+}

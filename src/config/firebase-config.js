@@ -1,4 +1,5 @@
 import { getApps, initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -14,6 +15,7 @@ const firebaseConfig = {
 
 if (!getApps.length) {
 	const app = initializeApp(firebaseConfig);
+	const storage = getStorage(app);
 	if (typeof window !== "undefined") {
 		if ("measurementId" in firebaseConfig) {
 			getAnalytics();
