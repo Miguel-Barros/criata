@@ -24,7 +24,7 @@ function Profile({ auth }) {
             icon: "error",
             showConfirmButton: false,
             timer: 1500,
-            text: "Parece que essa função foi desabilitada por um desenvolvedor"
+            text: "Parece que essa função foidesabilitada por um desenvolvedor"
         })
     }
 
