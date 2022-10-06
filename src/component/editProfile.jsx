@@ -92,6 +92,10 @@ export default function editProfile(props) {
         setChar(bio?.length)
     }, [bio])
 
+    function showChangeImg(){
+        document.querySelector('#changeImg').click()
+    }
+
     function handleChangeImg() {
         if (img) {
             return (
@@ -102,9 +106,9 @@ export default function editProfile(props) {
         } else {
             return (
                 <>
-                    <Icon icon={'mdi:edit'} className={styles.icon_edit} />
-                    <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
-                    <input type={"file"} name={`${user.uid}-profileIcon`} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
+                    <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()}/>
+                    <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()}/>
+                    <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
                 </>
             )
         }
