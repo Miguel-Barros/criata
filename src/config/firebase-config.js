@@ -1,6 +1,6 @@
 import { getApps, initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,12 +13,10 @@ const firebaseConfig = {
 	databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
 };
 
-if (!getApps().length) {
-	const app = initializeApp(firebaseConfig);
-	const storage = getStorage(app);
-	if (typeof window !== "undefined") {
-		if ("measurementId" in firebaseConfig) {
-			getAnalytics();
-		}
-	}
-}
+const app = initializeApp(firebaseConfig);
+getStorage(app);
+// if (typeof window !== "undefined") {
+// 	if ("measurementId" in firebaseConfig) {
+// 		getAnalytics();
+// 	}
+// }
