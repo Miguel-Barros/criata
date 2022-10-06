@@ -27,6 +27,8 @@
 .info .profile {
     width: 5vw;
     height: 10vh;
+    border-radius: 100vw;
+    padding: 2%;
 }
 
 .info span p:first-child {
@@ -136,7 +138,7 @@
 
 @media (min-width: 1920px) {
     .title {
-        font-size: 2.5vw;
+        font-size: 3vw;
         margin-top: 5%;
     }
 

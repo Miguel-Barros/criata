@@ -127,6 +127,10 @@ export function AuthProvider(props) {
 					ifError(error)
 				} else {
 
+					name = name.toLowerCase().replace(/(?:^|\s)\S/g, function (a) {
+						return a.toUpperCase();
+					});
+
 					await Database.setData('/users/' + user.uid, {
 						fullName: name,
 						username: username,
@@ -151,6 +155,11 @@ export function AuthProvider(props) {
 	}
 
 	async function logout() {
+		const d = new Date();
+		Database.updateUserData(user.uid, {
+			lastAcess: d.toUTCString()
+		})
+		
 		await AuthService.logout();
 		setUser(null);
 	}

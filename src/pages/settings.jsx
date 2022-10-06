@@ -5,6 +5,8 @@ import { withProtected } from '../hook/route';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
+import { useEffect, useState, React } from 'react';
+import Database from '../services/Database';
 
 function Settings({ auth }) {
   const { logout, user } = auth;
@@ -16,6 +18,19 @@ function Settings({ auth }) {
       showConfirmButton: false,
       timer: 2500
     })
+  }
+
+  const [userData, setUserData] = useState('')
+
+  useEffect(() => {
+    Database.getUserData(user.uid).then((e) => {
+      setUserData(e)
+    })
+  }, [])
+
+  function getDate() {
+    const d = new Date();
+    return d.toUTCString()
   }
 
   return (
@@ -38,10 +53,14 @@ function Settings({ auth }) {
           <Icon icon={'mdi:arrow-up-left'} className={styles.arrow} />
         </Link>
         <span className={styles.info}>
-          <Icon icon={'mdi:account-circle'} className={styles.profile} />
+          {(userData?.imgProfile) ?
+            <img src={userData.imgProfile} className={styles.profile} />
+            :
+            <Icon icon={'mdi:account-circle'} className={styles.profile} />
+          }
           <span>
             <p>{user.email}</p>
-            <p>Ultimo acesso 20-05-2022, 14:56 PM</p>
+            <p>{`Ultimo acesso em: ${userData?.lastAcess ?? ''}`}</p>
           </span>
         </span>
         <div className={styles.box}
@@ -52,7 +71,9 @@ function Settings({ auth }) {
           <span>
             <h1 className={styles.title}>Configurações</h1>
             <h2>Conta</h2>
-            <h3 onClick={error}>Editar perfil</h3>
+            <Link href={'/profile'}>
+              <h3>Editar perfil</h3>
+            </Link>
             <h3 onClick={error}>Codigos QR do perfil</h3>
             <h2>Segurança</h2>
             <h3 onClick={error}>Alterar senha</h3>

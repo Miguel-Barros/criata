@@ -50,7 +50,7 @@ export default function Nav(props) {
                                 {(userData?.imgProfile) ?
                                     <img src={userData.imgProfile} className={styles.profile} />
                                     :
-                                    ''
+                                    <Icon icon={'mdi:account-circle'} className={styles.profile} />
                                 }
                             </Link>
                         </span>
