@@ -67,6 +67,8 @@
 .header .box .profile {
     width: 4vw;
     height: 8vh;
+    object-fit: cover;
+    border-radius: 100vw;
 }
 
 .header .edit {

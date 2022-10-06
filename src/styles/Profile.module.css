@@ -29,6 +29,8 @@
 .main .account_icon {
     width: 12.5vw;
     height: 25vh;
+    object-fit: cover;
+    border-radius: 100vw;
 }
 
 .main .profile h2 {
@@ -182,6 +184,10 @@
 /* Large desktop */
 
 @media (min-width: 1920px) {
+    .main .profile h2 {
+        margin-top: 5%;
+    }
+
     .content .project {
         width: 25%;
         height: 90%;

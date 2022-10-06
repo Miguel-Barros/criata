@@ -2,6 +2,8 @@ import { getDatabase, ref, set, push, get, update, query, onValue } from "fireba
 import { getApp } from "firebase/app";
 import Swal from "sweetalert2";
 
+
+
 const app = getApp();
 const database = getDatabase(app);
 
@@ -53,12 +55,7 @@ class Database {
     async updateUserData(uid, data){
         try {
             await update(ref(this.database, `/users/${uid}/`), data)
-            return await Swal.fire({
-                icon: 'success',
-                title: 'Atualizado com sucesso!',
-                timer: 1500,
-                showConfirmButton: false
-            })
+            return update
         } catch (error) {
             return error
         }

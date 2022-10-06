@@ -1,7 +1,7 @@
-import { getStorage, ref, put} from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
+import Database from "./Database";
 
 const storage = getStorage()
-const usersRef = ref(storage, '/users/')
 
 class Storage {
 	constructor(Storage){
@@ -10,8 +10,15 @@ class Storage {
 
 	async setUserImg(uid, img){
 		try {
-			const result = await this.storage.ref().put(img)
-			return alert('Cavalo')
+			console.log('Init ...')
+			const result = await uploadBytes(ref(this.storage, `/users/${uid}/profile`), img).then((e) => {
+				getDownloadURL(e.ref).then((res) => {
+					Database.updateUserData(uid, {
+						imgProfile: res
+					}) 
+				})
+			})
+			return result
 		} catch (error){
 			return error
 		}

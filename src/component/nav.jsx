@@ -13,7 +13,7 @@ export default function Nav(props) {
     const [formatName, setFormatName] = useState('')
 
     useEffect(() => {
-        Database.getUserData(user.uid).then((e) =>{
+        Database.getUserData(user.uid).then((e) => {
             setUserData(e)
         })
 
@@ -47,7 +47,11 @@ export default function Nav(props) {
                                 <p>{formatName ?? '...'}</p>
                             </Link>
                             <Link href={'/profile'}>
-                                <Icon icon={'mdi:account-circle'} className={styles.profile} />
+                                {(userData?.imgProfile) ?
+                                    <img src={userData.imgProfile} className={styles.profile} />
+                                    :
+                                    ''
+                                }
                             </Link>
                         </span>
                         <span className={styles.split} />

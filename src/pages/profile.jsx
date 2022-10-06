@@ -37,7 +37,11 @@ function Profile({ auth }) {
             <img className={styles.background} src="./assets/images/team/bg.svg" alt="background" />
             <main className={styles.main}>
                 <div className={styles.profile}>
-                    <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
+                    {(userData?.imgProfile) ?
+                        <img src={userData.imgProfile} className={styles.account_icon} />
+                        :
+                        <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
+                    }
                     <h2>{userData?.fullName ?? '...'}</h2>
                     <h3>{userData?.username ?? '...'}</h3>
                     <p>{userData?.bio ?? '...'}</p>
@@ -46,7 +50,7 @@ function Profile({ auth }) {
                     {(edit) ? <EditProfile auth={auth} inEditing={edit} /> : ''}
                     <h1>Meus projetos</h1>
                     <span className={styles.buttons}>
-                        <button className={styles.btn} onClick={() => {(edit) ? setEdit(false) : setEdit(true)}}>
+                        <button className={styles.btn} onClick={() => { (edit) ? setEdit(false) : setEdit(true) }}>
                             <Icon className={styles.icon} icon={'mdi:edit-outline'} />Editar perfil</button>
                         <button disabled className={styles.btn} >
                             <Icon className={styles.icon} icon={'mdi:plus-circle-outline'} />Adicionar projeto</button>

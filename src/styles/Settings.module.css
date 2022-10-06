@@ -29,7 +29,7 @@
     height: 10vh;
 }
 
-.info span p:first-child{
+.info span p:first-child {
     font-size: 1.3vw;
     font-family: "Mulish";
 }
@@ -130,4 +130,26 @@
     height: 45vh;
     position: absolute;
     right: 15vw;
+}
+
+/* Large Desktop */
+
+@media (min-width: 1920px) {
+    .title {
+        font-size: 2.5vw;
+        margin-top: 5%;
+    }
+
+    .box span h2 {
+        margin-top: 10%;
+        font-size: 1.5vw;
+    }
+
+    .box span h3 {
+        font-size: 1.2vw;
+    }
+
+    .ilus {
+        right: 5vw;
+    }
 }

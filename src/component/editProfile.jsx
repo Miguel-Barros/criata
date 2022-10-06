@@ -45,6 +45,7 @@ export default function editProfile(props) {
     }, [username])
 
     function Update() {
+        // Storage.setUserImg(user.uid, img)
         // verify.forEach((e) => {
         //     if (e.username == "@" + username) {
         //         // Usuario já utilizado
@@ -71,20 +72,25 @@ export default function editProfile(props) {
         //         setCheck(false)
         //         return
         //     }
-            setCheck(true)
+        //     setCheck(true)
         // })
 
-        if (check) {
+        if (!check) {
+            Storage.setUserImg(user.uid, img)
             Database.updateUserData(user.uid, {
                 'username': "@" + username,
                 'email': email,
                 'bio': bio,
                 'fullName': fullName,
-            }).then(() => {
-                // window.location.reload();
+            }).then(async () => {
+                await Swal.fire({
+                    icon: 'success',
+                    title: 'Seu perfil foi editado com sucesso',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+                window.location.reload();
             })
-
-            Storage.setUserImg(user.uid, img)
         }
     }
 
@@ -92,7 +98,7 @@ export default function editProfile(props) {
         setChar(bio?.length)
     }, [bio])
 
-    function showChangeImg(){
+    function showChangeImg() {
         document.querySelector('#changeImg').click()
     }
 
@@ -104,13 +110,25 @@ export default function editProfile(props) {
                 </>
             )
         } else {
-            return (
-                <>
-                    <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()}/>
-                    <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()}/>
-                    <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
-                </>
-            )
+            if (userData?.imgProfile) {
+                return (
+                    <>
+                        <img src={userData.imgProfile} className={styles.account_icon} alt='profile-img' />
+                        <span className={styles.blur} />
+                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                        <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
+                    </>
+                )
+            } else {
+                return (
+                    <>
+                        <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()} />
+                        <span className={styles.blur} />
+                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                        <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
+                    </>
+                )
+            }
         }
     }
 
@@ -127,7 +145,7 @@ export default function editProfile(props) {
                         <h2>{fullName}</h2>
                         <h3>{"@" + username}</h3>
                         <span>
-                            {(img) ? handleChangeImg() : handleChangeImg() }
+                            {(img) ? handleChangeImg() : handleChangeImg()}
                         </span>
                         <h3>Ultimo login: 30-30-2030 - 22:50</h3>
                     </div>

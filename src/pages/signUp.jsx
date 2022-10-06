@@ -41,7 +41,7 @@ function SignUp({ auth }) {
     const lastName = name.split(" ")[((name.split(' ').length) - 1)]
 
     useLayoutEffect(() => {
-        verify.forEach((obj) => {
+        verify?.forEach((obj) => {
             if (obj.username == username) {
                 setUsername(username + Math.floor(Math.random() * 9))
                 return
