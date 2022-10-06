@@ -155,9 +155,9 @@ export function AuthProvider(props) {
 	}
 
 	async function logout() {
-		const d = new Date();
+		const d = new Date().toLocaleDateString('pt-BR');
 		Database.updateUserData(user.uid, {
-			lastAcess: d.toUTCString()
+			lastAcess: d
 		})
 		
 		await AuthService.logout();

@@ -19,6 +19,7 @@ export default function editProfile(props) {
     const [fullName, setFullName] = useState()
     const [bio, setBio] = useState()
     const [img, setImg] = useState(null)
+    const [lastImg, setLastImg] = useState(null)
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
@@ -103,33 +104,46 @@ export default function editProfile(props) {
     }
 
     function handleChangeImg() {
-        if (img) {
-            return (
-                <>
-                    <img src={URL.createObjectURL(img)} alt="profile-img" className={styles.account_icon} />
-                </>
-            )
-        } else {
-            if (userData?.imgProfile) {
-                return (
-                    <>
-                        <img src={userData.imgProfile} className={styles.account_icon} alt='profile-img' />
-                        <span className={styles.blur} />
-                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
-                        <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
-                    </>
-                )
-            } else {
-                return (
-                    <>
-                        <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()} />
-                        <span className={styles.blur} />
-                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
-                        <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
-                    </>
-                )
-            }
+        if(lastImg){
+
         }
+
+
+
+
+
+
+        // if (img) {
+        //     setImg('')
+        //     return (
+        //         <>
+        //             <img src={URL.createObjectURL(img)} alt="profile-img" className={styles.account_icon} />
+        //             <span className={styles.blur} onClick={() => showChangeImg()} />
+        //             <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+        //             <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
+        //         </>
+        //     )
+        // } else {
+        //     if (userData?.imgProfile) {
+        //         return (
+        //             <>
+        //                 <img src={userData.imgProfile} className={styles.account_icon} alt='profile-img' />
+        //                 <span className={styles.blur} onClick={() => showChangeImg()} />
+        //                 <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+        //                 <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
+        //             </>
+        //         )
+        //     } else {
+        //         return (
+        //             <>
+        //                 <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()} />
+        //                 <span className={styles.blur} />
+        //                 <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+        //                 <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} onClick={() => showChangeImg()} />
+        //             </>
+        //         )
+        //     }
+        // }
     }
 
     if (edit) {
@@ -147,7 +161,7 @@ export default function editProfile(props) {
                         <span>
                             {(img) ? handleChangeImg() : handleChangeImg()}
                         </span>
-                        <h3>Ultimo login: 30-30-2030 - 22:50</h3>
+                        <h3>{`Ultimo acesso em: ${userData?.lastAcess}`}</h3>
                     </div>
                     <div className={styles.right}>
                         <span>

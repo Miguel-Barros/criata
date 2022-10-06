@@ -24,7 +24,7 @@
     width: 30%;
     height: 75%;
     border-radius: .5vw;
-    background: #fff;
+    background: #f3f3f3;
 }
 
 .left h2 {
@@ -73,7 +73,7 @@
     margin-top: -2%;
     opacity: 1;
     transform: scale(1.01);
-    color: #fff;
+    color: #f3f3f3;
 }
 
 .left span:hover>.account_icon {
@@ -127,7 +127,7 @@
     margin-left: 5%;
     height: 75%;
     border-radius: .5vw;
-    background: #fff;
+    background: #f3f3f3;
 }
 
 .right span:nth-child(1) {
