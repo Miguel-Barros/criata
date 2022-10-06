@@ -13,7 +13,7 @@ const firebaseConfig = {
 	databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
 };
 
-if (!getApps.length) {
+if (!getApps().length) {
 	const app = initializeApp(firebaseConfig);
 	const storage = getStorage(app);
 	if (typeof window !== "undefined") {
