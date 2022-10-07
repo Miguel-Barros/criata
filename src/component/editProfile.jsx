@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import styles from './styles/editProfile.module.css'
 import { Icon } from '@iconify/react';
-import Swal from 'sweetalert2';
 import Database from '../services/Database'
 import Storage from '../services/Storage'
+import Swal from 'sweetalert2';
 
 export default function editProfile(props) {
     const { user } = props.auth
@@ -18,8 +18,8 @@ export default function editProfile(props) {
     const [email, setEmail] = useState()
     const [fullName, setFullName] = useState()
     const [bio, setBio] = useState()
+
     const [img, setImg] = useState(null)
-    const [lastImg, setLastImg] = useState(null)
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
@@ -46,52 +46,59 @@ export default function editProfile(props) {
     }, [username])
 
     function Update() {
-        // Storage.setUserImg(user.uid, img)
-        // verify.forEach((e) => {
-        //     if (e.username == "@" + username) {
-        //         // Usuario já utilizado
-        //         Swal.fire({
-        //             icon: 'error',
-        //             title: 'Usuario já utilizado',
-        //             text: 'Esse nome de usuario já esta sendo utilizado',
-        //             showConfirmButton: false,
-        //             timer: 2500
-        //         })
-        //         setCheck(false)
-        //         return
-        //     }
-
-        //     if (e.email == email) {
-        //         // email já utilizado
-        //         Swal.fire({
-        //             icon: 'error',
-        //             title: 'Email já utilizado',
-        //             text: 'Esse email já esta sendo utilizado',
-        //             showConfirmButton: false,
-        //             timer: 2500
-        //         })
-        //         setCheck(false)
-        //         return
-        //     }
-        //     setCheck(true)
-        // })
-
-        if (!check) {
-            Storage.setUserImg(user.uid, img)
-            Database.updateUserData(user.uid, {
-                'username': "@" + username,
-                'email': email,
-                'bio': bio,
-                'fullName': fullName,
-            }).then(async () => {
-                await Swal.fire({
-                    icon: 'success',
-                    title: 'Seu perfil foi editado com sucesso',
-                    showConfirmButton: false,
-                    timer: 2500
-                })
-                window.location.reload();
+        if ("@" + username == userData.username && email == userData.email && fullName == userData.fullName && bio == userData.bio && (!img)) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Sem alterações',
+                text: 'Faça alguma alteração para conseguir editar seu perfil',
+                showConfirmButton: false,
+                timer: 3000
             })
+        } else {
+            verify.forEach((e) => {
+                if (!check) {
+                    if ("@" + username == e.username && "@" + username != userData.username) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Usuario já utilizado',
+                            text: 'Esse nome de usuario já esta sendo utilizado',
+                            showConfirmButton: false,
+                            timer: 2500
+                        })
+                    }
+
+                    if (email == e.email && email != userData.email) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Email já utilizado',
+                            text: 'Esse endereço de email já esta sendo utilizado',
+                            showConfirmButton: false,
+                            timer: 2500
+                        })
+                    }
+                    return setCheck(true)
+                } else {
+                    (img) ? Storage.setUserImg(user.uid, img) : null;
+                    Database.updateUserData(user.uid, {
+                        'username': "@" + username,
+                        'email': email,
+                        'bio': bio,
+                        'fullName': fullName,
+                    }).then(async () => {
+                        await Swal.fire({
+                            icon: 'success',
+                            title: 'Seu perfil foi editado com sucesso',
+                            showConfirmButton: false,
+                            timer: 2500
+                        })
+                        window.location.reload();
+                    })
+                    setCheck(false)
+                }
+
+            })
+
+
         }
     }
 
@@ -104,46 +111,36 @@ export default function editProfile(props) {
     }
 
     function handleChangeImg() {
-        if(lastImg){
-
+        if (!img) {
+            if (userData?.imgProfile) {
+                return (
+                    <>
+                        <img src={userData.imgProfile} className={styles.account_icon} alt='profile-img' />
+                        <span className={styles.blur} onClick={() => showChangeImg()} />
+                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                        <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} />
+                    </>
+                )
+            } else {
+                return (
+                    <>
+                        <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()} />
+                        <span className={styles.blur} />
+                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                        <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} />
+                    </>
+                )
+            }
+        } else {
+            return (
+                <>
+                    <img src={URL.createObjectURL(img)} alt="profile-img" className={styles.account_icon} />
+                    <span className={styles.blur} onClick={() => showChangeImg()} />
+                    <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                    <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} />
+                </>
+            )
         }
-
-
-
-
-
-
-        // if (img) {
-        //     setImg('')
-        //     return (
-        //         <>
-        //             <img src={URL.createObjectURL(img)} alt="profile-img" className={styles.account_icon} />
-        //             <span className={styles.blur} onClick={() => showChangeImg()} />
-        //             <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
-        //             <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
-        //         </>
-        //     )
-        // } else {
-        //     if (userData?.imgProfile) {
-        //         return (
-        //             <>
-        //                 <img src={userData.imgProfile} className={styles.account_icon} alt='profile-img' />
-        //                 <span className={styles.blur} onClick={() => showChangeImg()} />
-        //                 <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
-        //                 <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} />
-        //             </>
-        //         )
-        //     } else {
-        //         return (
-        //             <>
-        //                 <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()} />
-        //                 <span className={styles.blur} />
-        //                 <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
-        //                 <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} value={img} onClick={() => showChangeImg()} />
-        //             </>
-        //         )
-        //     }
-        // }
     }
 
     if (edit) {
