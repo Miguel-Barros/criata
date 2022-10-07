@@ -5,8 +5,8 @@ import useAuth from "../hook/auth";
 import AuthService from "../services/AuthService";
 
 export default function AuthStateChanged({ children }) {
-    const { setUser } = useAuth();
-    const [loading, setLoading] = useState(true);
+    const { setUser }             = useAuth();
+    const [loading, setLoading]   = useState(true);
 
     useEffect(() => {
         AuthService.waitForUser((userCred) => {

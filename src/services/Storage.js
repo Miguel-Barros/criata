@@ -1,11 +1,11 @@
 import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
 import Database from "./Database";
 
-const storage = getStorage()
+const storage       = getStorage()
 
 class Storage {
 	constructor(Storage){
-		this.storage = storage;
+		this.storage      = storage;
 	}
 
 	async setUserImg(uid, img){
@@ -14,7 +14,7 @@ class Storage {
 			const result = await uploadBytes(ref(this.storage, `/users/${uid}/profile`), img).then((e) => {
 				getDownloadURL(e.ref).then((res) => {
 					Database.updateUserData(uid, {
-						imgProfile: res
+						imgProfile    : res
 					}) 
 				})
 			})

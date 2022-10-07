@@ -1,123 +1,123 @@
 .container {
-    width: 100vw;
-    height: 100vh;
+    width                     : 100vw;
+    height                    : 100vh;
 }
 
 .main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    display                   : flex;
+    justify-content           : space-between;
+    align-items               : center;
+    width                     : 100%;
+    height                    : 100%;
 }
 
 .ilus_bg {
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    left: 0;
-    bottom: 0;
+    position                  : absolute;
+    z-index                   : -1;
+    width                     : 100vw;
+    height                    : 100vh;
+    object-fit                : cover;
+    left                      : 0;
+    bottom                    : 0;
 }
 
 .ilus {
-    width: 60vw;
-    height: 60vh;
-    margin: 50vh 0 0 5vw;
-    transform: translateY(-50%)
+    width                     : 60vw;
+    height                    : 60vh;
+    margin                    : 50vh 0 0 5vw;
+    transform                 : translateY(-50%)
 }
 
 .box {
-    width: 50vw;
-    height: 80vh;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin-left: 10%;
+    width                     : 50vw;
+    height                    : 80vh;
+    display                   : flex;
+    justify-content           : space-evenly;
+    flex-direction            : column;
+    margin-left               : 10%;
 }
 
 .title {
-    font-family: 'Baloo 2';
-    font-weight: 400;
-    color: #595555;
-    font-size: 5vw;
+    font-family               : 'Baloo 2';
+    font-weight               : 400;
+    color                     : #595555;
+    font-size                 : 5vw;
 }
 
 .proj_name {
-    font-family: 'Quicksand';
-    letter-spacing: 0.02em;
-    background: linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family               : 'Quicksand';
+    letter-spacing            : 0.02em;
+    background                : linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
+    -webkit-background-clip   : text;
+    -webkit-text-fill-color   : transparent;
+    background-clip           : text;
 }
 
 .text {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    text-align: justify;
-    color: #595555;
+    font-family               : 'Mulish';
+    font-style                : normal;
+    font-weight               : 400;
+    font-size                 : 1.5vw;
+    text-align                : justify;
+    color                     : #595555;
 }
 
 .btn {
-    width: 22vw;
-    height: 10vh;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
-    background: #F6A413;
-    border-radius: .8vw;
-    font-family: 'Mulish';
-    color: #fff;
-    font-size: 1.5vw;
-    font-weight: 400;
-    transition: all .5s ease;
-    cursor: pointer;
-    margin-top: 5%;
-    align-self: center;
+    width                     : 22vw;
+    height                    : 10vh;
+    filter                    : drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    background                : #F6A413;
+    border-radius             : .8vw;
+    font-family               : 'Mulish';
+    color                     : #fff;
+    font-size                 : 1.5vw;
+    font-weight               : 400;
+    transition                : all .5s ease;
+    cursor                    : pointer;
+    margin-top                : 5%;
+    align-self                : center;
 }
 
 .btn:hover {
-    opacity: 75%;
+    opacity                   : 75%;
 }
 
 .copyright {
-    position: absolute;
-    font-family: 'Mulish';
-    font-weight: 400;
-    font-size: 1.3vw;
-    right: 23vw;
-    bottom: 5vh;
-    color: #4e4e4e;
+    position                  : absolute;
+    font-family               : 'Mulish';
+    font-weight               : 400;
+    font-size                 : 1.3vw;
+    right                     : 23vw;
+    bottom                    : 5vh;
+    color                     : #4e4e4e;
 }
 
 /* Large desktop */
 
 @media (min-width: 1920px) {
     .btn {
-        width: 15vw;
-        height: 7vh;
-        font-size: 1vw;
-        align-self: flex-start;
+        width                 : 15vw;
+        height                : 7vh;
+        font-size             : 1vw;
+        align-self            : flex-start;
     }
 
     .ilus {
-        display: flex;
-        align-self: center;
-        width: 50vw;
-        height: 50vh;
-        margin-right: 5%;
+        display               : flex;
+        align-self            : center;
+        width                 : 50vw;
+        height                : 50vh;
+        margin-right          : 5%;
     }
 
     .text {
-        width: 70%;
-        font-size: 1.2vw;
+        width                 : 70%;
+        font-size             : 1.2vw;
     }
 
     .title {
-        width: 50%;
-        font-size: 4.5vw;
-        line-height: 4.5vw;
+        width                 : 50%;
+        font-size             : 4.5vw;
+        line-height           : 4.5vw;
     }
 }

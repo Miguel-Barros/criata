@@ -6,64 +6,64 @@ export default function ShowBox(props) {
 
     if (props.func === 'dots-horizontal') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 dots
             </div>
         )
     }
  
     if (props.func === 'format-size') {
-        const [sliderValue, setSliderValue] = useState(12);
+        const [sliderValue, setSliderValue]   = useState(12);
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 <span>
                     <h3>Temas</h3>
-                    <select className={styles.dropdown}>
-                        <option value="">Titulo 1</option>
+                    <select className         = {styles.dropdown}>
+                        <option value         = "">Titulo 1</option>
                     </select>
                 </span>
                 <span>
                     <h3>Fonte</h3>
-                    <select className={styles.dropdown}>
-                        <option value="">Mulish</option>
+                    <select className         = {styles.dropdown}>
+                        <option value         = "">Mulish</option>
                     </select>
                 </span>
-                <span className={styles.slider}>
+                <span className               = {styles.slider}>
                     <h3>Tamanho</h3>
-                    <input type="range" name="" id="" className={styles.slider_sty} min='1' max='100' onChange={(e) => setSliderValue(e.target.value)} />
+                    <input type               = "range" name="" id="" className={styles.slider_sty} min='1' max='100' onChange={(e) => setSliderValue(e.target.value)} />
                     <p>{sliderValue}px</p>
                 </span>
-                <span className={styles.division} />
-                <span className={styles.icons}>
-                    <Icon icon="mdi:format-bold" className={styles.icon} />
-                    <Icon icon="mdi:format-italic" className={styles.icon} />
-                    <Icon icon="mdi:format-underline" className={styles.icon} />
-                    <Icon icon="mdi:palette" className={styles.icon} />
-                    <Icon icon="mdi:format-color-highlight" className={styles.icon} />
+                <span className               = {styles.division} />
+                <span className               = {styles.icons}>
+                    <Icon icon                = "mdi:format-bold" className={styles.icon} />
+                    <Icon icon                = "mdi:format-italic" className={styles.icon} />
+                    <Icon icon                = "mdi:format-underline" className={styles.icon} />
+                    <Icon icon                = "mdi:palette" className={styles.icon} />
+                    <Icon icon                = "mdi:format-color-highlight" className={styles.icon} />
                 </span>
-                <span className={styles.division} />
-                <span className={styles.icons}>
-                    <Icon icon="mdi:format-align-left" className={styles.icon} />
-                    <Icon icon="mdi:format-align-center" className={styles.icon} />
-                    <Icon icon="mdi:format-align-right" className={styles.icon} />
-                    <Icon icon="mdi:format-align-justify" className={styles.icon} />
+                <span className               = {styles.division} />
+                <span className               = {styles.icons}>
+                    <Icon icon                = "mdi:format-align-left" className={styles.icon} />
+                    <Icon icon                = "mdi:format-align-center" className={styles.icon} />
+                    <Icon icon                = "mdi:format-align-right" className={styles.icon} />
+                    <Icon icon                = "mdi:format-align-justify" className={styles.icon} />
                 </span>
-                <span className={styles.icons}>
-                    <Icon icon="mdi:format-horizontal-align-center" className={styles.icon} />
-                    <Icon icon="mdi:format-vertical-align-bottom" className={styles.icon} />
-                    <Icon icon="mdi:format-vertical-align-center" className={styles.icon} />
-                    <Icon icon="mdi:format-vertical-align-top" className={styles.icon} />
+                <span className               = {styles.icons}>
+                    <Icon icon                = "mdi:format-horizontal-align-center" className={styles.icon} />
+                    <Icon icon                = "mdi:format-vertical-align-bottom" className={styles.icon} />
+                    <Icon icon                = "mdi:format-vertical-align-center" className={styles.icon} />
+                    <Icon icon                = "mdi:format-vertical-align-top" className={styles.icon} />
                 </span>
-                <span className={styles.division} />
-                <span className={styles.models}>
+                <span className               = {styles.division} />
+                <span className               = {styles.models}>
                     <h3>Modelos</h3>
-                    <div className={styles.model}>
+                    <div className            = {styles.model}>
                         Modelo 1
                     </div>
-                    <div className={styles.model}>
+                    <div className            = {styles.model}>
                         Modelo 2
                     </div>
-                    <div className={styles.model}>
+                    <div className            = {styles.model}>
                         Modelo 3
                     </div>
                 </span>
@@ -73,7 +73,7 @@ export default function ShowBox(props) {
 
     if (props.func === 'collage') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 collage
             </div>
         )
@@ -81,7 +81,7 @@ export default function ShowBox(props) {
 
     if (props.func === 'aspect-ratio') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 aspect-ratio
             </div>
         )
@@ -89,7 +89,7 @@ export default function ShowBox(props) {
 
     if (props.func === 'auto-fix') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 auto-fix
             </div>
         )
@@ -97,7 +97,7 @@ export default function ShowBox(props) {
 
     if (props.func === 'texture') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 texture
             </div>
         )
@@ -105,7 +105,7 @@ export default function ShowBox(props) {
     
     if (props.func === 'cloud-upload') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 cloud-upload
             </div>
         )
@@ -113,7 +113,7 @@ export default function ShowBox(props) {
 
     if (props.func === 'radiobox-marked') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 radiobox-marked
             </div>
         )
@@ -121,7 +121,7 @@ export default function ShowBox(props) {
 
     if (props.func === 'help-circle-outline') {
         return (
-            <div className={styles.showMenu}>
+            <div className                    = {styles.showMenu}>
                 help-circle-outline
             </div>
         )

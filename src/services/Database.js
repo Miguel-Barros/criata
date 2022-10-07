@@ -4,12 +4,12 @@ import Swal from "sweetalert2";
 
 
 
-const app = getApp();
-const database = getDatabase(app);
+const app               = getApp();
+const database          = getDatabase(app);
 
 class Database {
     constructor(Database) {
-        this.database = database;
+        this.database   = database;
     }
 
     async setData(dbRef, data) {

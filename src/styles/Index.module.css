@@ -1,109 +1,109 @@
 .container {
-    width: 100vw;
-    height: 100vh;
+    width                     : 100vw;
+    height                    : 100vh;
 }
 
 .title {
-    font-family: 'Baloo 2';
-    line-height: 12vh;
-    font-weight: 400;
-    color: #595555;
-    font-size: 5vw;
+    font-family               : 'Baloo 2';
+    line-height               : 12vh;
+    font-weight               : 400;
+    color                     : #595555;
+    font-size                 : 5vw;
 }
 
 .proj_name {
-    font-family: 'Quicksand';
-    letter-spacing: 0.02em;
-    background: linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family               : 'Quicksand';
+    letter-spacing            : 0.02em;
+    background                : linear-gradient(89.78deg, #FF8200 5.2%, #fae719 99.72%);
+    -webkit-background-clip   : text;
+    -webkit-text-fill-color   : transparent;
+    background-clip           : text;
 }
 
 .text {
-    width: 80%;
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    text-align: justify;
-    color: #595555;
+    width                     : 80%;
+    font-family               : 'Mulish';
+    font-style                : normal;
+    font-weight               : 400;
+    font-size                 : 1.5vw;
+    text-align                : justify;
+    color                     : #595555;
 }
 
 .btn {
-    width: 22vw;
-    height: 10vh;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
-    background: #F6A413;
-    border-radius: .8vw;
-    font-family: 'Mulish';
-    color: #fff;
-    font-size: 1.5vw;
-    font-weight: 400;
-    transition: all .5s ease;
-    cursor: pointer;
-    margin-top: 5%;
+    width                     : 22vw;
+    height                    : 10vh;
+    filter                    : drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    background                : #F6A413;
+    border-radius             : .8vw;
+    font-family               : 'Mulish';
+    color                     : #fff;
+    font-size                 : 1.5vw;
+    font-weight               : 400;
+    transition                : all .5s ease;
+    cursor                    : pointer;
+    margin-top                : 5%;
 }
 
 .btn:hover {
-    opacity: 75%;
+    opacity                   : 75%;
 }
 
 .box {
-    width: 50vw;
-    height: 80vh;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin-left: 10%;
+    width                     : 50vw;
+    height                    : 80vh;
+    display                   : flex;
+    justify-content           : space-evenly;
+    flex-direction            : column;
+    margin-left               : 10%;
 }
 
 .main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-height: 100vh;
+    display                   : flex;
+    justify-content           : space-between;
+    align-items               : center;
+    max-height                : 100vh;
 }
 
 .ilus {
-    width: 60vw;
-    height: 60vh;
-    margin: 50vh 0 0 10vw;
-    transform: translateY(-50%)
+    width                     : 60vw;
+    height                    : 60vh;
+    margin                    : 50vh 0 0 10vw;
+    transform                 : translateY(-50%)
 }
 
 .ilus_bg {
-    position: absolute;
-    height: 100vh;
-    width: 50vw;
-    right: 0;
-    object-fit: cover;
-    z-index: -1;
+    position                  : absolute;
+    height                    : 100vh;
+    width                     : 50vw;
+    right                     : 0;
+    object-fit                : cover;
+    z-index                   : -1;
 }
 
 /* Large desktop */
 
 @media (min-width: 1920px) {
     .btn {
-        width: 15vw;
-        height: 7vh;
-        font-size: 1vw;
+        width                 : 15vw;
+        height                : 7vh;
+        font-size             : 1vw;
     }
 
     .ilus {
-        display: flex;
-        align-self: center;
-        width: 50vw;
-        height: 50vh;
+        display               : flex;
+        align-self            : center;
+        width                 : 50vw;
+        height                : 50vh;
     }
 
     .text {
-        width: 65%;
-        font-size: 1.2vw;
+        width                 : 65%;
+        font-size             : 1.2vw;
     }
 
     .title {
-        font-size: 4.5vw;
-        line-height: 4.5vw;
+        font-size             : 4.5vw;
+        line-height           : 4.5vw;
     }
 }

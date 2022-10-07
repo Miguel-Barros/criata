@@ -10,9 +10,9 @@ import { useEffect } from 'react';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     Aos.init({
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 50,
+      easing    : "ease-out-cubic",
+      once      : true,
+      offset    : 50,
     });
   }, []);
   return (
