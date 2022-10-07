@@ -1,6 +1,6 @@
 import { getApp } from "firebase/app";
 import {
-    signInWithPopup, onAuthStateChanged,
+    signInWithPopup, onAuthStateChanged, updatePassword,
     getAuth, signOut,
     GoogleAuthProvider,
     signInWithEmailAndPassword,
@@ -54,6 +54,14 @@ class AuthService {
             return {
                 error
             };
+        }
+    }
+
+    async updatePassword(user, newPassword){
+        try {
+            return
+        } catch (error) {
+            return error
         }
     }
 

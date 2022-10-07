@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Swal from 'sweetalert2';
 import { useEffect, useState, React } from 'react';
 import Database from '../services/Database';
+import ChangePasswrod from '../component/changePassword';
 
 function Settings({ auth }) {
   const { logout, user } = auth;
@@ -28,10 +29,7 @@ function Settings({ auth }) {
     })
   }, [])
 
-  function getDate() {
-    const d = new Date();
-    return d.toUTCString()
-  }
+  const [changeState, setChange] = useState(false)
 
   return (
     <div className={styles.container}>
@@ -44,6 +42,7 @@ function Settings({ auth }) {
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
         data-aos-offset="100">
+        {(changeState) ? <ChangePasswrod isChange={changeState} /> : null }
         <img className={styles.bg} src="./assets/images/settings/bg.svg" alt="background"
           data-aos="fade-right"
           data-aos-easing="ease-in-back"
@@ -76,7 +75,7 @@ function Settings({ auth }) {
             </Link>
             <h3 onClick={error}>Codigos QR do perfil</h3>
             <h2>Segurança</h2>
-            <h3 onClick={error}>Alterar senha</h3>
+            <h3 onClick={() => { (changeState) ? setChange(false) : setChange(true) }}>Alterar senha</h3>
             <h2>Preferências</h2>
             <h3 onClick={error}>Modo noturno</h3>
             <button className={styles.logout} onClick={() => logout()}>Sair</button>
