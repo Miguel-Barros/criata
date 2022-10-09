@@ -1,5 +1,6 @@
 import styles from "./styles/ChangePassword.module.css"
 import { useState } from 'react';
+import useAuth from '../hook/auth'
 
 export default function ChangePasswrod(props) {
     const [isChange, setChange] = useState(props?.isChange)
@@ -23,15 +24,15 @@ export default function ChangePasswrod(props) {
                 <span className={styles.right}>
                     <span>
                         <p>Digite sua senha antiga</p>
-                        <input type="text" placeholder="Inisira sua senha antiga" />
+                        <input type="password" placeholder="Inisira sua senha antiga" />
                         <p>Digite sua nova senha</p>
-                        <input type="text" placeholder="Inisira sua nova senha" />
+                        <input type="password" placeholder="Inisira sua nova senha" />
                         <p>Confirme sua nova senha</p>
-                        <input type="text" placeholder="Confirme sua nova senha" />
+                        <input type="password" placeholder="Confirme sua nova senha" />
                     </span>
                     <span>
                         <button onClick={() => setChange(false)}>Cancelar</button>
-                        <button>Salvar</button>
+                        <button onClick={() => {}} >Redefinir</button>
                     </span>
                 </span>
             </div>

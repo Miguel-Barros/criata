@@ -164,10 +164,34 @@ export function AuthProvider(props) {
 		setUser(null);
 	}
 
+	async function sendPasswordResetEmail(email){
+		if(email == null || email == ''){
+			Toast.fire({
+				icon: 'warning',
+				title: 'Informe seu email',
+				text: 'Para que possamos redefinir sua senha, prencha o campo com o email registrado',
+				timer: 5000
+			})	
+		}
+
+		const {error, result} = await AuthService.sendPasswordResetEmail(email)
+		if(error){
+			ifError(error)
+		}else{
+			await Toast.fire({
+				icon: 'success',
+				title: 'Redefinição de senha',
+				text: 'Foi enviado uma mensagem de redefinição, para o email informado',
+				timer: 3500
+			})
+			window.location.href = "/signIn"
+		}
+	}
+
 	const value = {
 		user, error, logout, setUser, setError,
 		loginWithGoogle, loginWithEmailAndPassword,
-		signUpWithEmailAndPassword
+		signUpWithEmailAndPassword, sendPasswordResetEmail
 	};
 
 	return <authContext.Provider value   = {value} {...props} />;
