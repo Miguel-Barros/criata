@@ -4,6 +4,11 @@ import useAuth from '../hook/auth'
 
 export default function ChangePasswrod(props) {
     const [isChange, setChange] = useState(props?.isChange)
+    const { user, updatePassword } = useAuth()
+
+    const [oldPassword, setOldPassword] = useState(null)
+    const [newPassword, setNewPassword] = useState(null)
+    const [confirmPassword, setConfirmPassword] = useState(null)
 
     if (isChange) {
         return (
@@ -24,15 +29,15 @@ export default function ChangePasswrod(props) {
                 <span className={styles.right}>
                     <span>
                         <p>Digite sua senha antiga</p>
-                        <input type="password" placeholder="Inisira sua senha antiga" />
+                        <input type="password" placeholder="Inisira sua senha antiga" onChange={(e) => setOldPassword(e.target.value)} value={oldPassword} />
                         <p>Digite sua nova senha</p>
-                        <input type="password" placeholder="Inisira sua nova senha" />
+                        <input type="password" placeholder="Inisira sua nova senha" onChange={(e) => setNewPassword(e.target.value)} value={newPassword} />
                         <p>Confirme sua nova senha</p>
-                        <input type="password" placeholder="Confirme sua nova senha" />
+                        <input type="password" placeholder="Confirme sua nova senha" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} />
                     </span>
                     <span>
                         <button onClick={() => setChange(false)}>Cancelar</button>
-                        <button onClick={() => {}} >Redefinir</button>
+                        <button onClick={() => updatePassword(user, oldPassword, newPassword, confirmPassword)} >Redefinir</button>
                     </span>
                 </span>
             </div>

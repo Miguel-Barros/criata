@@ -5,7 +5,7 @@ import Database from '../services/Database'
 import Storage from '../services/Storage'
 import Swal from 'sweetalert2';
 
-export default function editProfile(props) {
+export default function EditProfile(props) {
     const { user } = props.auth
     const [countChar, setChar] = useState(0)
     const [edit, setEdit] = useState(props.inEditing)

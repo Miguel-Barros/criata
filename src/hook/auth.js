@@ -87,8 +87,9 @@ export function AuthProvider(props) {
 		if (error) {
 			ifError(error)
 		} else {
-			await Swal.fire({
+			await Toast.fire({
 				icon                              : "success",
+				position: 'top-start',
 				title                             : "Login efetuado com sucesso",
 				text                              : "Seja bem vindo novamente",
 				showConfirmButton                 : false,
@@ -162,6 +163,7 @@ export function AuthProvider(props) {
 		
 		await AuthService.logout();
 		setUser(null);
+		setError(null);
 	}
 
 	async function sendPasswordResetEmail(email){
@@ -188,10 +190,65 @@ export function AuthProvider(props) {
 		}
 	}
 
+	async function updatePassword(user, oldPassword, newPassword, confirmPassword){
+
+		if (oldPassword == '' || oldPassword == null || newPassword == '' || newPassword == null || confirmPassword == '' || confirmPassword == null) {
+			Toast.fire({
+				icon: 'warning',
+				title: 'Preencha todos os campos',
+				text: 'Para conseguimos alterar sua senha preencha todos os campos',
+				timer: 3500
+			})
+			return
+		}
+
+		if (oldPassword == newPassword ) {
+			Toast.fire({
+				icon: 'error',
+				title: 'Senha atual igual a nova senha',
+				text: 'Sua nova senha não pode ser igual a sua senha antiga',
+				timer: 3500
+			})
+			return
+		}
+
+		if (newPassword != confirmPassword) {
+			Toast.fire({
+				icon: 'warning',
+				title: 'Suas novas senhas não coecidem',
+				text: 'Confirme sua nova senha',
+				timer: 3500
+			})
+			return
+		}
+
+		const {error, result} = await AuthService.updatePassword(user, oldPassword, newPassword)
+
+		if(error){
+			ifError(error)
+		}else{
+			await Toast.fire({
+				icon: 'success',
+				title: 'Senha alterada com sucesso',
+				text: 'Sua senha foi alterada com sucesso',
+				timer: 3500
+			})
+			await Swal.fire({
+				icon: 'warning',
+				title: 'Você sera deslogado',
+				text: 'Para manter a segurança de sua conta, você sera deslogado.',
+				timer: 5000,
+				showConfirmButton: false
+			})
+			logout()
+		}
+	}
+
 	const value = {
 		user, error, logout, setUser, setError,
 		loginWithGoogle, loginWithEmailAndPassword,
-		signUpWithEmailAndPassword, sendPasswordResetEmail
+		signUpWithEmailAndPassword, sendPasswordResetEmail,
+		updatePassword
 	};
 
 	return <authContext.Provider value   = {value} {...props} />;

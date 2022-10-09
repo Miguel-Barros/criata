@@ -1,8 +1,9 @@
 import { getApp } from "firebase/app";
 import {
     signInWithPopup, onAuthStateChanged, sendPasswordResetEmail,
+    updatePassword, reauthenticateWithCredential,
     getAuth, signOut,
-    GoogleAuthProvider,
+    GoogleAuthProvider, EmailAuthProvider,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword
 } from "firebase/auth";
@@ -69,6 +70,22 @@ class AuthService {
             }
         }
     }
+
+    async updatePassword(user, oldPassword, newPassword){
+        try {
+            const userCred = await EmailAuthProvider.credential(user.email, oldPassword)
+            const reAtuh = await reauthenticateWithCredential(user, userCred)
+            const result = await updatePassword(user, newPassword)
+            return {
+                result
+            }
+        } catch (error) {
+            return {
+                error
+            }
+        }
+    }
+
 
     async logout() {
         await signOut(this.auth);
