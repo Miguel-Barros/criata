@@ -3,7 +3,9 @@ import styles from './styles/CreationLayout.module.css';
 import { Icon } from '@iconify/react';
 import ShowBox from '../services/CreationService';
 import { useState } from 'react';
-import { Stage } from 'react-konva';
+import { Stage, Layer } from 'react-konva';
+
+import EditableText from './creationComponents/editableText'
 
 export default function CreationLayout() {
     const [useTool, setTool] = useState('format-size')
@@ -69,8 +71,10 @@ export default function CreationLayout() {
                         </span>
                         <ShowBox func={useTool} />
                     </div>
-                    <Stage className={styles.content}>
-                            {}
+                    <Stage className={styles.content} width={850} height={550} >
+                        <Layer>
+                            <EditableText />
+                        </Layer>
                     </Stage>
                 </main>
             </div >
