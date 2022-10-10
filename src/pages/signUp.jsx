@@ -72,7 +72,7 @@ function SignUp({ auth }) {
                 <Support />
                 <img className={styles.ilus_bg} src="./assets/images/signUp/ilus-bg.svg" alt='ilustration-bg' />
                 <img className={styles.ilus} src="./assets/images/signUp/ilus.svg" alt='ilustration' />
-                <div className={styles.box}
+                <form className={styles.box} onSubmit={(e) => e.preventDefault()}
                     data-aos="fade-right"
                     data-aos-offset="500"
                     data-aos-delay="200"
@@ -91,7 +91,7 @@ function SignUp({ auth }) {
                     <Link href='/signIn'>
                         <h3 className={styles.forgot}>Já possui uma conta?</h3>
                     </Link>
-                </div>
+                </form>
                 <p className={styles.copyright}>Coaraci © 2022</p>
             </main >
         </div >

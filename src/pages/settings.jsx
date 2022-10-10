@@ -62,7 +62,7 @@ function Settings({ auth }) {
           }
           <span>
             <p>{user.email}</p>
-            <p>{`Ultimo acesso em: ${userData?.lastAcess ?? '-/-(-_-)-/-'}`}</p>
+            <p>{`Ultimo acesso em: ${userData?.lastAcess ?? 'Agora'}`}</p>
           </span>
         </span>
         <div className={styles.box}

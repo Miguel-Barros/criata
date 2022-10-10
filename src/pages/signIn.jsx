@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Support from '../component/support';
 import styles from '../styles/SignIn.module.css';
 import { withPublic } from '../hook/route';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 function SignIn({ auth }) {
     const { loginWithGoogle, loginWithEmailAndPassword } = auth;
@@ -21,7 +21,7 @@ function SignIn({ auth }) {
                 data-aos-duration="350"
                 data-aos-offset="100">
                 <Support/>
-                <div className={styles.box}
+                <form className={styles.box} onSubmit={(e) => e.preventDefault()}
                 data-aos="fade-right"
                 data-aos-offset="500"
                 data-aos-delay="200"
@@ -43,7 +43,7 @@ function SignIn({ auth }) {
                         <img className={styles.icons} src="./assets/icons/linkedin-icon.svg" />
                         <img className={styles.icons} src="./assets/icons/github-icon.svg" />
                     </span>
-                </div>
+                </form>
             <p className={styles.copyright}>Coaraci © 2022</p>
             <img className={styles.ilus_bg} src="./assets/images/login/ilus-bg.svg" alt='ilustration-bg' />
             <img className={styles.ilus} src="./assets/images/login/ilus.svg" alt='ilustration' />

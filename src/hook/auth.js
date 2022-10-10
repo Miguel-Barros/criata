@@ -87,9 +87,8 @@ export function AuthProvider(props) {
 		if (error) {
 			ifError(error)
 		} else {
-			await Toast.fire({
+			await Swal.fire({
 				icon                              : "success",
-				position: 'top-start',
 				title                             : "Login efetuado com sucesso",
 				text                              : "Seja bem vindo novamente",
 				showConfirmButton                 : false,

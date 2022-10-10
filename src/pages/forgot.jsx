@@ -19,7 +19,7 @@ function Forgot({ auth }) {
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="100">
-                <div className={styles.box}>
+                <form className={styles.box} onSubmit={(e) => e.preventDefault()}>
                     <h1 className={styles.title}>Esqueci a senha</h1>
                     <p className={styles.text}>Insira seu <b>Email Cadastrado</b> para que seja enviado um código de verificação para sua <b>Caixa de Entrada</b>,
                         e assim possamos te redirecionar para a alteração de senha</p>
@@ -28,7 +28,7 @@ function Forgot({ auth }) {
                     <Link href={'/signIn'}>
                         <button className={`${styles.btn} ${styles.delined}`}>Voltar</button>
                     </Link>
-                </div>
+                </form>
                 <p className={styles.copyright}>Coaraci © 2022</p>
                 <img className={styles.ilus_bg} src="./assets/images/forgot/ilus-bg.svg" alt='ilustration-bg' />
                 <img className={styles.ilus} src="./assets/images/forgot/ilus.svg" alt='ilustration' />
