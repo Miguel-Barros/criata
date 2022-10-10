@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Swal from 'sweetalert2';
 import { useEffect, useState, React } from 'react';
 import Database from '../services/Database';
+
 import ChangePasswrod from '../component/changePassword';
 import EditProfile from '../component/editProfile'
 
@@ -30,8 +31,8 @@ function Settings({ auth }) {
     })
   }, [])
 
-  const [changeState, setChange] = useState(false)
-  const [isEdit, setEdit] = useState(false)
+  const [changePassword, setChangePassword] = useState(false)
+  const [editProfile, setEditProfile] = useState(false)
 
   return (
     <div className={styles.container}>
@@ -44,8 +45,10 @@ function Settings({ auth }) {
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
         data-aos-offset="100">
-        {(changeState) ? <ChangePasswrod isChange={changeState} /> : null }
-        {(isEdit) ? <EditProfile inEditing={isEdit} auth={auth} /> : null }
+
+        <ChangePasswrod isOpen={changePassword} onClose={() => setChangePassword(false)}/>
+        <EditProfile isOpen={editProfile} onClose={() => setEditProfile(false)}/>
+
         <img className={styles.bg} src="./assets/images/settings/bg.svg" alt="background"
           data-aos="fade-right"
           data-aos-easing="ease-in-back"
@@ -73,10 +76,10 @@ function Settings({ auth }) {
           <span>
             <h1 className={styles.title}>Configurações</h1>
             <h2>Conta</h2>
-            <h3 onClick={() => { isEdit ? setEdit(false) : setEdit(true)}} >Editar perfil</h3>
+            <h3 onClick={() => setEditProfile(true)} >Editar perfil</h3>
             <h3 onClick={error}>Codigos QR do perfil</h3>
             <h2>Segurança</h2>
-            <h3 onClick={() => { (changeState) ? setChange(false) : setChange(true) }}>Alterar senha</h3>
+            <h3 onClick={() => setChangePassword(true)}>Alterar senha</h3>
             <h2>Preferências</h2>
             <h3 onClick={error}>Modo noturno</h3>
             <button className={styles.logout} onClick={() => logout()}>Sair</button>

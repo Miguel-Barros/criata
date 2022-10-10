@@ -11,7 +11,7 @@ import EditProfile from "../component/editProfile";
 function Profile({ auth }) {
     const { user } = auth;
     const [userData, setUserData] = useState('')
-    const [edit, setEdit] = useState(false)
+    const [editProfile, setEditProfile] = useState(false)
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
@@ -47,10 +47,12 @@ function Profile({ auth }) {
                     <p>{userData?.bio ?? '...'}</p>
                 </div>
                 <div className={styles.content}>
-                    {(edit) ? <EditProfile auth={auth} inEditing={edit} /> : ''}
+
+                    <EditProfile isOpen={editProfile} onClose={() => setEditProfile(false)}/>
+                    
                     <h1>Meus projetos</h1>
                     <span className={styles.buttons}>
-                        <button className={styles.btn} onClick={() => { (edit) ? setEdit(false) : setEdit(true) }}>
+                        <button className={styles.btn} onClick={() => setEditProfile(true)}>
                             <Icon className={styles.icon} icon={'mdi:edit-outline'} />Editar perfil</button>
                         <button disabled className={styles.btn} >
                             <Icon className={styles.icon} icon={'mdi:plus-circle-outline'} />Adicionar projeto</button>

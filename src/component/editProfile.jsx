@@ -4,11 +4,11 @@ import { Icon } from '@iconify/react';
 import Database from '../services/Database'
 import Storage from '../services/Storage'
 import Swal from 'sweetalert2';
+import useAuth from '../hook/auth'
 
-export default function EditProfile(props) {
-    const { user } = props.auth
+export default function EditProfile({isOpen, onClose}) {
+    const { user } = useAuth()
     const [countChar, setChar] = useState(0)
-    const [edit, setEdit] = useState(props.inEditing)
     const [userData, setUserData] = useState()
 
     const [verify, setVerify] = useState([])
@@ -143,44 +143,44 @@ export default function EditProfile(props) {
         }
     }
 
-    if (edit) {
-        return (
-            <>
-                <div className={styles.modal}
-                    data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-duration="400"
-                    data-aos-offset="50"
-                >
-                    <div className={styles.left}>
-                        <h2>{fullName}</h2>
-                        <h3>{"@" + username}</h3>
-                        <span>
-                            {(img) ? handleChangeImg() : handleChangeImg()}
-                        </span>
-                        <h3>{`Ultimo acesso em: ${userData?.lastAcess}`}</h3>
-                    </div>
-                    <div className={styles.right}>
-                        <span>
-                            <p>Nome Completo</p>
-                            <input type="text" placeholder='Insira seu nome completo' onChange={(e) => setFullName(e.target.value)} value={fullName} maxLength={61} />
-                            <p>Nome de usuario</p>
-                            <input type="text" placeholder='Insira seu nome de usuario' onChange={(e) => setUsername(e.target.value)} value={"@" + username} maxLength={27} />
-                            <p>Email</p>
-                            <input type="text" placeholder='Insira seu email' onChange={(e) => setEmail(e.target.value)} value={email} />
-                        </span>
-                        <span>
-                            <p>Biografia</p>
-                            <p>Caracteres: {countChar}</p>
-                            <textarea maxLength={440} placeholder='Insira sua biografia' onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
-                        </span>
-                        <span>
-                            <button onClick={() => setEdit(false)}>Cancelar</button>
-                            <button onClick={() => Update()}>Editar perfil</button>
-                        </span>
-                    </div>
+    if(!isOpen) return null
+
+    return (
+        <>
+            <div className={styles.modal}
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-duration="400"
+                data-aos-offset="50"
+            >
+                <div className={styles.left}>
+                    <h2>{fullName}</h2>
+                    <h3>{"@" + username}</h3>
+                    <span>
+                        {(img) ? handleChangeImg() : handleChangeImg()}
+                    </span>
+                    <h3>{`Ultimo acesso em: ${userData?.lastAcess}`}</h3>
                 </div>
-            </>
-        )
-    }
+                <div className={styles.right}>
+                    <span>
+                        <p>Nome Completo</p>
+                        <input type="text" placeholder='Insira seu nome completo' onChange={(e) => setFullName(e.target.value)} value={fullName} maxLength={61} />
+                        <p>Nome de usuario</p>
+                        <input type="text" placeholder='Insira seu nome de usuario' onChange={(e) => setUsername(e.target.value)} value={"@" + username} maxLength={27} />
+                        <p>Email</p>
+                        <input type="text" placeholder='Insira seu email' onChange={(e) => setEmail(e.target.value)} value={email} />
+                    </span>
+                    <span>
+                        <p>Biografia</p>
+                        <p>Caracteres: {countChar}</p>
+                        <textarea maxLength={440} placeholder='Insira sua biografia' onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
+                    </span>
+                    <span>
+                        <button onClick={() => onClose()}>Cancelar</button>
+                        <button onClick={() => Update()}>Editar perfil</button>
+                    </span>
+                </div>
+            </div>
+        </>
+    )
 }
