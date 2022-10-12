@@ -17,7 +17,7 @@ function SignUp({ auth }) {
 
     const { signUpWithEmailAndPassword } = auth;
 
-    let [visible, isVisible] = useState(false);
+    const [visible, isVisible] = useState(false);
 
     function setVisible() {
         const pass = document.querySelector('#password')

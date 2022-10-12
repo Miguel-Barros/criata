@@ -105,9 +105,9 @@
 }
 
 .left .blur {
-    background        : rgb(0, 0, 0, .7);
+    background        : rgb(0, 0, 0, .5);
     opacity           : 0;
-    filter            : blur(1.3vw);
+    filter            : blur(1vw);
     width             : 100%;
     height            : 100%;
     margin-top        : -100%;
@@ -235,14 +235,14 @@
     bottom            : 15vh;
     right             : 23vw;
     width             : 20%;
-    height            : 5%;
+    height            : 10%;
 }
 
 .right span:nth-child(3) button:last-child {
     background        : #F6A413;
     color             : #fff;
-    width             : 50%;
-    height            : 100%;
+    width             : 45%;
+    height            : 60%;
     border-radius     : .5vw;
     cursor            : pointer;
     font-size         : .9vw;
@@ -252,13 +252,15 @@
 .right span:nth-child(3) button:last-child:hover {
     transform         : scale(1.02);
     opacity           : 70%;
+    margin-top: -5%;
+    transform: scale(1.05);
 }
 
 .right span:nth-child(3) button:first-child {
     background        : none;
     color             : #000;
-    width             : 35%;
-    height            : 85%;
+    width             : 45%;
+    height            : 60%;
     border-radius     : .5vw;
     cursor            : pointer;
     font-size         : .9vw;
@@ -268,6 +270,8 @@
 .right span:nth-child(3) button:first-child:hover {
     border            : 0.5px solid #00000050;
     background        : #00000050;
+    margin-top: -5%;
+    transform: scale(1.05);
     color             : #fff;
 }
 

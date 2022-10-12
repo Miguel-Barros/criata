@@ -54,9 +54,13 @@
     font-family       : 'Mulish';
     font-style        : normal;
     font-weight       : 400;
-    text-align        : center;
     font-size         : 1.3vw;
     color             : #000;
+}
+
+.input[type='password']{
+    padding-right: 7%;
+    width: 17vw;
 }
 
 .input:focus {
@@ -140,6 +144,15 @@
     font-size         : 1.2vw;
 }
 
+.eye {
+    width             : 3vw;
+    height            : 4.5vh;
+    position          : absolute;
+    left             : 32vw;
+    top               : 41.5vh;
+    cursor            : pointer;
+    transition        : all .5s ease;
+}
 
 /* Large desktop */
 

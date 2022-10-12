@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Support from '../component/support';
+import { Icon } from '@iconify/react';
 import styles from '../styles/SignIn.module.css';
 import { withPublic } from '../hook/route';
 import { useState, useLayoutEffect } from 'react';
@@ -9,6 +10,21 @@ function SignIn({ auth }) {
     const { loginWithGoogle, loginWithEmailAndPassword } = auth;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [visible, isVisible] = useState(false);
+
+    function setVisible() {
+        const pass = document.querySelector('#password')
+        const cpass = document.querySelector('#cpassword')
+        const eye = document.querySelector('#eye')
+
+        if (visible == false) {
+            pass.setAttribute('type', 'text')
+            isVisible(true)
+        } else {
+            pass.setAttribute('type', 'password')
+            isVisible(false)
+        }
+    }
 
     return (
         <div className={styles.container}>
@@ -28,7 +44,12 @@ function SignIn({ auth }) {
                 data-aos-duration="500">
                     <h1 className={styles.title}>Entrar</h1>
                     <input type="text" placeholder='E-mail' className={styles.input} onChange={(e) => { setEmail(e.target.value) }} value={email} />
-                    <input type="password" placeholder='Senha' className={styles.input} onChange={(e) => { setPassword(e.target.value) }} value={password} />
+                    {visible ?
+                        <Icon icon={'mdi:eye'} className={styles.eye} onClick={() => setVisible()} />
+                        :
+                        <Icon icon={'mdi:eye-off'} className={styles.eye} onClick={() => setVisible()} />
+                    }
+                    <input type="password" maxLength={16} id={'password'} placeholder='Senha' className={styles.input} onChange={(e) => { setPassword(e.target.value) }} value={password} />
                     <Link href='/forgot'>
                         <h3 className={styles.forgot}>Esqueceu a senha?</h3>
                     </Link>

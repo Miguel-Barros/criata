@@ -36,7 +36,12 @@ export default function ChangePasswrod({isOpen, onClose}) {
                     <input type="password" placeholder="Confirme sua nova senha" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} />
                 </span>
                 <span>
-                    <button onClick={() => onClose()}>Cancelar</button>
+                    <button onClick={() => {
+                        onClose()
+                        setOldPassword('')
+                        setNewPassword('')
+                        setConfirmPassword('')
+                    }}>Cancelar</button>
                     <button onClick={() => updatePassword(user, oldPassword, newPassword, confirmPassword)} >Redefinir</button>
                 </span>
             </span>
