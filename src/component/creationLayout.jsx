@@ -2,13 +2,37 @@ import Link from 'next/link';
 import styles from './styles/CreationLayout.module.css';
 import { Icon } from '@iconify/react';
 import ShowBox from '../services/CreationService';
-import { useState } from 'react';
-import Script from 'next/script';
+import { useEffect, useState } from 'react';
+import * as PIXI from 'pixi.js';
 
 import EditableText from './creationComponents/editableText'
 
 export default function CreationLayout() {
     const [useTool, setTool] = useState('format-size')
+
+    const app =  new PIXI.Application({ width: 800, height: 800 })
+
+    let text = new PIXI.Text('This is a PixiJS text',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center', width: 150});
+
+    text.interactive = true;
+
+    useEffect(() => {
+        document.querySelector("#Stage").appendChild(app.view)
+    }, [])
+
+    app.stage.addChild(text);
+
+    const mv = (e) => {
+        text.position = {x: e.data.global.x, y: e.data.global.y}
+    }
+
+    text.on('pointerdown', () => {
+        text.on('mousemove', mv);
+    });
+
+    text.on('pointerup', () => {
+        text.off('mousemove', mv);
+    });
 
     const sideTools = [
         'dots-horizontal',
@@ -71,9 +95,10 @@ export default function CreationLayout() {
                         </span>
                         <ShowBox func={useTool} />
                     </div>
-                    <div id="Stage"></div>
+                    <div className={styles.content} id="Stage">
+
+                    </div>
                 </main>
-                <Script src="script.js" type="module" />
             </div>
         </>
     )
