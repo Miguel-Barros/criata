@@ -34,6 +34,11 @@ export default function CreationLayout() {
         text.off('mousemove', mv);
     });
 
+    text.on('click', (e) => {
+        //text.text = e.;
+        console.log(e.key)
+    });
+
     const sideTools = [
         'dots-horizontal',
         'format-size',
