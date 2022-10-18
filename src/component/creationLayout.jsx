@@ -3,7 +3,7 @@ import styles from './styles/CreationLayout.module.css';
 import { Icon } from '@iconify/react';
 import ShowBox from '../services/CreationService';
 import { useState } from 'react';
-import * as PIXI from 'pixi.js';
+import Script from 'next/script';
 
 import EditableText from './creationComponents/editableText'
 
@@ -33,12 +33,6 @@ export default function CreationLayout() {
         'dots-vertical'
     ]
 
-    //Create a Pixi Application
-    const app = new PIXI.Application({width: 256, height: 256});
-
-    //Add the canvas that Pixi automatically created for you to the HTML document
-    document.getElementById("Stage").appendChild(app.view);
-
     return (
         <>
             <div className={styles.container}>
@@ -64,7 +58,7 @@ export default function CreationLayout() {
                         </span>
                     </span>
                 </header>
-                <main className={styles.main}>
+                <main className={styles.main} id="main">
                     <div className={styles.side_menu}>
                         <span className={styles.tools}>
                             {sideTools.map((e) => {
@@ -79,7 +73,8 @@ export default function CreationLayout() {
                     </div>
                     <div id="Stage"></div>
                 </main>
-            </div >
+                <Script src="script.js" type="module" />
+            </div>
         </>
     )
 }
