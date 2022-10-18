@@ -4,13 +4,17 @@ import { Icon } from '@iconify/react';
 import Swal from 'sweetalert2';
 import useAuth from "../hook/auth";
 import Database from "../services/Database"
+import Router from 'next/router';
 import { useState, useEffect } from 'react';
+
+import { Search } from '../services/SearchService';
+
 
 export default function Nav(props) {
     const { user } = useAuth();
-
     const [userData, setUserData] = useState([])
     const [formatName, setFormatName] = useState('')
+    const [searchContent, setSearchContent] = useState('')
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
@@ -55,15 +59,8 @@ export default function Nav(props) {
                             </Link>
                         </span>
                         <span className={styles.split} />
-                        <input type="text" placeholder={'Buscar'} className={styles.search} />
-                        <Icon icon={'mdi:magnify'} className={styles.search_icon} onClick={() => {
-                            Swal.fire({
-                                icon: 'error',
-                                text: 'Parece que essa função foi desabilitada por um desenvolvedor',
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                        }} />
+                        <input type="text" placeholder={'Buscar'} className={styles.search} onChange={(e) => setSearchContent(e.target.value)} value={searchContent} />
+                        <Icon icon={'mdi:magnify'} className={styles.search_icon} onClick={() => Search(searchContent)} />
                     </span>
                 </span>
             </header>

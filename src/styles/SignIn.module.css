@@ -169,6 +169,15 @@
         font-size     : 1vw;
     }
 
+    .input[type='password']{
+        padding-right: 3%;
+    }
+
+    .eye {
+        top               : 43.5vh;
+        left             : 31vw;
+    }
+
     .input::placeholder {
         font-size     : 1vw;
     }
