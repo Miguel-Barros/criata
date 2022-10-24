@@ -8,13 +8,18 @@ import * as PIXI from 'pixi.js';
 import EditableText from './creationComponents/editableText'
 
 export default function CreationLayout() {
-    const [useTool, setTool] = useState('format-size')
+    const [useTool, setTool] = useState('format-size');
+    const [sliderValue, setSliderValue] = useState();
 
     const app =  new PIXI.Application({ width: 800, height: 800 })
 
-    let text = new PIXI.Text('This is a PixiJS text',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center', width: 150});
+    let text = new PIXI.Text("teste",{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center', width: 150});
 
     text.interactive = true;
+
+    var testo = [];
+
+    var i = 0;
 
     useEffect(() => {
         document.querySelector("#Stage").appendChild(app.view)
@@ -23,20 +28,25 @@ export default function CreationLayout() {
     app.stage.addChild(text);
 
     const mv = (e) => {
-        text.position = {x: e.data.global.x, y: e.data.global.y}
+        text.position = {x: e.data.global.x, y: e.data.global.y};
+        console.log(sliderValue);
     }
 
     text.on('pointerdown', () => {
         text.on('mousemove', mv);
+        text.text = testo.join('');
+        console.log(testo.join(''));
+        testo = [];
     });
 
     text.on('pointerup', () => {
         text.off('mousemove', mv);
     });
 
-    text.on('click', (e) => {
-        //text.text = e.;
-        console.log(e.key)
+    document.addEventListener('keypress', (event) => {
+        testo[i] = event.key;
+        i++;
+
     });
 
     const sideTools = [
@@ -98,7 +108,7 @@ export default function CreationLayout() {
                                 )
                             })}
                         </span>
-                        <ShowBox func={useTool} />
+                        <ShowBox func={useTool} sliderValue={(e) => setSliderValue(e)}/>
                     </div>
                     <div className={styles.content} id="Stage">
 
