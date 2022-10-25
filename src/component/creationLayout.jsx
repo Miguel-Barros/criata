@@ -5,11 +5,8 @@ import ShowBox from '../services/CreationService';
 import { useEffect, useState } from 'react';
 import * as PIXI from 'pixi.js';
 
-import EditableText from './creationComponents/editableText'
-
 export default function CreationLayout() {
     const [useTool, setTool] = useState('format-size');
-    const [sliderValue, setSliderValue] = useState();
 
     const app =  new PIXI.Application({ width: 800, height: 800 })
 
@@ -27,15 +24,16 @@ export default function CreationLayout() {
 
     app.stage.addChild(text);
 
+
     const mv = (e) => {
         text.position = {x: e.data.global.x, y: e.data.global.y};
-        console.log(sliderValue);
     }
 
     text.on('pointerdown', () => {
         text.on('mousemove', mv);
-        text.text = testo.join('');
+        //text.text = testo.join('');
         console.log(testo.join(''));
+        console.log(valSlider)
         testo = [];
     });
 
@@ -46,7 +44,6 @@ export default function CreationLayout() {
     document.addEventListener('keypress', (event) => {
         testo[i] = event.key;
         i++;
-
     });
 
     const sideTools = [
@@ -111,7 +108,6 @@ export default function CreationLayout() {
                         <ShowBox func={useTool} sliderValue={(e) => setSliderValue(e)}/>
                     </div>
                     <div className={styles.content} id="Stage">
-
                     </div>
                 </main>
             </div>
