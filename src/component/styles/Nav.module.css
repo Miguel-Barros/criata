@@ -7,7 +7,7 @@
     display             : flex;
     justify-content     : space-between;
     align-items         : center;
-    background          : linear-gradient(180deg, #FB9700 1%, #FEE85D 211%);
+    background          : #FCA30F;
 }
 
 .right,
@@ -88,6 +88,7 @@
 .profile {
     cursor              : pointer;
     transition          : all .5s ease;
+    color: #321F01;
 }
 
 .edit p:hover,

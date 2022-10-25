@@ -22,7 +22,7 @@ function Home({ auth }) {
                 <img src="./assets/images/home/bg.svg" alt="background" className={styles.background} />
                 <span className={styles.welcome}>
                     <h1>Crie o seu próprio design!</h1>
-                    <p>E use um de nossos <b>Templates</b> para inspiração</p>
+                    <p>e use um dos <b>templates</b> de exemplo para inspiração!</p>
                 </span>
                 <section>
                     <div className={styles.card_group}>

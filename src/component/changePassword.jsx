@@ -17,14 +17,15 @@ export default function ChangePasswrod({isOpen, onClose}) {
             data-aos-easing="ease-in-back"
             data-aos-duration="400"
             data-aos-offset="50">
+                <span className={styles.blur}></span>
             <span className={styles.left}>
                 <img className={styles.ilus} src="../assets/components/ilus/settings-ilus.svg" alt="ilustration" />
                 <h2>Que tal algumas recomendações para ter uma senha ainda mais segura?</h2>
-                <h3><span>1º</span> Sua senha deve possuir no minimo 6 caracteres. </h3>
-                <h3><span>2º</span> Use caracteres especiais e letras maiúsculas.</h3>
-                <h3><span>3º</span> Evite sequências numéricas e a sua data de nascimento. .</h3>
-                <h3><span>4º</span> Varie o máximo que puder de uma senha para outra.</h3>
-                <h3><span>5º</span> Tenha criatividade para uma senha forte, mas não a esqueça.</h3>
+                <h3><span>•</span> Sua senha deve possuir no minimo 6 caracteres. </h3>
+                <h3><span>•</span> Use caracteres especiais e letras maiúsculas.</h3>
+                <h3><span>•</span> Evite sequências numéricas e a sua data de nascimento.</h3>
+                <h3><span>•</span> Varie o máximo que puder de uma senha para outra.</h3>
+                <h3><span>•</span> Tenha criatividade para uma senha forte, mas não a esqueça.</h3>
             </span>
             <span className={styles.right}>
                 <span>

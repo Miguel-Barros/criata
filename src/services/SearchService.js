@@ -16,7 +16,7 @@ Database.getData().then((e) => {
     return usersData = e
 })
 
-function Search(content) {
+async function Search(content) {
     if (!content || content == ' ' || content == null) return Toast.fire({
         icon: 'warning',
         title: 'Insira o email ou @usuario de quem deseja encontrar',
@@ -24,24 +24,12 @@ function Search(content) {
         width: '28%'
     })
 
-    // usersData.forEach((e) => {
-    //     // Verificação com o banco de dados
-    //     if (!(content == e.email || '@' + content == e.username || content == e.username)) return Toast.fire({
-    //         icon: 'error',
-    //         title: `O usuario ${content} não foi encontrado`,
-    //         position: 'bottom-start',
-    //         width: '28%'
-    //     })
-    // })
-
-    Router.push({
+    await Router.push({
         pathname: '/search',
-        query: { q: `${content}` },
+        query: { q: `${content}` }
     })
 
-    return (
-        {}
-    )
+    window.location.reload()
 }
 
 export { Search }

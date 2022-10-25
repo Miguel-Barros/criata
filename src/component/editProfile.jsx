@@ -117,7 +117,7 @@ export default function EditProfile({isOpen, onClose}) {
                     <>
                         <img src={userData.imgProfile} className={styles.account_icon} alt='profile-img' />
                         <span className={styles.blur} onClick={() => showChangeImg()} />
-                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                        <Icon icon={'mdi:camera-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
                         <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} />
                     </>
                 )
@@ -126,7 +126,7 @@ export default function EditProfile({isOpen, onClose}) {
                     <>
                         <Icon icon={'mdi:account-circle'} className={styles.account_icon} onClick={() => showChangeImg()} />
                         <span className={styles.blur} />
-                        <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                        <Icon icon={'mdi:camera-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
                         <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} />
                     </>
                 )
@@ -136,7 +136,7 @@ export default function EditProfile({isOpen, onClose}) {
                 <>
                     <img src={URL.createObjectURL(img)} alt="profile-img" className={styles.account_icon} />
                     <span className={styles.blur} onClick={() => showChangeImg()} />
-                    <Icon icon={'mdi:square-edit-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
+                    <Icon icon={'mdi:camera-outline'} className={styles.icon_edit} onClick={() => showChangeImg()} />
                     <input type={"file"} name={`${user.uid}-profileIcon`} id={'changeImg'} accept="image/png, image/jpeg" title=" " onChange={(e) => setImg(e.target.files[0])} />
                 </>
             )
@@ -153,6 +153,7 @@ export default function EditProfile({isOpen, onClose}) {
                 data-aos-duration="400"
                 data-aos-offset="50"
             >
+                <span className={styles.blur}></span>
                 <div className={styles.left}>
                     <h2>{fullName}</h2>
                     <h3>{"@" + username}</h3>

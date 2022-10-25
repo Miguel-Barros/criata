@@ -55,7 +55,7 @@ function Settings({ auth }) {
           data-aos-delay="50"
           data-aos-offset="100" />
         <Link href={'/home'}>
-          <Icon icon={'mdi:arrow-up-left'} className={styles.arrow} />
+          <Icon icon={'mdi:arrow-u-left-bottom'} className={styles.arrow} />
         </Link>
         <span className={styles.info}>
           {(userData?.imgProfile) ?
