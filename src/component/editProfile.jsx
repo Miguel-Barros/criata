@@ -172,7 +172,7 @@ export default function EditProfile({isOpen, onClose}) {
                     </span>
                     <span>
                         <p>Biografia</p>
-                        <p>Caracteres: {countChar}</p>
+                        <p>Caracteres: {countChar}/440</p>
                         <textarea maxLength={440} placeholder='Insira sua biografia' onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
                     </span>
                     <span>

@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 
 function searchUsers() {
 
-
+ 
     // usersData.forEach((e) => {
     //     // Verificação com o banco de dados
     //     // if (!(content == e.email || '@' + content == e.username || content == e.username)) return Toast.fire({
@@ -29,8 +29,7 @@ function searchUsers() {
 export default function Search() {
     const query = Router.query.q
     const [data, setData] = useState([])
-
-    const [userData, setUserData] = useState({})
+    const [foundUsers, setFoundUsers] = useState([])
 
     const Toast = Swal.mixin({
         toast: true,
@@ -48,18 +47,28 @@ export default function Search() {
 
     useEffect(() => {
         data.forEach((e) => {
-            if (e.email == query || e.username == query || e.username == "@" + query) {
-                return console.log(e)
-            }else{
-                return Toast.fire({
-                    icon: 'error',
-                    title: `O usuario ${query} não foi encontrado`,
-                    position: 'bottom-start',
-                    width: '28%'
-                })
+            const firstName = e.fullName.split(' ')[0].toLowerCase()
+            const lastName = e.fullName.split(' ')[e.fullName.split(' ').length - 1].toLowerCase()
+            const name = `${firstName} ${lastName}`
+
+            if(query == name || query == e.username || query == e.email || query == e.username.replace('@', '') || firstName == query || lastName == query) {
+                return setFoundUsers([...foundUsers, e])
             }
-        }, [])
-    })
+        })
+    }, [data])
+    
+    useEffect(() => {
+        console.log(foundUsers);
+    }, [foundUsers])
+
+    // useEffect(() => {
+    //     if(foundUsers.length == 0) return Toast.fire({
+    //         icon: 'error',
+    //         title: `Nenhum usuário encontrado`,
+    //         position: 'bottom-start',
+    //         width: '28%'
+    //     })
+    // }, [foundUsers])
 
     return (
         <div className={styles.container}>

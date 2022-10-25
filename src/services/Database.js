@@ -2,8 +2,6 @@ import { getDatabase, ref, set, push, get, update, query, onValue } from "fireba
 import { getApp } from "firebase/app";
 import Swal from "sweetalert2";
 
-
-
 const app               = getApp();
 const database          = getDatabase(app);
 

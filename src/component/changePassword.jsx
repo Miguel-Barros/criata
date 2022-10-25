@@ -29,11 +29,11 @@ export default function ChangePasswrod({isOpen, onClose}) {
             <span className={styles.right}>
                 <span>
                     <p>Digite sua senha antiga</p>
-                    <input type="password" placeholder="Inisira sua senha antiga" onChange={(e) => setOldPassword(e.target.value)} value={oldPassword} />
+                    <input type="password" placeholder="Inisira sua senha antiga" onChange={(e) => setOldPassword(e.target.value)} value={oldPassword} maxLength={16} minLength={6} />
                     <p>Digite sua nova senha</p>
-                    <input type="password" placeholder="Inisira sua nova senha" onChange={(e) => setNewPassword(e.target.value)} value={newPassword} />
+                    <input type="password" placeholder="Inisira sua nova senha" onChange={(e) => setNewPassword(e.target.value)} value={newPassword} maxLength={16} minLength={6}/>
                     <p>Confirme sua nova senha</p>
-                    <input type="password" placeholder="Confirme sua nova senha" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} />
+                    <input type="password" placeholder="Confirme sua nova senha" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} maxLength={16} minLength={6} />
                 </span>
                 <span>
                     <button onClick={() => {
