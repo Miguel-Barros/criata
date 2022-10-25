@@ -123,11 +123,11 @@
 
     .cardGroup .card {
         width: 21%;
-        height: 95%;
+        height: 99%;
     }
     
     .cardGroup .card .bio {
         font-size: .75vw;
-        height: 12ch;
+        height: 15ch;
     }
 }
