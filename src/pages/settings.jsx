@@ -10,6 +10,7 @@ import Database from '../services/Database';
 
 import ChangePasswrod from '../component/changePassword';
 import EditProfile from '../component/editProfile'
+import Router from 'next/router';
 
 function Settings({ auth }) {
   const { logout, user } = auth;
@@ -82,6 +83,7 @@ function Settings({ auth }) {
             <h3 onClick={() => setChangePassword(true)}>Alterar senha</h3>
             <h2>Preferências</h2>
             <h3 onClick={error}>Modo noturno</h3>
+            <h3 onClick={() => Router.push('/support')}>Suporte</h3>
             <button className={styles.logout} onClick={() => logout()}>Sair</button>
           </span>
         </div>

@@ -1,156 +1,156 @@
 .container {
-    width             : 100vw;
-    height            : 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .main {
-    display           : flex;
-    align-items       : center;
+  display: flex;
+  align-items: center;
 }
 
 .bg {
-    position          : absolute;
-    height            : 100%;
-    z-index           : -1;
+  position: absolute;
+  height: 100%;
+  z-index: -1;
 }
 
 .main .info {
-    position          : absolute;
-    display           : flex;
-    align-items       : center;
-    top               : 0;
-    left              : 12.5vw;
-    width             : 25vw;
-    height            : 15vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 12.5vw;
+  width: 25vw;
+  height: 15vh;
 }
 
 .info .profile {
-    width             : 5vw;
-    height            : 10vh;
-    border-radius     : 100vw;
-    padding           : 2%;
+  width: 5vw;
+  height: 10vh;
+  border-radius: 100vw;
+  padding: 2%;
 }
 
 .info span p:first-child {
-    font-size         : 1.3vw;
-    font-family       : "Mulish";
+  font-size: 1.3vw;
+  font-family: "Mulish";
 }
 
 .info span p:last-child {
-    font-size         : 1.1vw;
-    font-family       : "Mulish";
-    color             : #00000080;
+  font-size: 1.1vw;
+  font-family: "Mulish";
+  color: #00000080;
 }
 
 .title {
-    font-size         : 3vw;
-    font-family       : 'Mulish';
-    margin-left       : -5%;
-    font-weight       : 800;
+  font-size: 3vw;
+  font-family: "Mulish";
+  margin-left: -5%;
+  font-weight: 800;
 }
 
 .box {
-    width             : 50%;
-    height            : 100vh;
-    display           : flex;
-    flex-direction    : column;
-    align-items       : center;
-    justify-content   : center;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .box span {
-    width             : 50%;
-    height            : 65%;
+  margin-top: 5%;
+  width: 50%;
+  height: auto;
 }
 
 .box span h2 {
-    font-size         : 1.8vw;
-    font-family       : 'Mulish';
-    font-weight       : 400;
-    color             : #00000090;
-    margin-bottom     : 10%;
-    margin-left       : -5%;
+  font-size: 1.8vw;
+  font-family: "Mulish";
+  font-weight: 400;
+  color: #00000090;
+  margin-bottom: 10%;
+  margin-left: -5%;
 }
 
 .box span h3 {
-    width             : 55%;
-    font-size         : 1.3vw;
-    font-family       : 'Mulish';
-    font-weight       : 400;
-    color             : #000;
-    margin-bottom     : 5%;
-    cursor            : pointer;
-    transition        : all .3s ease;
+  width: 55%;
+  font-size: 1.3vw;
+  font-family: "Mulish";
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 5%;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .box span h3:hover {
-    transform         : scale(1.02);
-    text-shadow       : 0px .4vh .4vh rgba(0, 0, 0, .2);
+  transform: scale(1.02);
+  text-shadow: 0px 0.4vh 0.4vh rgba(0, 0, 0, 0.2);
 }
 
 .box span .logout {
-    margin-top        : 15%;
+  margin-top: 15%;
 }
 
 .logout {
-    background        : none;
-    border-radius     : .5vw;
-    font-size         : 1.3vw;
-    display           : flex;
-    align-items       : center;
-    justify-content   : center;
-    color             : red;
-    transition        : all .5s ease;
-    cursor            : pointer;
+  background: none;
+  border-radius: 0.5vw;
+  font-size: 1.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .logout:hover {
-    transform         : scale(1.1);
-    text-shadow       : 0px .4vh .4vh rgba(0, 0, 0, .5);
+  transform: scale(1.1);
+  text-shadow: 0px 0.4vh 0.4vh rgba(0, 0, 0, 0.5);
 }
 
 .arrow {
-    width             : 3vw;
-    height            : 4vw;
-    position          : absolute;
-    bottom               : 1vh;
-    left              : 1vw;
-    cursor            : pointer;
-    transition        : all .5s ease;
-    z-index           : 2;
+  width: 3vw;
+  height: 4vw;
+  position: absolute;
+  bottom: 1vh;
+  left: 1vw;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  z-index: 2;
 }
 
 .arrow:hover {
-    left              : .7vw;
-    transform         : scale(1.01);
+  left: 0.7vw;
+  transform: scale(1.01);
 }
 
 .ilus {
-    width             : 35vw;
-    height            : 45vh;
-    position          : absolute;
-    right             : 5vw;
+  width: 35vw;
+  height: 45vh;
+  position: absolute;
+  right: 5vw;
 }
 
 /* Large Desktop */
 
 @media (min-width: 1920px) {
-    .title {
-        font-size     : 3vw;
-        margin-top    : 5%;
-    }
+  .title {
+    font-size: 3vw;
+    margin-top: 5%;
+  }
 
-    .box span h2 {
-        margin-top    : 10%;
-        font-size     : 1.5vw;
-    }
+  .box span h2 {
+    margin-top: 10%;
+    font-size: 1.5vw;
+  }
 
-    .box span h3 {
-        font-size     : 1.2vw;
-    }
+  .box span h3 {
+    font-size: 1.2vw;
+  }
 
-    .ilus {
-        right         : 10vw;
-    }
-
+  .ilus {
+    right: 10vw;
+  }
 }

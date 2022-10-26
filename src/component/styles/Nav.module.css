@@ -1,170 +1,153 @@
 .header {
-    width               : 100%;
-    height              : 10%;
-    position            : sticky;
-    top: 0vh;
-    border-bottom       : .1vw solid #C2854A;
-    display             : flex;
-    justify-content     : space-between;
-    align-items         : center;
-    background          : #FCA30F;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  background: #fca410;
+  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
 }
 
-.right,
-.left {
-    margin-left         : 5%;
-    margin-right        : 5%;
+.header nav {
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
-.header .logo img {
-    width               : 4vw;
-    height              : 8vh;
-    align-self          : center;
+.header nav .left {
+  width: 100%;
+  max-width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.header .logo p {
-    font-family         : 'Baloo 2';
-    font-style          : normal;
-    font-weight         : 400;
-    font-size           : 2.5vw;
-    color               : #2D2D2D;
-    text-shadow         : 0px .4vh .4vh rgba(0, 0, 0, 0.25);
+.header nav .left img {
+  width: 8vw;
+  height: 8vh;
 }
 
-.header .logo {
-    width               : 12vw;
-    display             : flex;
-    align-items         : center;
-    cursor              : pointer;
+.header nav .left h2 {
+  width: 100%;
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2vw;
+  color: #2d2d2d;
+  text-shadow: 0px 0.4vh 0.4vh rgba(0, 0, 0, 0.25);
 }
 
-.header .box {
-    display             : flex;
-    width               : 100%;
-    justify-content     : center;
-    align-items         : center;
+.header nav .right {
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
 }
 
-.header .box .icons {
-    width               : 4vw;
-    height              : 4vh;
-    color               : #00000080;
-    cursor              : pointer;
-    transition          : all .5s ease;
+.header nav .right .settings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 50%;
 }
 
-.header .box p {
-    font-family         : 'Mulish';
-    font-weight         : 700;
-    font-size           : 1.3vw;
-    color               : #000000;
+.header nav .right .settings .icon {
+  width: 10%;
+  height: 45%;
+  display: flex;
+  opacity: 0.5;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.header .box .icons:hover {
-    transform           : scale(1.05);
-    color               : #000;
+.header nav .right .settings .username {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  font-size: 1.3vw;
+  font-weight: 500;
+  font-family: "Baloo 2";
+  cursor: pointer;
 }
 
-.header .box .profile {
-    width               : 4vw;
-    height              : 8vh;
-    object-fit          : cover;
-    border-radius       : 100vw;
+.header nav .right .settings img {
+  width: 20%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
-.header .edit {
-    width               : 80%;
-    display             : flex;
-    justify-content     : space-evenly;
-    align-items         : center;
+.split {
+  width: 3.5vw;
+  height: 0vw;
+  border-top: 0.1vw solid #c2854a;
+  transform: rotate(90deg);
 }
 
-.header .edit p {
-    max-width           : 48ch;
-    overflow            : hidden;
+.header nav .right .search {
+  width: 40%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 0.5vw;
 }
 
-.edit p,
-.profile {
-    cursor              : pointer;
-    transition          : all .5s ease;
-    color: #321F01;
+.header nav .right form {
+  width: 100%;
+  display: flex;
+  height: 100%;
 }
 
-.edit p:hover,
-.profile:hover {
-    transform           : scale(1.01);
-    opacity             : 50%;
+.header nav .right .search .icon {
+  padding-left: 5%;
+  width: 13%;
+  height: 100%;
+  cursor: pointer;
 }
 
-.header .box .split {
-    width               : 3.5vw;
-    height              : 0vw;
-    border-top          : .1vw solid #C2854A;
-    transform           : rotate(90deg);
-}
-
-.header .right .box .search {
-    width               : 15vw;
-    max-width           : 15vw;
-    height              : 6vh;
-    background          : #F5F5F4;
-    border-radius       : .3vw;
-    font-size           : 1vw;
-    padding-left        : 3vw;
-    padding-right       : 1vw;
-}
-
-.header .box .search_icon {
-    position            : absolute;
-    color               : rgba(0, 0, 0, 0.75);
-    width               : 2vw;
-    height              : 5vh;
-    right               : 19vw;
-    cursor              : pointer;
-    transition          : all .4s ease;
-}
-
-.header .box .search_icon:hover {
-    opacity             : 50%;
+.header nav .right .search input {
+  width: 75%;
+  padding-left: 3%;
+  font-size: 1vw;
+  height: 100%;
 }
 
 /* Large desktop */
 
 @media (min-width: 1920px) {
-    .header .logo img {
-        width           : 3.5vw;
-        height          : 7vh;
-    }
+  .header nav .right .settings .icon {
+    width: 8%;
+    height: 45%;
+  }
 
-    .header .logo p {
-        font-size       : 2vw;
-    }
+  .header nav .right .settings .username {
+    margin-left: -20%;
+    margin-right: -20%;
+    font-size: 1.1vw;
+  }
 
-    .header .edit p {
-        font-size       : 2.2vh;
-        margin-left     : -.5vw;
-        margin-right    : -1.2vw;
-    }
+  .header nav .right .search .icon {
+    width: 10%;
+  }
 
-    .header .box .profile {
-        width           : 3.5vw;
-        height          : 7vh;
-    }
+  .header nav .right .settings img {
+    width: 18%;
+    height: 80%;
+  }
 
-    .header .box .icons {
-        width           : 3vw;
-        height          : 3vh;
-    }
-
-    .header .box .search_icon {
-        width           : 2vw;
-        height          : 3.5vh;
-        right           : 17.5vw;
-    }
-
-    .header .right .box .search {
-        height          : 6vh;
-        font-size       : .9vw;
-    }
+  .header nav .right .search input {
+    font-size: 0.8vw;
+  }
 }

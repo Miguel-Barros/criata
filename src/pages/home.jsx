@@ -9,7 +9,7 @@ function Home({ auth }) {
     const { logout, user } = auth
 
     function click() {
-        Router.push('/creation')
+        
     }
 
     return (
@@ -24,9 +24,9 @@ function Home({ auth }) {
                     <h1>Crie o seu próprio design!</h1>
                     <p>e use um dos <b>templates</b> de exemplo para inspiração!</p>
                 </span>
-                <section>
+                <section className={styles.section}>
                     <div className={styles.card_group}>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => Router.push('/creation')}>
                             <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
                         </div>
                         <div className={styles.card} onClick={click}>
