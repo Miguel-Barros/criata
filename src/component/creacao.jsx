@@ -68,23 +68,34 @@ export default function CreationLayout() {
     return (
         <>
             <p>texto</p>
-            <input type="range" min='0' max='100' onChange={(e) => {
+            <input type="range" min='10' max='300' onChange={(e) => {
                 text.style.fontSize = `${e.target.value}px`;
             }} />
+            <p> Negrito </p>
+            <input type="checkbox" onChange={(e) => {
+                e.target.checked ? text.style.fontWeight = "bold" : text.style.fontWeight = "normal";
+            }}></input>
+            <p> Italico </p>
+            <input type="checkbox" onChange={(e) => {
+                e.target.checked ? text.style.fontStyle = "italic" : text.style.fontStyle = "normal";
+            }}></input>
             <input type="color" id="color" onChange={(e) => {
                 text.style.fill = document.getElementById("color").value;
             }} />
             <p>Forma</p>
-            <input type="range" min='0' max='100' onChange={(e) => {
-                rect.width = e.target.value;
+            <input type="number" id="comprimento" onKeyDown={(e) => {
+                if(e.key == "Enter"){
+                    rect.width = document.getElementById("comprimento").value;
+                }
             }} />
-            <input type="range" min='0' max='100' onChange={(e) => {
-                rect.height = e.target.value;
+            <input type="number" id="altura" onKeyDown={(e) => {
+                if(e.key == "Enter"){
+                    rect.height = document.getElementById("comprimento").value;
+                }
             }} />
             <input type="color" id="color2" onChange={(e) => {
                 rect.tint = `0x${document.getElementById("color2").value.slice(1)}`;
             }} />
-
             <div className={styles.content} id="Stage"></div>
         </>
     )
