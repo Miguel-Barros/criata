@@ -19,29 +19,33 @@ export default function Search() {
   });
 
   const founds = foundUsers.length;
+  let lock = false;
 
   useEffect(() => {
-    Database.getData().then((e) => {
-      e.forEach((e) => {
-        const firstName = e.fullName.split(" ")[0].toLowerCase();
-        const lastName = e.fullName
-          .split(" ")
-          [e.fullName.split(" ").length - 1].toLowerCase();
-        const name = `${firstName} ${lastName}`;
+    if (!lock) {
+      lock = true;
+      Database.getData().then((e) => {
+        e.forEach((e) => {
+          const firstName = e.fullName.split(" ")[0].toLowerCase();
+          const lastName = e.fullName
+            .split(" ")
+            [e.fullName.split(" ").length - 1].toLowerCase();
+          const name = `${firstName} ${lastName}`;
 
-        if (
-          query == name ||
-          query == lastName ||
-          query == firstName ||
-          query == e.username.replace("@", "") ||
-          query == e.username ||
-          query == e.email ||
-          query == e.fullName.toLowerCase()
-        ) {
-          setFoundUsers((found) => [...found, e]);
-        }
+          if (
+            query == name ||
+            query == lastName ||
+            query == firstName ||
+            query == e.username.replace("@", "") ||
+            query == e.username ||
+            query == e.email ||
+            query == e.fullName.toLowerCase()
+          ) {
+            setFoundUsers((found) => [...found, e]);
+          }
+        });
       });
-    });
+    }
   }, []);
 
   return (
@@ -52,8 +56,14 @@ export default function Search() {
       <Nav />
       <main className={styles.main}>
         <span>
-          <h2>Resultados da pesquisa por: <span>{query}</span></h2>
-          <h3>{((founds) > 1) ? `Foram encontrados ${founds} usuarios` : `Foi encontrado ${founds} usuario`}</h3>
+          <h2>
+            Resultados da pesquisa por: <span>{query}</span>
+          </h2>
+          <h3>
+            {founds > 1
+              ? `Foram encontrados ${founds} usuarios`
+              : `Foi encontrado ${founds} usuario`}
+          </h3>
         </span>
       </main>
     </div>
