@@ -30,7 +30,7 @@ export default function ShowBox(props) {
                 </span>
                 <span className               = {styles.slider}>
                     <h3>Tamanho</h3>
-                    <input type               = "range" name="" id="" className={styles.slider_sty} min='1' max='100' onChange={(e) => setSliderValue(e.target.value)} />
+                    <input type               = "range" name="" id="range" className={styles.slider_sty} min='1' max='100' onChange={(e) => {setSliderValue(e.target.value);console.log(sliderValue)}} />
                     <p>{sliderValue}px</p>
                 </span>
                 <span className               = {styles.division} />
@@ -126,4 +126,6 @@ export default function ShowBox(props) {
             </div>
         )
     }
+
+    return props.sliderValue;
 }
