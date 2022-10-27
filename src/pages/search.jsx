@@ -26,12 +26,12 @@ export default function Search() {
       lock = true;
       Database.getData().then((e) => {
         e.forEach((e) => {
+          const fullName = e.fullName.toLowerCase().split(" ");
           const firstName = e.fullName.split(" ")[0].toLowerCase();
           const lastName = e.fullName
             .split(" ")
             [e.fullName.split(" ").length - 1].toLowerCase();
           const name = `${firstName} ${lastName}`;
-
           if (
             query == name ||
             query == lastName ||
@@ -39,7 +39,8 @@ export default function Search() {
             query == e.username.replace("@", "") ||
             query == e.username ||
             query == e.email ||
-            query == e.fullName.toLowerCase()
+            query == e.fullName.toLowerCase() ||
+            fullName.includes(query.toLowerCase())
           ) {
             setFoundUsers((found) => [...found, e]);
           }
@@ -57,14 +58,23 @@ export default function Search() {
       <main className={styles.main}>
         <span>
           <h2>
-            Resultados da pesquisa por: <span>{query}</span>
+            Resultados de pesquisa por: <b>{query}</b>
           </h2>
-          <h3>
-            {founds > 1
-              ? `Foram encontrados ${founds} usuarios`
-              : `Foi encontrado ${founds} usuario`}
-          </h3>
+          <h3>Foram encontrados {founds} usuarios</h3>
         </span>
+        <div className={styles.cardGroup}>
+          <div className={styles.card}>
+            <div className={styles.header}>
+              <img src={""} alt="Profile" />
+              <p>
+                Ultimo acesso: <b>27/07/2027</b>
+              </p>
+            </div>
+            <div className={styles.info}>
+              <p>Miguel Natan Barreto de Barros</p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
