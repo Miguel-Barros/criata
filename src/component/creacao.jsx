@@ -20,7 +20,7 @@ export default function CreationLayout() {
     var i = 0;
 
     useEffect(() => {
-        document.querySelector("#Stage").appendChild(app.view)
+        document.querySelector("#Stage").appendChild(app.view);
     }, [])
 
     app.stage.addChild(rect);
@@ -36,19 +36,25 @@ export default function CreationLayout() {
 
     text.on('pointerdown', () => {
         text.on('mousemove', mv);
-        //text.text = testo.join('');
-        console.log(testo.join(''));
-        testo = [];
-        console.log(text.fontSize);
     });
 
     text.on('pointerup', () => {
         text.off('mousemove', mv);
     });
 
-    document.addEventListener('keypress', (event) => {
-        testo[i] = event.key;
-        i++;
+    document.addEventListener('keypress', (e) => {
+        if(e.key != "Enter"){
+            testo[i] = e.key;
+            text.text = testo.join('');
+            i++;
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if(e.key == "Backspace"){
+            testo.pop();
+            text.text = testo.join('');
+        }
     });
 
     rect.on('pointerdown', () => {
