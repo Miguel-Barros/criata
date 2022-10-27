@@ -8,6 +8,7 @@ import * as PIXI from 'pixi.js';
 export default function CreationLayout() {
 
     const app =  new PIXI.Application({ width: 800, height: 800 });
+    app.addSystem(EventSystem, 'events');
 
     let rect = new PIXI.Graphics().beginFill(0xffffff).drawRect(0, 0, 100, 100).endFill();
     rect.interactive = true;
@@ -34,28 +35,36 @@ export default function CreationLayout() {
         rect.position = {x: e.data.global.x - 50, y: e.data.global.y - 50};
     }
 
-    text.on('pointerdown', () => {
-        text.on('mousemove', mv);
-    });
-
-    text.on('pointerup', () => {
-        text.off('mousemove', mv);
-    });
-
-    document.addEventListener('keypress', (e) => {
+    const escrever = (e) => {
         if(e.key != "Enter"){
             testo[i] = e.key;
             text.text = testo.join('');
             i++;
         }
-    });
+    }
 
-    document.addEventListener('keydown', (e) => {
+    const apagar = (e) => {
         if(e.key == "Backspace"){
             testo.pop();
             text.text = testo.join('');
         }
+    }
+
+    text.on('pointerdown', () => {
+        text.on('mousemove', mv);
+        document.addEventListener('keypress', escrever);
+        document.addEventListener('keydown', apagar);
     });
+
+    stage.on('click', () => {
+        alert("a");
+        document.removeEventListener('keypress', escrever);
+        document.removeEventListener('keydown', apagar);
+    });
+
+    text.on('pointerup', () => {
+        text.off('mousemove', mv);
+    }); 
 
     rect.on('pointerdown', () => {
         rect.on('mousemove', mvRect);
