@@ -3,36 +3,85 @@
   height: 100vh;
 }
 
-.main {
-  width: 80%;
-  height: 88%;
-  margin: 0.5% auto;
+.container .main {
+  width: 90%;
+  height: 85%;
+  margin: 0 auto;
+  font-family: "Mulish";
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  margin-top: 2%;
 }
 
-.main span:nth-child(1){
-  margin-top: 5%;
+.main span:first-child {
+  width: 50%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 0.1%;
+  border-bottom: 0.01vw solid rgba(0, 0, 0, 0.4);
 }
 
-.main h2 {
-  font-family: "Mulish";
-  font-style: normal;
-  font-weight: 600;
+.main span h2 {
   font-size: 1.5vw;
+  font-weight: 500;
 }
 
-.main h2 span {
-  color: #7435dc;
+.main span h2 b {
+  color: #a135dc;
 }
 
-.main h3 {
-  font-family: "Mulish";
-  font-style: normal;
-  font-weight: 600;
-  opacity: 0.5;
+.main span h3 {
   font-size: 1vw;
-  text-align: center;
   margin-top: 1%;
+  opacity: 0.5;
+}
+
+.main .cardGroup {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.cardGroup .card:is(:first-child) {
+  display: flex;
+  align-self: center;
+  width: 80%;
+  height: 25%;
+  border-radius: .5vw;
+  background: red;
+  margin-top: 1%;
+  border: .01vw solid rgba(0, 0, 0, 0.4);
+}
+
+.cardGroup .card .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 25%;
+  height: 100%;
+  border-right: .01vw solid rgba(0, 0, 0, 0.4);
+}
+
+.cardGroup .card .header img {
+  background: pink;
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.cardGroup .card .header p {
+  font-size: .8vw;
+  font-weight: 500;
+}
+
+.cardGroup .card .header p b {
+  color: #a135dc;
 }

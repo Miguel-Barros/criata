@@ -19,29 +19,34 @@ export default function Search() {
   });
 
   const founds = foundUsers.length;
+  let lock = false;
 
   useEffect(() => {
-    Database.getData().then((e) => {
-      e.forEach((e) => {
-        const firstName = e.fullName.split(" ")[0].toLowerCase();
-        const lastName = e.fullName
-          .split(" ")
-          [e.fullName.split(" ").length - 1].toLowerCase();
-        const name = `${firstName} ${lastName}`;
-
-        if (
-          query == name ||
-          query == lastName ||
-          query == firstName ||
-          query == e.username.replace("@", "") ||
-          query == e.username ||
-          query == e.email ||
-          query == e.fullName.toLowerCase()
-        ) {
-          setFoundUsers((found) => [...found, e]);
-        }
+    if (!lock) {
+      lock = true;
+      Database.getData().then((e) => {
+        e.forEach((e) => {
+          const fullName = e.fullName.toLowerCase().split(" ");
+          const firstName = e.fullName.split(" ")[0].toLowerCase();
+          const lastName = e.fullName
+            .split(" ")
+            [e.fullName.split(" ").length - 1].toLowerCase();
+          const name = `${firstName} ${lastName}`;
+          if (
+            query == name ||
+            query == lastName ||
+            query == firstName ||
+            query == e.username.replace("@", "") ||
+            query == e.username ||
+            query == e.email ||
+            query == e.fullName.toLowerCase() ||
+            fullName.includes(query.toLowerCase())
+          ) {
+            setFoundUsers((found) => [...found, e]);
+          }
+        });
       });
-    });
+    }
   }, []);
 
   return (
@@ -52,9 +57,24 @@ export default function Search() {
       <Nav />
       <main className={styles.main}>
         <span>
-          <h2>Resultados da pesquisa por: <span>{query}</span></h2>
-          <h3>{((founds) > 1) ? `Foram encontrados ${founds} usuarios` : `Foi encontrado ${founds} usuario`}</h3>
+          <h2>
+            Resultados de pesquisa por: <b>{query}</b>
+          </h2>
+          <h3>Foram encontrados {founds} usuarios</h3>
         </span>
+        <div className={styles.cardGroup}>
+          <div className={styles.card}>
+            <div className={styles.header}>
+              <img src={""} alt="Profile" />
+              <p>
+                Ultimo acesso: <b>27/07/2027</b>
+              </p>
+            </div>
+            <div className={styles.info}>
+              <p>Miguel Natan Barreto de Barros</p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
