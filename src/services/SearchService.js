@@ -19,7 +19,7 @@ Database.getData().then((e) => {
 async function Search(content) {
     if (!content || content == ' ' || content == null) return Toast.fire({
         icon: 'warning',
-        title: 'Insira o email ou @usuario de quem deseja encontrar',
+        title: 'Insira o email ou usuario de quem deseja encontrar',
         position: 'bottom-start',
         width: '28%'
     })

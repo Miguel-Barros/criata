@@ -42,7 +42,7 @@ export default function Nav(props) {
             <Icon
               className={styles.icon}
               icon="mdi:settings-outline"
-              onClick={() => Router.push("/profile")}
+              onClick={() => Router.push("/settings")}
             />
             <p
               className={styles.username}
