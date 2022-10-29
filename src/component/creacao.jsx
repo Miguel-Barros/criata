@@ -8,12 +8,14 @@ import * as PIXI from 'pixi.js';
 export default function CreationLayout() {
 
     const app =  new PIXI.Application({ width: 800, height: 800 });
-    app.addSystem(EventSystem, 'events');
 
-    let rect = new PIXI.Graphics().beginFill(0xffffff).drawRect(0, 0, 100, 100).endFill();
+    let bg = new PIXI.Graphics().beginFill(0x000000).drawRect(0, 0, app.screen.width, app.screen.height).endFill();
+    bg.interactive = true;
+
+    let rect = new PIXI.Graphics().beginFill(0xcccccc).drawRect(0, 0, 100, 100).endFill();
     rect.interactive = true;
 
-    let text = new PIXI.Text("teste",{fontFamily: 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+    let text = new PIXI.Text("teste",{fontFamily: 'Arial', fontSize: 24, fill : 0xffffff, align : 'center'});
     text.interactive = true;
 
     var testo = [];
@@ -24,15 +26,18 @@ export default function CreationLayout() {
         document.querySelector("#Stage").appendChild(app.view);
     }, [])
 
+    app.stage.addChild(bg);
     app.stage.addChild(rect);
     app.stage.addChild(text);
 
     const mv = (e) => {
-        text.position = {x: e.data.global.x, y: e.data.global.y};
+        text.position = {x: e.data.global.x - text.width / 2, y: e.data.global.y - text.height / 2};
     }
 
     const mvRect = (e) => {
-        rect.position = {x: e.data.global.x - 50, y: e.data.global.y - 50};
+        rect.position = {x: e.global.x - 50, y: e.data.global.y - 50};
+        console.log(app.stage.toLocal(e.global, rect));
+        console.log(e.global.x)
     }
 
     const escrever = (e) => {
@@ -40,6 +45,10 @@ export default function CreationLayout() {
             testo[i] = e.key;
             text.text = testo.join('');
             i++;
+        } else {
+            testo[i] = '\n';
+            i++;
+            text.text = testo.join('');
         }
     }
 
@@ -56,8 +65,7 @@ export default function CreationLayout() {
         document.addEventListener('keydown', apagar);
     });
 
-    stage.on('click', () => {
-        alert("a");
+    bg.on('click', () => {
         document.removeEventListener('keypress', escrever);
         document.removeEventListener('keydown', apagar);
     });
@@ -66,7 +74,8 @@ export default function CreationLayout() {
         text.off('mousemove', mv);
     }); 
 
-    rect.on('pointerdown', () => {
+    rect.on('pointerdown', (e) => {
+        console.log(app.stage.toLocal(e.global))
         rect.on('mousemove', mvRect);
     })
 
@@ -80,31 +89,54 @@ export default function CreationLayout() {
             <input type="range" min='10' max='300' onChange={(e) => {
                 text.style.fontSize = `${e.target.value}px`;
             }} />
+
             <p> Negrito </p>
             <input type="checkbox" onChange={(e) => {
                 e.target.checked ? text.style.fontWeight = "bold" : text.style.fontWeight = "normal";
             }}></input>
+
             <p> Italico </p>
             <input type="checkbox" onChange={(e) => {
                 e.target.checked ? text.style.fontStyle = "italic" : text.style.fontStyle = "normal";
             }}></input>
+
+            <button onClick={() => {
+                text.style.align = "left";
+            }}>Alinhar esquerda</button>
+
+            <button onClick={() => {
+                text.style.align = "center";
+            }}>Alinhar centro</button>
+
+            <button onClick={() => {
+                text.style.align = "right";
+            }}>Alinhar direita</button>
+
+            <button onClick={() => {
+                text.style.align = "justify";
+            }}>Justificado</button>
+
             <input type="color" id="color" onChange={(e) => {
                 text.style.fill = document.getElementById("color").value;
             }} />
             <p>Forma</p>
+
             <input type="number" id="comprimento" onKeyDown={(e) => {
                 if(e.key == "Enter"){
                     rect.width = document.getElementById("comprimento").value;
                 }
             }} />
+
             <input type="number" id="altura" onKeyDown={(e) => {
                 if(e.key == "Enter"){
                     rect.height = document.getElementById("comprimento").value;
                 }
             }} />
+
             <input type="color" id="color2" onChange={(e) => {
                 rect.tint = `0x${document.getElementById("color2").value.slice(1)}`;
             }} />
+
             <div className={styles.content} id="Stage"></div>
         </>
     )
