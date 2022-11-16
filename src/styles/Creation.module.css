@@ -1,0 +1,202 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  width: 90%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.header .left img {
+  width: 8vw;
+  height: 8vh;
+}
+
+.header .left {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.header .left h2 {
+  width: 100%;
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2vw;
+  color: #2d2d2d;
+  text-shadow: 0px 0.4vh 0.4vh rgba(0, 0, 0, 0.25);
+}
+
+.header .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 85%;
+  height: 100%;
+}
+
+.header .right .shortcuts {
+  display: flex;
+  justify-content: space-around;
+  width: 45%;
+  height: 60%;
+  margin-top: 2%;
+  border-radius: 1vw;
+  background: #e9e9e9;
+}
+
+.header .right .shortcuts .icon {
+  width: 5%;
+  height: 60%;
+  align-self: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.header .right .shortcuts .icon:hover {
+  opacity: 0.3;
+  transform: scale(1.1);
+}
+
+.header .right .actions {
+  display: flex;
+  width: 25%;
+  height: 50%;
+  margin-top: 2%;
+  margin-left: 5%;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.header .right .actions button {
+  width: 45%;
+  height: 90%;
+  align-self: flex-end;
+  font-family: "Mulish";
+  font-weight: 300;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  color: #fff;
+  background: #7535dc;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.header .right .actions button:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.main {
+  width: 100%;
+  height: 88%;
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .background {
+  width: 100%;
+  height: 63%;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  object-fit: cover;
+}
+
+.main .side_bar {
+  width: 27%;
+  height: 100%;
+  border-radius: 0 1vw 0 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 1vh 2vh rgba(0, 0, 0, 0.2);
+}
+
+.main .content {
+  display: flex;
+  width: 67%;
+  height: 100%;
+  border-radius: 1vw 1vw 0 0;
+  margin-right: 2%;
+  background: #fff;
+  box-shadow: 0px 1vh 2vh rgba(0, 0, 0, 0.2);
+}
+
+.main .tools_header {
+  width: 20%;
+  height: 100%;
+  border-radius: 0 1vw 0 0;
+  background: #dfdfdf;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 1vh 0.5vh rgba(0, 0, 0, 0.4);
+}
+
+.main .tools_header span:first-child {
+  border-radius: 0 1.1vw 0 0;
+}
+
+.main .tools_header span:last-child {
+  margin-top: 80%;
+}
+
+.main .tools_header span {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.main .tools_header span .tool {
+  width: 50%;
+  height: 45%;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+
+.main .tools_header span p {
+  font-family: "Mulish";
+  font-size: 0.7vw;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+
+.main .tools_header span:hover {
+  background: #f2f5f6;
+}
+
+.main .tools_header span:hover > p {
+  color: rgba(0, 0, 0, 1);
+}
+
+.main .tools_header span:hover > .tool {
+  color: #000;
+}
+
+.main .side_bar .box {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1920px) {
+  .main .side_bar .box {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

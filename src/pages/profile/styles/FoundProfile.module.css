@@ -1,0 +1,166 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main {
+    margin: 0 auto;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.main .account_icon {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 65%;
+    height: 37%;
+    object-fit: cover;
+    border-radius: 100vw;
+}
+
+.main .profile h2 {
+    font-family: "Mulish";
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+.main .profile h3 {
+    margin-top: 2%;
+    opacity: 0.7;
+    font-family: "Mulish";
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.main .profile p {
+    width: 75%;
+    max-height: 50%;
+    margin-top: 10%;
+    font-family: "Mulish";
+    font-size: 1vw;
+    overflow: hidden;
+}
+
+.main .content {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h1 {
+    margin-top: 3%;
+    margin-bottom: 1%;
+    font-weight: 400;
+    font-family: "Mulish";
+    font-size: 2.5vw;
+}
+
+.content .projects {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.content .project {
+    width: 28%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1vw;
+    border: 0.1vw solid #000;
+    font-size: 1vw;
+    transition: all 0.5s ease;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
+.content .project[aria-disabled] {
+    opacity: 20%;
+}
+
+.content .project:not(.project[aria-disabled]):hover {
+    margin-top: -1.5vh;
+    box-shadow: 0 0.5vw 2vh rgba(0, 0, 0, 0.5);
+}
+
+.content .project h3 {
+    font-family: "Mulish";
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+.content .project .btn {
+    width: 50%;
+    height: 10%;
+    border-radius: 0.5vw;
+    font-size: 1vw;
+    font-family: "Mulish";
+    font-weight: 600;
+    color: #fff;
+    margin-top: 10%;
+    background: #0066ff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    bottom: -25%;
+}
+
+.content .project .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Large desktop */
+
+@media (min-width: 1920px) {
+    .main .profile h2 {
+        margin-top: 5%;
+    }
+
+    .content .project {
+        width: 25%;
+        height: 90%;
+    }
+
+    .main .account_icon {
+        width: 12vw;
+        height: 24vh;
+    }
+
+    .content .project .icon {
+        width: 4vw;
+        height: 8vh;
+    }
+
+    .content .project .btn {
+        width: 50%;
+        height: 10%;
+        font-size: 0.8vw;
+    }
+
+    .main .profile {
+        margin-top: 3%;
+    }
+}

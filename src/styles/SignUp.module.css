@@ -1,0 +1,181 @@
+.container {
+    width             : 100vw;
+    height            : 100vh;
+}
+
+.main {
+    width             : 100vw;
+    height            : 100vh;
+    display           : flex;
+    justify-content   : space-evenly;
+}
+
+.ilus_bg {
+    position          : absolute;
+    top               : 0;
+    left              : 0;
+    width             : 50vw;
+    height            : 100vh;
+    object-fit        : cover;
+    z-index           : -1;
+}
+
+.ilus {
+    display           : flex;
+    align-self        : center;
+    width             : 50vw;
+    height            : 50vh;
+    margin-right      : 10%;
+}
+
+.box {
+    width             : 50vw;
+    height            : 100vh;
+    display           : flex;
+    flex-direction    : column;
+    justify-content   : center;
+    align-items       : center;
+}
+
+.title {
+    font-family       : 'Mulish';
+    font-size         : 3vw;
+    color             : #595555;
+    margin-bottom     : 3%;
+}
+
+.input {
+    width             : 20vw;
+    height            : 6vh;
+    border            : .01vw solid #c9c9c9;
+    background        : #F5F5F4;
+    border-radius     : .5vw;
+    margin            : 2%;
+    padding           : 1%;
+    font-family       : 'Mulish';
+    font-style        : normal;
+    font-weight       : 400;
+    font-size         : 1.3vw;
+    color             : #000;
+}
+
+.input:focus {
+    border            : solid #00000085 .01vw;
+    transition        : all .3s ease-out;
+}
+
+.input::placeholder {
+    font-size         : 1.3vw;
+    opacity           : 50%;
+}
+
+.forgot {
+    font-family       : 'Mulish';
+    font-weight       : 400;
+    font-size         : 1.3vw;
+    cursor            : pointer;
+    transition        : all .5s ease;
+    padding-top       : 1%;
+    margin-bottom     : 5%;
+    opacity           : 50%;
+}
+
+.forgot:hover {
+    opacity           : 100%;
+}
+
+.btn {
+    margin-top        : 2%;
+    width             : 21vw;
+    height            : 8vh;
+    background        : #F6A413;
+    border-radius     : .5vw;
+    font-family       : 'Mulish';
+    color             : #fff;
+    font-size         : 1.3vw;
+    font-weight       : 400;
+    display           : flex;
+    justify-content   : center;
+    align-items       : center;
+    align-self        : center;
+    transition        : all .5s ease;
+    cursor            : pointer;
+}
+
+.btn:hover, .eye:hover {
+    opacity           : 75%;
+}
+
+.copyright {
+    bottom            : 3vh;
+    right             : 18.5vw;
+    color             : #595555;
+    position          : absolute;
+    font-family       : 'Mulish';
+    font-weight       : 400;
+    font-size         : 1.2vw;
+}
+
+.eye {
+    width             : 3vw;
+    height            : 4.5vh;
+    position          : absolute;
+    right             : 13vw;
+    top               : 49.5vh;
+    cursor            : pointer;
+    transition        : all .5s ease;
+}
+
+.recaptcha {
+    overflow: hidden;
+}
+
+/* Large desktop */
+
+@media (min-width: 1920px) {
+    .btn {
+        width         : 15vw;
+        height        : 5vh;
+        font-size     : 1vw;
+    }
+
+    .input {
+        width         : 18vw;
+        height        : 5vh;
+        font-size     : 1vw;
+    }
+
+    .input:is(.password){
+        width         : 14vw;
+        padding-right : 10%;
+    }
+
+    .eye{
+        width         : 2vw;
+        height        : 4vh;
+        right         : 14vw;
+        top           : 51vh;
+    }
+
+    .input::placeholder {
+        font-size     : 1vw;
+    }
+
+    .forgot {
+        font-size     : .95vw;
+    }
+
+    .icons {
+        width         : 5vw;
+        height        : 5vh;
+        cursor        : pointer;
+        transition    : all .5s ease;
+    }
+
+    .ilus {
+        display       : flex;
+        align-self    : center;
+        width         : 50vw;
+        height        : 40vh;
+    }
+}
