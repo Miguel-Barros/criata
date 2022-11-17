@@ -134,6 +134,10 @@
   right: 5vw;
 }
 
+.swal {
+  font-family: 'Mulish';
+}
+
 /* Large Desktop */
 
 @media (min-width: 1920px) {

@@ -4,12 +4,22 @@ import { withProtected } from '../hook/route';
 import Nav from '../component/nav';
 import { Icon } from '@iconify/react';
 import Router from 'next/router';
+import Swal from 'sweetalert2';
 
 function Home({ auth }) {
     const { logout, user } = auth
 
     function click() {
-        
+        Swal.fire({
+            icon: 'error',
+            title: "Opps...",
+            text: "Parece que essa função foi desativada por um administrador",
+            showConfirmButton: false,
+            timer: 2000,
+            customClass: {
+                container: styles.swal
+            }
+        })
     }
 
     return (
@@ -30,27 +40,41 @@ function Home({ auth }) {
                             <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
                         </div>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model1.png" alt="Template" className={styles.template} />
                         </div>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model2.png" alt="Template" className={styles.template} />
                         </div>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model3.png" alt="Template" className={styles.template} />
                         </div>
                     </div>
                     <div className={styles.card_group}>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model3.png" alt="Template" className={styles.template} />
                         </div>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model4.png" alt="Template" className={styles.template} />
                         </div>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model1.png" alt="Template" className={styles.template} />
                         </div>
                         <div className={styles.card} onClick={click}>
-                            <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
+                            <p>Template</p>
+                            <span className={styles.blur}></span>
+                            <img src="./assets/components/models/model2.png" alt="Template" className={styles.template} />
                         </div>
                     </div>
                 </section>

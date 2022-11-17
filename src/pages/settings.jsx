@@ -69,7 +69,7 @@ function Settings({ auth }) {
               {(user.email.length > 30) ?
                 user.email.substring(0, user.email.indexOf('@')) + '...' + user.email.substring(user.email.indexOf('@'), user.email.length)
                 :
-                user.email} 
+                user.email}
             </p>
             <p>{`Ultimo acesso em: ${userData?.lastAcess ?? 'Agora'}`}</p>
           </span>
@@ -88,8 +88,29 @@ function Settings({ auth }) {
             <h3 onClick={() => setChangePassword(true)}>Alterar senha</h3>
             <h2>Preferências</h2>
             <h3 onClick={error}>Modo noturno</h3>
-            <h3 onClick={() => Router.push('/support')}>Suporte</h3>
-            <button className={styles.logout} onClick={() => logout()}>Sair</button>
+            <button className={styles.logout} onClick={
+              async () => {
+                await Swal.fire({
+                  title: 'Você tem certeza que deseja sair?',
+                  text: "Você será redirecionado para a tela de login",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Sair',
+                  cancelButtonText: 'Cancelar',
+                  customClass: {
+                    container: styles.swal
+                  }
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    logout()
+                    Router.push('/')
+                  }
+                }
+                )
+              }
+            }>Sair</button>
           </span>
         </div>
         <img className={styles.ilus} src="./assets/images/settings/ilus.svg" alt="ilustration" />
