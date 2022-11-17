@@ -7,6 +7,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@pixi/graphics-extras": "^7.0.4",
         "aos": "^2.3.4",
         "firebase": "^9.9.2",
         "next": "12.1.4",
