@@ -38,6 +38,7 @@ function Creation({ auth }) {
     "question-mark-circle",
   ];
 
+
   const sideToolsText = [
     "Mais ações",
     "Texto",
@@ -55,6 +56,22 @@ function Creation({ auth }) {
   const [container, setContainer] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    let tools = document.querySelectorAll(".tool");
+    tools.forEach((e) => {
+      e.classList.remove("active");
+      e.style.backgroundColor = "transparent";
+      e.children[0].style.color = "#00000050";
+      e.children[1].style.color = "#00000050";
+      if (e.id === toolShowing) {
+        e.classList.add("active");
+        e.style.backgroundColor = "#f5f5f5";
+        e.children[0].style.color = "#000";
+        e.children[1].style.color = "#000";
+      }
+    })
+  }, [toolShowing])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -118,8 +135,20 @@ function Creation({ auth }) {
       selectedElement.interactive = true;
       selectedElement.buttonMode = true;
       selectedElement.cursor = "move";
+      showElementProps(selectedElement);
     }
   };
+
+  let elementProps = {};
+
+  const showElementProps = (e) => {
+    return elementProps = getElementProps(e)
+  }
+
+  const getElementProps = (element) => {
+    return element.getBounds()
+  }
+
 
   const onMove = (container, element) => {
     if (!element.grabbing) {
@@ -176,7 +205,7 @@ function Creation({ auth }) {
   }, [app]);
 
   return (
-    <CreationContext.Provider value={{ app, elements, elementSelected }}>
+    <CreationContext.Provider value={{ app, elements, elementSelected, getElementProps, elementProps }}>
       <div className={styles.container}>
         <Head>
           <title>Criata - Criação</title>
@@ -219,7 +248,7 @@ function Creation({ auth }) {
             <div className={styles.tools_header}>
               {sideTools.map((e, index) => {
                 return (
-                  <span key={e} onClick={() => setToolShowing(e)}>
+                  <span key={e} onClick={() => setToolShowing(e)} className={'tool'} id={e}>
                     <Icon icon={`iconoir:${e}`} className={styles.tool} />
                     <p>{sideToolsText[index]}</p>
                   </span>
