@@ -22,7 +22,7 @@ function Profile({ auth }) {
 
     useEffect(() => {
         usersData.forEach((user) => {
-            if(user.username === '@' + profile) {
+            if (user.username === '@' + profile) {
                 setUserData(user)
             }
         })
@@ -36,7 +36,7 @@ function Profile({ auth }) {
             <Nav />
             <main className={styles.main}>
                 <div className={styles.profile}>
-                {(userData?.imgProfile) ?
+                    {(userData?.imgProfile) ?
                         <img src={userData.imgProfile} className={styles.account_icon} />
                         :
                         <Icon icon={'mdi:account-circle'} className={styles.account_icon} />
@@ -50,7 +50,7 @@ function Profile({ auth }) {
                     <span className={styles.projects}>
                         <div className={styles.project}>
                             <h3>Curriculo</h3>
-                            <button className={styles.btn} onClick={() => Disabled()}>Visualizar</button>
+                            <button className={styles.btn}>Visualizar</button>
                         </div>
                         <div aria-disabled aria-readonly className={styles.project}>
                         </div>
