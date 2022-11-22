@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 
 import FontStyle from "./utils/fontStyle";
 import CreateElements from "./utils/createElements";
+import ImportElement from "./utils/importElement";
 
 function ShowTool({ showing, elements }) {
 
@@ -27,7 +28,7 @@ function ShowTool({ showing, elements }) {
     return <>f</>;
   }
   if (showing == "cloud-upload") {
-    return <>g</>;
+    return <ImportElement />
   }
   if (showing == "up-round-arrow") {
     return <>h</>;

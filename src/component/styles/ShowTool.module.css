@@ -30,9 +30,73 @@
 
 .tool_content {
   width: 80%;
-  height: 88%;
+  height: 85%;
   margin-top: 5%;
   align-self: center;
+}
+
+.tool_content_group {
+  width: 100%;
+  height: 98%;
+  margin-bottom: 5%;
+  overflow-x: hidden;
+}
+
+.tool_content_group::-webkit-scrollbar {
+  width: .5vw;
+  background: transparent;
+}
+
+.tool_content_group::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 1vw;
+}
+
+.tool_content_group::-webkit-scrollbar-thumb:hover {
+  background: #b1b1b1;
+}
+
+.tool_content_group input[type="file"] {
+  display: none;
+}
+
+.tool_content_group img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tool_content .importObject {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 97%;
+  height: 40%;
+  border-radius: .5vw;
+  border: .01vw solid #00000050;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tool_content .importObject:hover {
+  border: .01vw solid #000000;
+}
+
+.tool_content .btn {
+  width: 100%;
+  height: 5%;
+  border-radius: .5vw;
+  background: #9351B6;
+  color: #fff;
+  font-size: .8vw;
+  font-family: "Mulish";
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.tool_content .btn:hover {
+  background: #7A3F9A;
+  transform: scale(1.03);
 }
 
 .tool_content p {
@@ -153,6 +217,8 @@
   height: 50%;
   color: #9351B6;
 }
+
+/* Ferramenta de Importar */
 
 @media (min-width: 1920px) {
   .tool_nav p:last-child {

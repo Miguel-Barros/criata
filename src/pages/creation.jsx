@@ -17,8 +17,6 @@ function Creation({ auth }) {
   const topTools = [
     "nav-arrow-left",
     "nav-arrow-right",
-    "precision-tool",
-    "star-outline",
     "download",
     "trash",
     "erase",
@@ -33,8 +31,8 @@ function Creation({ auth }) {
     "media-image",
     "bounce-right",
     "intersect",
+    "star-outline",
     "cloud-upload",
-    "up-round-arrow",
     "question-mark-circle",
   ];
 
@@ -46,8 +44,8 @@ function Creation({ auth }) {
     "Imagens",
     "Animações",
     "Fundo",
+    "Efeitos",
     "Importar",
-    "Botões",
     "Ajuda",
   ];
 
@@ -220,7 +218,7 @@ function Creation({ auth }) {
           </Link>
           <div className={styles.right}>
             <span className={styles.shortcuts}>
-              {topTools.map((e) => {
+              {topTools.map((e, i) => {
                 return (
                   <Icon
                     key={e}
