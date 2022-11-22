@@ -57,6 +57,9 @@ function Creation({ auth }) {
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
+  var cachedSprite = null;
+  var currentSprite = null;
+
   useEffect(() => {
     let tools = document.querySelectorAll(".tool");
     tools.forEach((e) => {
@@ -93,9 +96,26 @@ function Creation({ auth }) {
         });
         setApp(app);
         container.appendChild(app.view);
+      } else {
+        // Restaurar canvas salvo
+
+        cachedSprite = localStorage.getItem('salvo');
+        if (cachedSprite) {
+          currentSprite = cachedSprite;
+          app.stage.addChild(currentSprite);
+
+          // below code makes sure you can normally draw on `graphics` as usual
+          // add graphics at the top of currentSprite
+          app.stage.removeChild(graphics);
+          app.stage.addChild(graphics);
+        }
       }
     }
   }, [container]);
+
+
+  
+
 
   // Funções de criação de elementos
 
@@ -109,6 +129,12 @@ function Creation({ auth }) {
           setElementSelected(null);
         }
       });
+    }
+    if (e === "download") { // Salvar elemento
+      var canvas = app.renderer.extract.canvas();
+      var texture = PIXI.Texture.from(canvas);
+      cachedSprite = new PIXI.Sprite(texture);
+      localStorage.setItem('salvo', cachedSprite);
     }
   }
 
