@@ -135,7 +135,7 @@
 }
 
 .copyright {
-  bottom: 10vh;
+  bottom: 5vh;
   left: 20vw;
   color: #595555;
   position: absolute;
@@ -149,7 +149,7 @@
   height: 4.5vh;
   position: absolute;
   left: 32vw;
-  top: 44.5vh;
+  top: 46vh;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -176,7 +176,7 @@
   .eye {
     width: 2vw;
     height: 4vh;
-    top: 47vh;
+    top: 48vh;
     left: 31vw;
   }
 
@@ -203,7 +203,7 @@
   }
 
   .copyright {
-    bottom: 15vh;
+    bottom: 5vh;
     left: 20vw;
     color: #595555;
     position: absolute;

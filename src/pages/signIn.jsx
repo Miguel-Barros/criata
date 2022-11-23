@@ -57,8 +57,6 @@ function SignIn({ auth }) {
                     <Link href='/signUp'>
                         <h3 className={styles.forgot}>Ainda não tem uma conta?</h3>
                     </Link>
-                    <span className={styles.split} />
-                    
                 </form>
             <p className={styles.copyright}>Coaraci © 2022</p>
             <img className={styles.ilus_bg} src="./assets/images/login/ilus-bg.svg" alt='ilustration-bg' />

@@ -1,78 +1,36 @@
 .navigation {
-    position          : absolute;
-    top               : 50vh;
-    left              : 2vw;
-    transform         : translateY(-50%);
-    height            : 15vh;
-    display           : flex;
-    flex-direction    : column;
-    justify-content   : space-between;
-    position          : absolute;
+    position: absolute;
+    z-index: 5;
+    width: 2%;
+    height: 20%;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.circle {
-    background-color  : #ffffff60;
-    width             : 2vw;
-    height            : 4vh;
-    border-radius     : 50%;
-    border            : .1vw solid #6C6C6C;
-    cursor            : pointer;
-    transition        : all .5s ease;
+.navigation ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.circle:hover {
-    background        : #ff6b00;
-    border            : .1vw solid #F6A413;
+.navigation ul li .icon {
+    width: 100%;
+    height: 100%;
+    color: #595555;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
-.circle:nth-child(1):hover:before {
-    content           : 'Suporte';
-    font-family       : 'mulish';
-    font-weight       : 700;
-    margin-top        : 10%;
-    margin-left       : 120%;
-    display           : flex;
-    align-items       : center;
-    color             : #00000095;
-    text-shadow       : -2px 2px 4px rgba(0, 0, 0, 0.25);
-    font-size         : 1.11vw;
+.navigation ul li.active .icon{
+    color: #FF6B00;
 }
 
-.circle:nth-child(2):hover:before {
-    content           : 'Principal';
-    font-family       : 'mulish';
-    font-weight       : 700;
-    margin-top        : 10%;
-    margin-left       : 120%;
-    display           : flex;
-    align-items       : center;
-    color             : #00000095;
-    text-shadow       : -2px 2px 4px rgba(0, 0, 0, 0.25);
-    font-size         : 1.11vw;
-}
-
-.circle:nth-child(3):hover:before {
-    content           : 'Sobre';
-    font-family       : 'mulish';
-    font-weight       : 700;
-    margin-top        : 10%;
-    margin-left       : 120%;
-    display           : flex;
-    align-items       : center;
-    color             : #00000095;
-    text-shadow       : -2px 2px 4px rgba(0, 0, 0, 0.25);
-    font-size         : 1.11vw;
-}
-
-/* Large desktop */
-
-@media (min-width: 1920px) {
-    .circle {
-        width         : 1.5vw;
-        height        : 3vh;
-    }
-
-    .circle:nth-child(1):hover:before, .circle:nth-child(2):hover:before, .circle:nth-child(3):hover:before {
-        font-size     : 1vw;
-    }
+.navigation .icon:hover {
+    color: #FF6B00;
 }

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Settings.module.css'
-import Support from '../component/support'
+import Support, { SupportModal } from '../component/support'
 import { withProtected } from '../hook/route';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
@@ -32,6 +32,7 @@ function Settings({ auth }) {
     })
   }, [])
 
+  const [supportModal, setSupportModal] = useState(false);
   const [changePassword, setChangePassword] = useState(false)
   const [editProfile, setEditProfile] = useState(false)
 
@@ -46,7 +47,7 @@ function Settings({ auth }) {
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
         data-aos-offset="100">
-
+        <SupportModal showing={supportModal} />
         <ChangePasswrod isOpen={changePassword} onClose={() => setChangePassword(false)} />
         <EditProfile isOpen={editProfile} onClose={() => setEditProfile(false)} />
 
@@ -88,6 +89,9 @@ function Settings({ auth }) {
             <h3 onClick={() => setChangePassword(true)}>Alterar senha</h3>
             <h2>Preferências</h2>
             <h3 onClick={error}>Modo noturno</h3>
+            <h3 onClick={() => {
+              setSupportModal(true)
+            }}>Suporte</h3>
             <button className={styles.logout} onClick={
               async () => {
                 await Swal.fire({

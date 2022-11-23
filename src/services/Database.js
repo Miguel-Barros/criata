@@ -2,12 +2,12 @@ import { getDatabase, ref, set, push, get, update, query, onValue } from "fireba
 import { getApp } from "firebase/app";
 import Swal from "sweetalert2";
 
-const app               = getApp();
-const database          = getDatabase(app);
+const app = getApp();
+const database = getDatabase(app);
 
 class Database {                                   // Criação da classe do banco de dados e exportação da mesma
     constructor(Database) {
-        this.database   = database;
+        this.database = database;
     }
 
     async setData(dbRef, data) {                   // Inserção de novos dados na base de dados, utilizando como referência o caminho do dado e o dado em si
@@ -50,7 +50,7 @@ class Database {                                   // Criação da classe do ban
         }
     }
 
-    async updateUserData(uid, data){             // Atualização de dados de usuario, utilizando como referência o UID e o dado a ser atualizado
+    async updateUserData(uid, data) {             // Atualização de dados de usuario, utilizando como referência o UID e o dado a ser atualizado
         try {
             await update(ref(this.database, `/users/${uid}/`), data)
             return update

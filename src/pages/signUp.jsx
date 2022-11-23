@@ -71,7 +71,11 @@ function SignUp({ auth }) {
   });
 
   useEffect(() => {
-    setUsername(("@" + firstName + lastName).toLowerCase());
+    if (name.split(" ").length > 1) {
+      setUsername(("@" + firstName + lastName).toLowerCase());
+    } else {
+      setUsername(("@" + firstName).toLowerCase());
+    }
   }, [name]);
 
   useEffect(() => {

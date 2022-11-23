@@ -22,10 +22,11 @@ export default function Nav(props) {
   }, []);
 
   useEffect(() => {
-    const firstName = userData?.fullName?.split(" ")[0];
-    const lastName =
-      userData?.fullName?.split(" ")[userData?.fullName?.split(" ").length - 1];
-    setFormatName(`${firstName ?? "..."} ${lastName ?? "..."}`);
+    if (userData?.fullName?.split(" ").length > 1) {
+      setFormatName(`${userData?.fullName?.split(" ")[0]} ${userData?.fullName?.split(" ")[userData?.fullName?.split(" ").length - 1].charAt(0)}.`);
+    } else {
+      setFormatName(userData?.fullName?.split(" ")[0])
+    }
   }, [userData]);
 
   return (

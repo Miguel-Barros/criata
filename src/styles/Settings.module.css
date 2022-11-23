@@ -48,6 +48,7 @@
   font-family: "Mulish";
   margin-left: -5%;
   font-weight: 800;
+  margin-bottom: 5%;
 }
 
 .box {
@@ -142,13 +143,13 @@
 
 @media (min-width: 1920px) {
   .title {
-    font-size: 3vw;
+    font-size: 2.5vw;
     margin-top: 5%;
   }
 
   .box span h2 {
     margin-top: 10%;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
   }
 
   .box span h3 {
@@ -157,5 +158,31 @@
 
   .ilus {
     right: 10vw;
+  }
+
+  .main .info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 12.5vw;
+    width: 25vw;
+    height: 15vh;
+  }
+
+  .info .profile {
+    width: 4vw;
+    height: 8vh;
+  }
+
+  .info span p:first-child {
+    font-size: 1vw;
+    font-family: "Mulish";
+  }
+
+  .info span p:last-child {
+    font-size: 1vw;
+    font-family: "Mulish";
+    color: #00000080;
   }
 }

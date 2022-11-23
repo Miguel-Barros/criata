@@ -26,8 +26,8 @@ function ifError(error) {
         title: "Email inválido",
         text: "Insira um email válido",
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       break;
     case "auth/user-not-found":
@@ -36,8 +36,8 @@ function ifError(error) {
         title: "Credênciais inválidas",
         text: "Usuario não encontrado	",
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       break;
     case "auth/wrong-password":
@@ -46,8 +46,8 @@ function ifError(error) {
         title: "Senha incorreta",
         text: "Insira uma senha válida",
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       break;
     case "auth/weak-password":
@@ -58,8 +58,8 @@ function ifError(error) {
         showConfirmButton: false,
         timer: 5000,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       break;
     case "auth/email-already-in-use":
@@ -70,8 +70,8 @@ function ifError(error) {
         showConfirmButton: false,
         timer: 5000,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       break;
     case "auth/network-request-failed":
@@ -80,8 +80,8 @@ function ifError(error) {
         title: "Conexão instável",
         text: "Verifique a sua conexão com a internet, tente novamente!",
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       break;
     default:
@@ -108,8 +108,8 @@ export function AuthProvider(props) {
         title: "Aviso",
         text: "Preencha todos os campos",
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
     }
 
@@ -123,8 +123,8 @@ export function AuthProvider(props) {
         showConfirmButton: false,
         timer: 5000,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       setUser(user ?? null);
       setError(error ?? "");
@@ -160,8 +160,8 @@ export function AuthProvider(props) {
         text: "Preencha todos os campos",
         position: "top-start",
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
     } else {
       if (password != cpassword) {
@@ -171,8 +171,8 @@ export function AuthProvider(props) {
           text: "As senhas não coecidem",
           position: "top-start",
           customClass: {
-    container: styles.swal
-  }
+            container: styles.swal
+          }
         });
       } else {
         const { error, user } =
@@ -199,8 +199,8 @@ export function AuthProvider(props) {
             position: "top-start",
             timer: 5000,
             customClass: {
-    container: styles.swal
-  }
+              container: styles.swal
+            }
           });
         }
       }
@@ -226,8 +226,8 @@ export function AuthProvider(props) {
         text: "Para que possamos redefinir sua senha, prencha o campo com o email registrado",
         timer: 5000,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
     }
 
@@ -241,8 +241,8 @@ export function AuthProvider(props) {
         text: "Foi enviado uma mensagem de redefinição, para o email informado",
         timer: 3500,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       window.location.href = "/signIn";
     }
@@ -268,8 +268,8 @@ export function AuthProvider(props) {
         text: "Para conseguimos alterar sua senha preencha todos os campos",
         timer: 3500,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       return;
     }
@@ -281,8 +281,8 @@ export function AuthProvider(props) {
         text: "Sua nova senha não pode ser igual a sua senha antiga",
         timer: 3500,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       return;
     }
@@ -294,8 +294,8 @@ export function AuthProvider(props) {
         text: "Confirme sua nova senha",
         timer: 3500,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       return;
     }
@@ -315,8 +315,8 @@ export function AuthProvider(props) {
         text: "Sua senha foi alterada com sucesso",
         timer: 3500,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       await Swal.fire({
         icon: "warning",
@@ -325,8 +325,8 @@ export function AuthProvider(props) {
         timer: 5000,
         showConfirmButton: false,
         customClass: {
-    container: styles.swal
-  }
+          container: styles.swal
+        }
       });
       logout();
     }

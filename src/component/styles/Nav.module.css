@@ -137,10 +137,11 @@
     margin-right: -20%;
     font-size: 1.1vw;
   }
+
   .header nav .right .settings .profile {
-  width: 20%;
-  height: 80%;
-}
+    width: 20%;
+    height: 80%;
+  }
 
   .header nav .right .search .icon {
     width: 10%;
