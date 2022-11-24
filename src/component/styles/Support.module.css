@@ -29,7 +29,7 @@
 
 .modal {
     width: 50%;
-    height: 50%;
+    height: 60%;
     background: #fff;
     border-radius: calc(.5vw + 1vh);
     display: flex;
@@ -55,7 +55,7 @@
 }
 
 .left p {
-    font-size: calc(.5vw + .5vh);
+    font-size: calc(.6vw + .5vh);
     font-family: 'Mulish';
     font-weight: 400;
     color: #595555;
@@ -91,17 +91,24 @@
     font-weight: 400;
     color: #595555;
     resize: none;
+    transition: all .5s ease;
+}
+
+.right form textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 .1vh .3vw #00000050;
 }
 
 .right form input {
     width: 75%;
-    height: 12%;
+    height: 10%;
     margin-top: 2%;
     margin-bottom: 2%;
     border-radius: calc(.1vw + 1vh);
     font-size: calc(.6vw + .5vh);
     background: #F5F5F4;
     padding-left: 5%;
+    transition: all .5s ease;
 }
 
 .right form input::placeholder {
@@ -111,9 +118,21 @@
     color: #595555;
 }
 
-.right form button {
-    width: 45%;
+.right form input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 .1vh .3vw #00000050;
+}
+
+.right form span {
+    width: 80%;
     height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right form span button {
+    width: 45%;
+    height: 100%;   
     border-radius: calc(.1vw + 1vh);
     font-size: calc(.6vw + .5vh);
     font-family: 'Mulish';
@@ -125,6 +144,21 @@
     margin-top: 5%;
 }
 
-.right form button:hover {
+.right form span button:first-child {
+    background: transparent;
+    color: #000;
+}
+
+.right form span button:first-child:hover {
+    background: #00000015;
+    color: #000;
+    opacity: 100%;
+}
+
+.right form span button:hover {
     opacity: 40%;
+}
+
+.swal {
+    font-family: 'Mulish';
 }

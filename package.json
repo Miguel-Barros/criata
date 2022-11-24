@@ -9,13 +9,14 @@
     "dependencies": {
         "@pixi/graphics-extras": "^7.0.4",
         "aos": "^2.3.4",
+        "emailjs-com": "^3.2.0",
         "firebase": "^9.9.2",
         "next": "12.1.4",
         "pixi.js": "^7.0.0",
         "react": "18.0.0",
         "react-dom": "18.0.0",
         "react-google-recaptcha": "^2.1.0",
-        "sweetalert2": "^11.4.33"
+        "sweetalert2": "^11.4.8"
     },
     "devDependencies": {
         "@iconify/react": "^4.0.0",

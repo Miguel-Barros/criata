@@ -47,7 +47,7 @@ function Settings({ auth }) {
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
         data-aos-offset="100">
-        <SupportModal showing={supportModal} />
+        <SupportModal showing={supportModal} setShowing={() => setSupportModal(false)}/>
         <ChangePasswrod isOpen={changePassword} onClose={() => setChangePassword(false)} />
         <EditProfile isOpen={editProfile} onClose={() => setEditProfile(false)} />
 
