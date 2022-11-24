@@ -5,8 +5,16 @@ import * as PIXI from "pixi.js";
 
 export default function ImportElement() {
 
+    const { app } = useContext(CreationContext);
+
     const [file, setFile] = useState(null);
     const [imports, setImports] = useState([]);
+
+    const handleImport = (e) => {
+        const fileSprite = PIXI.Sprite.from(e.target.src);
+        fileSprite.scale.set(0.5);
+        app.stage.addChild(fileSprite);
+    }
 
     return (
         <>
@@ -19,7 +27,7 @@ export default function ImportElement() {
                     }} />
                     {imports.map((e, i) => {
                         return (
-                            <div className={styles.importObject} key={i}>
+                            <div className={styles.importObject} key={i} onClick={(e) => handleImport(e)}>
                                 <img src={URL.createObjectURL(
                                     (e != null ? e : file)
                                 )} alt="imported-element" />
