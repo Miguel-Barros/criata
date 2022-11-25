@@ -4,11 +4,12 @@ import { Icon } from "@iconify/react";
 import FontStyle from "./utils/fontStyle";
 import CreateElements from "./utils/createElements";
 import ImportElement from "./utils/importElement";
+import MoreOptions from "./utils/moreOptions";
 
 function ShowTool({ showing, elements }) {
 
   if (showing == "more-horiz") {
-    return <>a</>;
+    return <MoreOptions />;
   }
 
   if (showing == "text-size") {

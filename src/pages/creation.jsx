@@ -224,6 +224,31 @@ function Creation({ auth }) {
             locked = true;
           });
         });
+
+        document.addEventListener("keydown", (e) => {
+          if (selectedElement) {
+            if (e.key === "ArrowUp") {
+              selectedElement.position.y -= 10;
+            }
+            if (e.key === "ArrowDown") {
+              selectedElement.position.y += 10;
+            }
+            if (e.key === "ArrowLeft") {
+              selectedElement.position.x -= 10;
+            }
+            if (e.key === "ArrowRight") {
+              selectedElement.position.x += 10;
+            }
+            if (e.key === "Delete") {
+              app.stage.children.forEach((child) => {
+                if (child.name === selectedElement.name) {
+                  app.stage.removeChild(child);
+                  setElementSelected(null);
+                }
+              });
+            }
+          }
+        });
       });
     }
   }, [app]);

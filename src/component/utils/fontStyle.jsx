@@ -173,25 +173,25 @@ export default function FontStyle() {
                         />
                     </span>
                 </div>
+                <button
+                    className={styles.btn}
+                    onClick={() =>
+                        createText({
+                            text: "Algum texto",
+                            customStyle: {
+                                fontFamily: "Mulish",
+                                fontSize: 36,
+                                fontWeight: "normal",
+                                fill: "black",
+                                align: "center",
+                                interactive: true,
+                            },
+                        })
+                    }
+                >
+                    Adicionar texto
+                </button>
             </div>
-            <button
-                onClick={() =>
-                    createText({
-                        text: "Algum texto",
-                        customStyle: {
-                            fontFamily: "Mulish",
-                            fontSize: 36,
-                            fontWeight: "normal",
-                            fill: "black",
-                            align: "center",
-                            interactive: true,
-                        },
-                    })
-                }
-            >
-                add text
-            </button>
-            < button onClick={() => console.log(elementSelected)}>Check</button>
         </>
     );
 }

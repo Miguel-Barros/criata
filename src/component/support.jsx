@@ -71,7 +71,12 @@ function SupportModal({ showing, setShowing }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container}
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-duration="400"
+            data-aos-offset="50"
+        >
             <div className={styles.modal}>
                 <div className={styles.left}>
                     <h2>Formulario de contato</h2>
