@@ -15,6 +15,7 @@ export default function CreateElements() {
     const [frameHeight, setFrameHeight] = useState(100);
     const [frameWidth, setFrameWidth] = useState(100);
     const [frameColor, setFrameColor] = useState("#000000");
+    const [cliped, setCliped] = useState(false);
 
     function createRectangle(color, width, height, border) {
         const elementRect = new PIXI.Graphics();
@@ -140,6 +141,33 @@ export default function CreateElements() {
                     <h3>Altura</h3>
                     <input type="range" name="frame-height" id="frame-height" min="10" max={app.screen.height} onChange={(e) => setFrameHeight(e.target.value)} value={frameHeight} />
                     <p>{frameHeight}px</p>
+                    {
+                        cliped ? (
+                            <span>
+                                <Icon
+                                    icon="mdi:paperclip"
+                                    className={styles.icon}
+                                    onClick={() => setCliped(false)}
+                                />
+                                <p>Entrelaçar</p>
+                            </span>
+                        ) : (
+                            <span>
+                                <Icon
+                                    icon="mdi:paperclip-off"
+                                    className={styles.icon}
+                                    onClick={() => setCliped(true)}
+                                />
+                                <p>Desentrelaçar</p>
+                            </span>
+                        )
+                    }
+                    <input
+                        type="checkbox"
+                        name="height-lock-and-width-lock"
+                        id="height-lock-and-width-lock"
+                        className={styles.checkbox}
+                    />
                     <h3>Largura</h3>
                     <input type="range" name="frame-width" id="frame-width" min="10" max={app.screen.width} onChange={(e) => setFrameWidth(e.target.value)} value={frameWidth} />
                     <p>{frameWidth}px</p>

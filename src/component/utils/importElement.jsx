@@ -43,3 +43,16 @@ export default function ImportElement() {
         </>
     )
 }
+
+
+
+const cards = []
+
+cards.forEach((card) => {
+    if (card.id === cardAnterior) {
+        // mesmo card
+    }
+    if (card.id != cardAnterior) {
+        // outro card
+    }
+})
