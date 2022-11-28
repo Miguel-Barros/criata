@@ -174,12 +174,10 @@
   cursor: pointer;
 }
 
-.tool_content .frameProperties span {
+.tool_content .frameProperties .clip {
   display: flex;
   align-items: center;
-  margin-top: 5%;
-  margin-bottom: -5%;
-  width: 100%;
+  flex-direction: row-reverse;
 }
 
 .tool_content input[type="checkbox"] {

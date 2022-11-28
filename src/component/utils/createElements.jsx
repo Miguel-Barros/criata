@@ -141,27 +141,6 @@ export default function CreateElements() {
                     <h3>Altura</h3>
                     <input type="range" name="frame-height" id="frame-height" min="10" max={app.screen.height} onChange={(e) => setFrameHeight(e.target.value)} value={frameHeight} />
                     <p>{frameHeight}px</p>
-                    {
-                        cliped ? (
-                            <span>
-                                <Icon
-                                    icon="mdi:paperclip"
-                                    className={styles.icon}
-                                    onClick={() => setCliped(false)}
-                                />
-                                <p>Entrelaçar</p>
-                            </span>
-                        ) : (
-                            <span>
-                                <Icon
-                                    icon="mdi:paperclip-off"
-                                    className={styles.icon}
-                                    onClick={() => setCliped(true)}
-                                />
-                                <p>Desentrelaçar</p>
-                            </span>
-                        )
-                    }
                     <input
                         type="checkbox"
                         name="height-lock-and-width-lock"
@@ -171,13 +150,34 @@ export default function CreateElements() {
                     <h3>Largura</h3>
                     <input type="range" name="frame-width" id="frame-width" min="10" max={app.screen.width} onChange={(e) => setFrameWidth(e.target.value)} value={frameWidth} />
                     <p>{frameWidth}px</p>
-                    {/* <h3>Rotação</h3> */}
-                    {/* <input type="range" name="frame-rotate" id="frame-rotate" min="0" max="360" onChange={(e) => setFrameRotate(e.target.value)} value={frameRotate} /> */}
-                    {/* <p>{frameRotate}°</p> */}
-                    {/* <h3>Escala</h3> */}
-                    {/* <input type="range" name="frame-scale" id="frame-scale" min="1" max="10" onChange={(e) => setFrameScale(e.target.value)} value={frameScale} /> */}
-                    {/* <p>{frameScale}x</p> */}
-                    <h3>Color</h3>
+                    {
+                        cliped ? (
+                            <span className={styles.clip}>
+                                <Icon
+                                    icon="mdi:paperclip"
+                                    className={styles.icon}
+                                    onClick={() => setCliped(false)}
+                                />
+                                <p>Entrelaçar</p>
+                            </span>
+                        ) : (
+                            <span className={styles.clip}>
+                                <Icon
+                                    icon="mdi:paperclip-off"
+                                    className={styles.icon}
+                                    onClick={() => setCliped(true)}
+                                />
+                                <p>Desentrelaçar</p>
+                            </span>
+                        )
+                    }
+                    {/* <h3>Rotação</h3>
+                    <input type="range" name="frame-rotate" id="frame-rotate" min="0" max="360" onChange={(e) => setFrameRotate(e.target.value)} value={frameRotate} />
+                    <p>{frameRotate}°</p>
+                    <h3>Escala</h3>
+                    <input type="range" name="frame-scale" id="frame-scale" min="1" max="10" onChange={(e) => setFrameScale(e.target.value)} value={frameScale} />
+                    <p>{frameScale}x</p>
+                    <h3>Color</h3> */}
                     <input type="color" name="frame-color" id="frame-color" onChange={(e) => setFrameColor(e.target.value)} />
                 </div>
             </div>

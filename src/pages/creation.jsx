@@ -210,6 +210,9 @@ function Creation({ auth }) {
 
         document.addEventListener("keydown", (e) => {
           if (selectedElement) {
+            if (e.key === "Enter") {
+              selectedElement.text = prompt("Digite o texto", selectedElement.text);
+            }
             if (e.key === "ArrowUp") {
               selectedElement.position.y -= 10;
             }
