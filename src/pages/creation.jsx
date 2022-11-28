@@ -94,26 +94,9 @@ function Creation({ auth }) {
         });
         setApp(app);
         container.appendChild(app.view);
-      } else {
-        // Restaurar canvas salvo
-
-        cachedSprite = localStorage.getItem('salvo');
-        if (cachedSprite) {
-          currentSprite = cachedSprite;
-          app.stage.addChild(currentSprite);
-
-          // below code makes sure you can normally draw on `graphics` as usual
-          // add graphics at the top of currentSprite
-          app.stage.removeChild(graphics);
-          app.stage.addChild(graphics);
-        }
       }
     }
   }, [container]);
-
-
-
-
 
   // Funções de criação de elementos
 
