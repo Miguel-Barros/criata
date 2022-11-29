@@ -46,18 +46,6 @@ export default function CreateElements() {
         app.stage.addChild(elementTriangle);
     }
 
-    function createStar(color, width, height, radius) {
-        const elementStar = new PIXI.Graphics();
-        elementStar.beginFill(`0x${color?.replace("#", "")}`);
-        elementStar.drawStar(0, 0, 5, (
-            width / 2, 0,
-            0, height,
-            width, height
-        ), radius / 2, 0);
-        elementStar.endFill();
-        app.stage.addChild(elementStar);
-    }
-
     useEffect(() => {
         if (elementSelected) {
             const { width, height } = getElementProps(elementSelected);
@@ -70,7 +58,7 @@ export default function CreateElements() {
         if (elementSelected) {
             elementSelected.width = frameWidth;
             elementSelected.height = frameHeight;
-            elementSelected.rotation = frameRotate * Math.PI / 180;
+            // elementSelected.rotation = frameRotate * Math.PI / 180;
             // elementSelected.scale.set(frameScale / 100 );
             // elementSelected.backgroundColor = `0x${frameColor.replace("#", "")}`;
         }
@@ -114,24 +102,6 @@ export default function CreateElements() {
                             frameBorder
                         )}
                     />
-                    <Icon
-                        icon="akar-icons:star"
-                        className={styles.icon}
-                        onClick={() => createStar(
-                            frameColor,
-                            frameWidth,
-                            frameHeight
-                        )}
-                    />
-                    <Icon
-                        icon="akar-icons:hexagon"
-                        className={styles.icon}
-                    />
-                    <Icon
-                        icon="akar-icons:octagon"
-                        className={styles.icon}
-                    />
-
                 </div>
                 <h2>Propiedades</h2>
                 <div className={styles.frameProperties}>
@@ -166,8 +136,13 @@ export default function CreateElements() {
                                     icon="mdi:paperclip-off"
                                     className={styles.icon}
                                     onClick={() => setCliped(true)}
+                                    style={{
+                                        color: "#9351B6"
+                                    }}
                                 />
-                                <p>Desentrelaçar</p>
+                                <p style={{
+                                    color: "#9351B6"
+                                }}>Desentrelaçar</p>
                             </span>
                         )
                     }
