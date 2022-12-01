@@ -13,7 +13,7 @@ import EditProfile from '../component/editProfile'
 import Router from 'next/router';
 
 function Settings({ auth }) {
-  const { logout, user } = auth;
+  const { logout, user, sendEmailVerification } = auth;
 
   function error() {
     Swal.fire({
@@ -47,7 +47,7 @@ function Settings({ auth }) {
         data-aos-easing="ease-in-back"
         data-aos-delay="50"
         data-aos-offset="100">
-        <SupportModal showing={supportModal} setShowing={() => setSupportModal(false)}/>
+        <SupportModal showing={supportModal} setShowing={() => setSupportModal(false)} />
         <ChangePasswrod isOpen={changePassword} onClose={() => setChangePassword(false)} />
         <EditProfile isOpen={editProfile} onClose={() => setEditProfile(false)} />
 
@@ -71,6 +71,9 @@ function Settings({ auth }) {
                 user.email.substring(0, user.email.indexOf('@')) + '...' + user.email.substring(user.email.indexOf('@'), user.email.length)
                 :
                 user.email}
+              {
+                (user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: 'green' }} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: 'red' }} />
+              }
             </p>
             <p>{`Ultimo acesso em: ${userData?.lastAcess ?? 'Agora'}`}</p>
           </span>
@@ -85,6 +88,7 @@ function Settings({ auth }) {
             <h2>Conta</h2>
             <h3 onClick={() => setEditProfile(true)} >Editar perfil</h3>
             <h3 onClick={error}>Codigos QR do perfil</h3>
+            <h3 onClick={() => sendEmailVerification()}>Verificar conta</h3>
             <h2>Segurança</h2>
             <h3 onClick={() => setChangePassword(true)}>Alterar senha</h3>
             <h2>Preferências</h2>

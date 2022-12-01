@@ -50,6 +50,7 @@ export default function Nav(props) {
               onClick={() => Router.push("/profile")}
             >
               {formatName}
+              {(user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: 'green' }} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: 'red' }} />}
             </p>
             {userData?.imgProfile ? (
               <img

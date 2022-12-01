@@ -248,6 +248,23 @@ export function AuthProvider(props) {
     }
   }
 
+  async function sendEmailVerification() {
+    const { error, result } = await AuthService.sendEmailVerification(user);
+    if (error) {
+      ifError(error);
+    } else {
+      await Toast.fire({
+        icon: "success",
+        title: "Verificação de email",
+        text: "Foi enviado uma mensagem de verificação, para o email informado. Verifique sua caixa de entrada",
+        timer: 3500,
+        customClass: {
+          container: styles.swal
+        }
+      });
+    }
+  }
+
   async function updatePassword(
     user,
     oldPassword,
@@ -330,6 +347,8 @@ export function AuthProvider(props) {
       });
       logout();
     }
+
+
   }
 
   const value = {
@@ -343,6 +362,7 @@ export function AuthProvider(props) {
     signUpWithEmailAndPassword,
     sendPasswordResetEmail,
     updatePassword,
+    sendEmailVerification
   };
 
   return <authContext.Provider value={value} {...props} />;

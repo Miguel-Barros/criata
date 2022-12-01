@@ -5,7 +5,7 @@ import {
     getAuth, signOut,
     GoogleAuthProvider, EmailAuthProvider,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword, sendEmailVerification
 } from "firebase/auth";
 
 class AuthService {
@@ -86,6 +86,24 @@ class AuthService {
         }
     }
 
+    async sendEmailVerification(user) { 
+
+        const actionCodeSettings = {
+            url: 'htpps://criata.me/',
+            handleCodeInApp: true,
+        };
+
+        try {
+            const result = await sendEmailVerification(user, actionCodeSettings)
+            return {
+                result
+            }
+        } catch (error) {
+            return {
+                error
+            }
+        }
+    }
 
     async logout() {
         await signOut(this.auth);
