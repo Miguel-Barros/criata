@@ -109,7 +109,12 @@ export default function CreateElements() {
                     <input type="range" name="frame-border" id="frame-border" min="1" max="100" onChange={(e) => setFrameBorder(e.target.value)} value={frameBorder} />
                     <p>{frameBorder}px</p>
                     <h3>Altura</h3>
-                    <input type="range" name="frame-height" id="frame-height" min="10" max={app.screen.height} onChange={(e) => setFrameHeight(e.target.value)} value={frameHeight} />
+                    <input type="range" name="frame-height" id="frame-height" min="10" max={app.screen.height} onChange={(e) => {
+                        setFrameHeight(e.target.value)
+                        if (cliped) {
+                            setFrameWidth(e.target.value)
+                        }
+                    }} value={frameHeight} />
                     <p>{frameHeight}px</p>
                     <input
                         type="checkbox"
@@ -118,24 +123,20 @@ export default function CreateElements() {
                         className={styles.checkbox}
                     />
                     <h3>Largura</h3>
-                    <input type="range" name="frame-width" id="frame-width" min="10" max={app.screen.width} onChange={(e) => setFrameWidth(e.target.value)} value={frameWidth} />
+                    <input type="range" name="frame-width" id="frame-width" min="10" max={app.screen.width} onChange={(e) => {
+                        setFrameWidth(e.target.value)
+                        if (cliped) {
+                            setFrameHeight(e.target.value)
+                        }
+                    }} value={frameWidth} />
                     <p>{frameWidth}px</p>
                     {
                         cliped ? (
                             <span className={styles.clip}>
                                 <Icon
-                                    icon="mdi:paperclip"
-                                    className={styles.icon}
-                                    onClick={() => setCliped(false)}
-                                />
-                                <p>Entrelaçar</p>
-                            </span>
-                        ) : (
-                            <span className={styles.clip}>
-                                <Icon
                                     icon="mdi:paperclip-off"
                                     className={styles.icon}
-                                    onClick={() => setCliped(true)}
+                                    onClick={() => setCliped(false)}
                                     style={{
                                         color: "#9351B6"
                                     }}
@@ -143,6 +144,17 @@ export default function CreateElements() {
                                 <p style={{
                                     color: "#9351B6"
                                 }}>Desentrelaçar</p>
+                            </span>
+
+                        ) : (
+                            <span className={styles.clip}>
+                                <Icon
+                                    icon="mdi:paperclip"
+                                    className={styles.icon}
+                                    onClick={() => setCliped(true)}
+                                    
+                                />
+                                <p>Entrelaçar</p>
                             </span>
                         )
                     }

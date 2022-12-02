@@ -84,6 +84,16 @@ function ifError(error) {
         }
       });
       break;
+    case "auth/too-many-requests":
+      Toast.fire({
+        icon: "error",
+        title: "Muitas tentativas",
+        text: "Aguarde um pouco ou tente novamente mais tarde!",
+        customClass: {
+          container: styles.swal
+        }
+      });
+      break;
     default:
       return;
   }
@@ -250,13 +260,33 @@ export function AuthProvider(props) {
 
   async function sendEmailVerification() {
     const { error, result } = await AuthService.sendEmailVerification(user);
-    if (error) {
-      ifError(error);
+    if ( !user.emailVerified ) {
+      if (error) {
+        await Toast.fire({
+          icon: "error",
+          title: "Falha ao enviar email",
+          text: "Parece que já enviamos um email de verificação. Cheque novamente sua (Caixa de Entrada) ou (Spam)",
+          timer: 5000,
+          customClass: {
+            container: styles.swal
+          }
+        });
+      } else {
+        await Toast.fire({
+          icon: "success",
+          title: "Email enviado",
+          text: "Foi enviado um email de verificação. Verifique sua (Caixa de Entrada) e (Spam), caso não encontre, tente novamente mais tarde",
+          timer: 3500,
+          customClass: {
+            container: styles.swal
+          }
+        });
+      }
     } else {
       await Toast.fire({
-        icon: "success",
-        title: "Verificação de email",
-        text: "Foi enviado uma mensagem de verificação, para o email informado. Verifique sua caixa de entrada",
+        icon: "info",
+        title: "A conta atual já está verificada!",
+        text: "Parece que a conta atual já está verificada, não é necessário fazer a verificação novamente!",
         timer: 3500,
         customClass: {
           container: styles.swal

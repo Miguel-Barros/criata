@@ -68,13 +68,13 @@
 }
 
 .header nav .right .settings .username {
-  width: 100%;
+  width: 30%;
+  padding: 0 10%;
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 50%;
-  font-size: 1.3vw;
+  justify-content: space-evenly;
+ font-size: 1.3vw;
   font-weight: 500;
   font-family: "Baloo 2";
   cursor: pointer;
