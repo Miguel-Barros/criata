@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Settings.module.css'
-import Support, { SupportModal } from '../component/support'
+import { SupportModal } from '../component/support'
 import { withProtected } from '../hook/route';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
@@ -11,6 +11,7 @@ import Database from '../services/Database';
 import ChangePasswrod from '../component/changePassword';
 import EditProfile from '../component/editProfile'
 import Router from 'next/router';
+import QRCode from '../component/qrCode';
 
 function Settings({ auth }) {
   const { logout, user, sendEmailVerification } = auth;
@@ -35,6 +36,7 @@ function Settings({ auth }) {
   const [supportModal, setSupportModal] = useState(false);
   const [changePassword, setChangePassword] = useState(false)
   const [editProfile, setEditProfile] = useState(false)
+  const [qrCode, setqrCode] = useState(false)
 
   return (
     <div className={styles.container}>
@@ -50,6 +52,7 @@ function Settings({ auth }) {
         <SupportModal showing={supportModal} setShowing={() => setSupportModal(false)} />
         <ChangePasswrod isOpen={changePassword} onClose={() => setChangePassword(false)} />
         <EditProfile isOpen={editProfile} onClose={() => setEditProfile(false)} />
+        <QRCode showing={qrCode} onClose={() => setqrCode(false)} />
 
         <img className={styles.bg} src="./assets/images/settings/bg.svg" alt="background"
           data-aos="fade-right"
@@ -72,7 +75,7 @@ function Settings({ auth }) {
                 :
                 user.email}
               {
-                (user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: 'green' }} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: 'red' }} />
+                (user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: 'red', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} />
               }
             </p>
             <p>{`Ultimo acesso em: ${userData?.lastAcess ?? 'Agora'}`}</p>
@@ -87,7 +90,7 @@ function Settings({ auth }) {
             <h1 className={styles.title}>Configurações</h1>
             <h2>Conta</h2>
             <h3 onClick={() => setEditProfile(true)} >Editar perfil</h3>
-            <h3 onClick={error}>Codigos QR do perfil</h3>
+            <h3 onClick={() => setqrCode(true)}>Codigos QR do perfil</h3>
             <h3 onClick={() => sendEmailVerification()}>Verificar conta</h3>
             <h2>Segurança</h2>
             <h3 onClick={() => setChangePassword(true)}>Alterar senha</h3>
