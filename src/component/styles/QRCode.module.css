@@ -5,4 +5,85 @@
     height: 100%;
     position: absolute;
     z-index: 5;
+    display: flex;
+}
+
+.modal {
+    margin: 0 auto;
+    align-self: center;
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: calc(25px - 1vw);
+}
+
+.modal h2 {
+    font-family: 'Mulish';
+    font-size: calc(3.5rem - 1vw);
+    font-weight: 500;
+    margin-bottom: 3%;
+}
+
+.modal .profile {
+    width: calc(40% - 1vw);
+    height: calc(28% - 1vh);
+    object-fit: cover;
+    border-radius: calc(100% - 1vw);
+    margin-bottom: 3%;
+}
+
+.modal h3 {
+    width: 80%;
+    text-align: center;
+    font-family: 'Mulish';
+    font-weight: 600;
+    font-size: calc(2.5rem - 1vw);
+    font-weight: 500;
+}
+
+.modal span {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 35%;
+    height: 25%;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .qrCode {
+    width: 90%;
+    height: 100%;
+}
+
+.modal .btn {
+    width: calc(50% - 1vw);
+    height: calc(10% - 1vh);
+    border-radius: calc(30px - 1vw);
+    font-family: 'Mulish';
+    font-size: calc(2.2rem - 1vw);
+    font-weight: 700;
+    color: #fff;
+    background: #F6A413;
+    cursor: pointer;
+}
+
+.modal .close {
+    position: absolute;
+    top: calc(13% - 1vh);
+    right: calc(37% - 1vw);
+    width: calc(4% - 1vw);
+    height: calc(7% - 1vh);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal .close:hover {
+    transform: scale(1.1);
+    opacity: .5;
 }
