@@ -56,9 +56,6 @@ function Creation({ auth }) {
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
-  var cachedSprite = null;
-  var currentSprite = null;
-
   useEffect(() => {
     let tools = document.querySelectorAll(".tool");
     tools.forEach((e) => {
@@ -113,11 +110,18 @@ function Creation({ auth }) {
       });
     }
     if (e === "download") { // Salvar elemento
-      var canvas = app.renderer.extract.canvas();
-      var texture = PIXI.Texture.from(canvas);
-      cachedSprite = new PIXI.Sprite(texture);
-      localStorage.setItem('salvo', cachedSprite);
+      save();
     }
+  }
+
+  async function save() {
+    const url = await app.renderer.extract.base64(app.stage);
+      const a = document.createElement('a');
+      document.body.append(a);
+      a.download = 'screenshot';
+      a.href = url;
+      a.click();
+      a.remove();
   }
 
   let selectedElement = null;
