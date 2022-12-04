@@ -6,6 +6,7 @@ import { useState, useEffect, useLayoutEffect, createContext } from "react";
 import { withProtected } from "../hook/route";
 import styles from "../styles/Creation.module.css";
 import { ShowTool } from "../component/showTool";
+import PublishModal from "../component/publishModal";
 
 export const CreationContext = createContext();
 
@@ -239,6 +240,8 @@ function Creation({ auth }) {
     }
   }, [app]);
 
+  const [publishModal, setPublishModal] = useState(false);
+
   return (
     <CreationContext.Provider value={{ app, elements, elementSelected, getElementProps, elementProps }}>
       <div className={styles.container}>
@@ -246,6 +249,7 @@ function Creation({ auth }) {
           <title>Criata - Criação</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <PublishModal showing={publishModal} onClose={() => setPublishModal(false)}/>
         <header className={styles.header}>
           <Link href="/">
             <div className={styles.left}>
@@ -268,7 +272,7 @@ function Creation({ auth }) {
               })}
             </span>
             <span className={styles.actions}>
-              <button>Publicar</button>
+              <button onClick={() => setPublishModal(true)}>Publicar</button>
               <button>Visualizar</button>
             </span>
           </div>
