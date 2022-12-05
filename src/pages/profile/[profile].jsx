@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Nav from "../../component/nav";
 import styles from "./styles/FoundProfile.module.css";
-import { withProtected } from "../../hook/route";
+import { withProtected, withPublic } from "../../hook/route";
 import { Icon } from "@iconify/react";
 import Database from "../../services/Database";
 
@@ -64,4 +64,4 @@ function Profile({ auth }) {
     )
 }
 
-export default withProtected(Profile)
+export default withPublic(Profile)

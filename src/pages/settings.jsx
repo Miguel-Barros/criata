@@ -75,7 +75,7 @@ function Settings({ auth }) {
                 :
                 user.email}
               {
-                (user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: 'red', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} />
+                (user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} />
               }
             </p>
             <p>{`Ultimo acesso em: ${userData?.lastAcess ?? 'Agora'}`}</p>

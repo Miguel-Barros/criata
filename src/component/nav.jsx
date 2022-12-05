@@ -16,7 +16,7 @@ export default function Nav(props) {
   const [searchContent, setSearchContent] = useState("");
 
   useEffect(() => {
-    Database.getUserData(user.uid).then((e) => {
+    Database?.getUserData(user?.uid)?.then((e) => {
       setUserData(e);
     });
   }, []);
@@ -49,8 +49,8 @@ export default function Nav(props) {
               className={styles.username}
               onClick={() => Router.push("/profile")}
             >
-              {formatName}
-              {(user.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} />}
+              {formatName ?? "Visitante"}
+              {(user?.emailVerified) ? <Icon icon={'mdi:check-circle'} className={styles.verified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} /> : <Icon icon={'mdi:close-circle'} className={styles.unverified} style={{ color: '#7856F1', backgroundColor: '#fff', borderRadius: 'calc(100px - 1vw)'}} />}
             </p>
             {userData?.imgProfile ? (
               <img

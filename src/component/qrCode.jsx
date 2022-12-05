@@ -25,7 +25,7 @@ function QRCode({ showing, onClose }) {
                 <h3>{userData?.fullName}</h3>
                 <h3>{userData?.username}</h3>
                 <span>
-                    <CodeQR size={180} className={styles.qrCode} value={`https://criata.me/profile/${userData.username.replace('@', '')}`} />
+                    <CodeQR size={180} className={styles.qrCode} value={`https://criata.me/profile/${userData?.username?.replace('@', '')}`} />
                 </span>
                 <button className={styles.btn}>Compartilhar Codigo QR</button>
             </div>

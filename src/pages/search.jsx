@@ -5,8 +5,9 @@ import Database from "../services/Database";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Head from "next/head";
+import { withProtected } from "../hook/route";
 
-export default function Search() {
+function Search() {
   const query = Router.query.q;
   const [foundUsers, setFoundUsers] = useState([]);
 
@@ -101,3 +102,6 @@ export default function Search() {
                             <p className={styles.bio}> Shrek, um temido e aterrorizante ogro verde que ama a solidão em seu pântano, vê sua vida interrompida quando diversas criaturas de contos de fada.</p>
                         </span> */
 }
+
+
+export default withProtected(Search);
