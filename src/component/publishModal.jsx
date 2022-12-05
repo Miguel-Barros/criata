@@ -2,18 +2,19 @@ import { Router, useRouter } from "next/router";
 import { useState } from "react";
 import styles from "./styles/PublishModal.module.css";
 
-export default function PublishModal({ showing, onClose }) {
+export default function PublishModal({ showing, onClose, publish }) {
     if (!showing) return null;
 
     const [defaultPrefix, setDefaultPrefix] = useState("https://criata.me/c/");
     const [prefix, setPrefix] = useState("");
     const router = useRouter();
 
-    function publishProject() {
+    async function publishProject() {
         if (prefix === "") {
             alert("Insira um prefixo para o seu projeto");
             return;
         }
+        await publish();
         router.push('/c/' + prefix);
     }
 

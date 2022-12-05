@@ -32,6 +32,14 @@ class Storage {
 		}
 	}
 
+	async getFile(uid, fileName) {
+		try {
+			const result = await getDownloadURL(ref(this.storage, `/users/${uid}/${fileName}`));
+			return result
+		} catch (error) {
+			return error
+		}
+	}
 }
 
 export default new Storage

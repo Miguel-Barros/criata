@@ -146,7 +146,17 @@ function Creation({ auth }) {
       Storage.uploadFile(user.uid, file).then((res) => {
         console.log(res);
       })
+      saveScene();
     }
+  }
+
+  async function saveScene() {
+    const url = await app.renderer.extract.base64(app.stage);
+    const blob = await fetch(url).then(r => r.blob());
+    const file = new File([blob], "curriculo.png", { type: "image/png" });
+    Storage.uploadFile(user.uid, file).then((res) => {
+      console.log(res);
+    })
   }
 
   let selectedElement = null;
@@ -278,7 +288,7 @@ function Creation({ auth }) {
           <title>Criata - Criação</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <PublishModal showing={publishModal} onClose={() => setPublishModal(false)} />
+        <PublishModal showing={publishModal} onClose={() => setPublishModal(false)} publish={() => saveScene()} />
         <header className={styles.header}>
           <Link href="/">
             <div className={styles.left}>
