@@ -64,4 +64,4 @@ function Profile({ auth }) {
     )
 }
 
-export default withPublic(Profile)
+export default withProtected(Profile)

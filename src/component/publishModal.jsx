@@ -4,7 +4,7 @@ import styles from "./styles/PublishModal.module.css";
 export default function PublishModal({ showing, onClose }) {
     if (!showing) return null;
 
-    const [defaultPrefix, setDefaultPrefix] = useState("https://criata.me/");
+    const [defaultPrefix, setDefaultPrefix] = useState("https://criata.me/c/");
     const [prefix, setPrefix] = useState("");
 
     return (
@@ -15,8 +15,8 @@ export default function PublishModal({ showing, onClose }) {
                 <p>Digite o nome que deseja para seu projeto</p>
                 
                 <input type="text" placeholder="https://criata.me/"
-                    value={"https://criata.me/" + prefix}
-                    onChange={(e) => setPrefix(e.target.value.slice(18).replace(' ', ''))}
+                    value={"https://criata.me/c/" + prefix}
+                    onChange={(e) => setPrefix(e.target.value.slice(20).replace(' ', ''))}
                 />
                 <span>
                     <button onClick={onClose}>Cancelar</button>
