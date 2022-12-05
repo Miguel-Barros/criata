@@ -7,29 +7,19 @@ import Head from "next/head";
 import Database from "../services/Database"
 import { useState, useEffect } from 'react';
 import EditProfile from "../component/editProfile";
+import { Router, useRouter } from "next/router";
 
 function Profile({ auth }) {
     const { user } = auth;
     const [userData, setUserData] = useState('')
     const [editProfile, setEditProfile] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         Database.getUserData(user.uid).then((e) => {
             setUserData(e)
         })
     }, [])
-
-    function Disabled() {
-        Swal.fire({
-            icon: "error",
-            showConfirmButton: false,
-            timer: 1500,
-            text: "Parece que essa função foi desabilitada por um desenvolvedor",
-            customClass: {
-                container: styles.swal,
-            }
-        })
-    }
 
     return (
         <div className={styles.container}>
@@ -57,20 +47,33 @@ function Profile({ auth }) {
                     <span className={styles.buttons}>
                         <button className={styles.btn} onClick={() => setEditProfile(true)}>
                             <Icon className={styles.icon} icon={'mdi:edit-outline'} />Editar perfil</button>
-                        <button disabled className={styles.btn} >
+                        <button disabled className={styles.btn} onClick={() => {
+                        }}>
                             <Icon className={styles.icon} icon={'mdi:plus-circle-outline'} />Adicionar projeto</button>
                     </span>
                     <span className={styles.projects}>
                         <div className={styles.project}>
-                            <span>
+                            {/* <span>
                                 <Icon icon={'mdi:pencil-box-outline'} className={styles.icon} onClick={() => Disabled()} />
                                 <Icon icon={'mdi:qrcode'} className={styles.icon} onClick={() => Disabled()} />
+                            </span> */}
+                            <button className={styles.btn} onClick={() => {
+                                router.push('/creation')
+                            }} style={{ marginTop: '50%' }}>Criar um novo</button>
+                        </div>
+                        <div className={styles.project}>
+                            <span>
+                                <Icon icon={'mdi:pencil-box-outline'} className={styles.icon} />
+                                <Icon icon={'mdi:qrcode'} className={styles.icon} />
                             </span>
-                            <button className={styles.btn} onClick={() => Disabled()}>Visualizar</button>
+                            <button className={styles.btn} onClick={() => {
+                            }}>Visualizar</button>
                         </div>
                         <div aria-disabled aria-readonly className={styles.project}>
-                        </div>
-                        <div aria-disabled aria-readonly className={styles.project}>
+                            {/* <span>
+                                <Icon icon={'mdi:pencil-box-outline'} className={styles.icon} onClick={() => Disabled()} />
+                                <Icon icon={'mdi:qrcode'} className={styles.icon} onClick={() => Disabled()} />
+                            </span> */}
                         </div>
                     </span>
                 </div>

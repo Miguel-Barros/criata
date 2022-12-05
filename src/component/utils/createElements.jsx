@@ -22,6 +22,7 @@ export default function CreateElements() {
         elementRect.beginFill(`0x${color?.replace("#", "")}`);
         elementRect.drawRoundedRect(0, 0, width, height, border);
         elementRect.endFill();
+        elementRect.name = "Rectangle";
         app.stage.addChild(elementRect);
     }
 
@@ -30,6 +31,7 @@ export default function CreateElements() {
         elementCircle.beginFill(`0x${color?.replace("#", "")}`);
         elementCircle.drawCircle(width / 2, height / 2, width / 2);
         elementCircle.endFill();
+        elementCircle.name = "Circle";
         app.stage.addChild(elementCircle);
     }
 
@@ -43,6 +45,7 @@ export default function CreateElements() {
                 width, height
             ), 3, radius, 0);
         elementTriangle.endFill();
+        elementTriangle.name = "Triangle";
         app.stage.addChild(elementTriangle);
     }
 
@@ -152,7 +155,7 @@ export default function CreateElements() {
                                     icon="mdi:paperclip"
                                     className={styles.icon}
                                     onClick={() => setCliped(true)}
-                                    
+
                                 />
                                 <p>Entrelaçar</p>
                             </span>

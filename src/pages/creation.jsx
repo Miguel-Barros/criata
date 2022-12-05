@@ -7,6 +7,7 @@ import { withProtected } from "../hook/route";
 import styles from "../styles/Creation.module.css";
 import { ShowTool } from "../component/showTool";
 import PublishModal from "../component/publishModal";
+import Storage from "../services/Storage";
 
 export const CreationContext = createContext();
 
@@ -14,6 +15,7 @@ function Creation({ auth }) {
   // Gerar ferramentas
 
   const [elementSelected, setElementSelected] = useState(null);
+  const { user } = auth;
 
   const topTools = [
     "nav-arrow-left",
@@ -100,28 +102,51 @@ function Creation({ auth }) {
 
   let elements = [];
 
-  function handleTopClick(e) {
-    if (e === "trash" && elementSelected) { // Deletar elemento
-      app.stage.children.forEach((child) => {
-        if (child.name === elementSelected.name) {
-          app.stage.removeChild(child);
-          setElementSelected(null);
-        }
-      });
-    }
-    if (e === "download") { // Salvar elemento
-      save();
-    }
-  }
 
-  async function save() {
-    const url = await app.renderer.extract.base64(app.stage);
-      const a = document.createElement('a');
-      document.body.append(a);
-      a.download = 'screenshot';
-      a.href = url;
-      a.click();
-      a.remove();
+  // function handleTopClick(e) {
+  //   if (e === "trash" && elementSelected) { // Deletar elemento
+  //     app.stage.removeChild(elementSelected);
+  //     setElementSelected(null);
+  //   }
+  //   if (e == "download") { // Salvar elemento em json
+  //     app.stage.children.forEach((child) => {
+  //       elements.push({
+  //         name: child.name,
+  //         x: child.x,
+  //         y: child.y,
+  //         width: child.width,
+  //         height: child.height,
+  //         rotation: child.rotation,
+  //         text: child.text,
+  //         style: child.style,
+  //         anchor: child.anchor,
+  //         texture: child.texture,
+  //       });
+  //     });
+
+  //     alert("Salvo com sucesso!");
+  //     // let blob = new Blob([data], { type: "application/json" });
+  //     // let url = URL.createObjectURL(blob);
+  //     // let a = document.createElement('a');
+  //     // a.download = "project.json";
+  //     // a.href = url;
+  //     // a.click();
+  //   }
+  // }
+
+  async function handleTopClick(e) {
+    if (e === "trash" && elementSelected) { // Deletar elemento
+      app.stage.removeChild(elementSelected);
+      setElementSelected(null);
+    }
+    if (e == "download") { // Salvar elemento em json
+      const url = await app.renderer.extract.base64(app.stage);
+      const blob = await fetch(url).then(r => r.blob());
+      const file = new File([blob], "curriculo.png", { type: "image/png" });
+      Storage.uploadFile(user.uid, file).then((res) => {
+        console.log(res);
+      })
+    }
   }
 
   let selectedElement = null;
@@ -253,7 +278,7 @@ function Creation({ auth }) {
           <title>Criata - Criação</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <PublishModal showing={publishModal} onClose={() => setPublishModal(false)}/>
+        <PublishModal showing={publishModal} onClose={() => setPublishModal(false)} />
         <header className={styles.header}>
           <Link href="/">
             <div className={styles.left}>

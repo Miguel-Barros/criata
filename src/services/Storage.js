@@ -22,6 +22,16 @@ class Storage {
 			return error
 		}
 	}
+
+	async uploadFile(uid, file) {
+		try {
+			const result = await uploadBytes(ref(this.storage, `/users/${uid}/${file.name}`), file);
+			return result
+		} catch (error) {
+			return error
+		}
+	}
+
 }
 
 export default new Storage

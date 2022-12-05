@@ -56,6 +56,7 @@ export default function FontStyle() {
         const elementText = new PIXI.Text(props.text, {
             ...props.customStyle,
         });
+        elementText.name = "Text";
         app.stage.addChild(elementText);
     }
 
