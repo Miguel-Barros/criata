@@ -4,7 +4,7 @@
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
-    backdrop-filter: blur(calc(16px - 1vw));
+    backdrop-filter: blur(calc(23px - 1vw));
 }
 
 .modal {
@@ -15,7 +15,7 @@
     transform: translateY(-50%) translateX(50%);
     background: #fff;
     box-shadow: 0 0 calc(50px - 1vw) 0 rgba(0, 0, 0, 0.5);
-    border-radius: calc(25px - 1vw);
+    border-radius: calc(30px - 1vw);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,4 +83,24 @@
 .modal span button:hover {
     opacity: 0.7;
     transform: scale(1.05);
+}
+
+@media (min-width: 1920px) {
+    .modal h2 {
+        font-size: 1.9em;
+    }
+
+    .modal p {
+        font-size: 1.3em;
+    }
+
+    .modal input {
+        font-size: 1.3em;
+    }
+
+    .modal span button {
+        font-size: 1.2em;
+        border-radius: calc(30px - 1vw);
+    }
+
 }
