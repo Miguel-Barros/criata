@@ -39,4 +39,24 @@ function QRCode({ showing, onClose }) {
     )
 }
 
+function ProjectQR({ showing, onClose }) {
+    if (!showing) return null
+    const { user } = useAuth()
+    const [userData, setUserData] = useState(null)
+
+    return (
+        <div className={styles.container}>
+            <div className={styles.modal}>
+                <Icon icon="mdi:close" className={styles.close} onClick={onClose} />
+                <h2>Project QR</h2>
+                <span>
+                    <CodeQR size={200} className={styles.qrCode} value={`https://criata.me/c/${userData?.username?.replace('@', '')}`} />
+                </span>
+                
+            </div>
+        </div>
+    )
+}
+
 export default QRCode
+export { ProjectQR }
