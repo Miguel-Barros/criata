@@ -23,11 +23,17 @@ function QRCode({ showing, onClose }) {
                 <h2>Meu codigo QR</h2>
                 <img className={styles.profile} src={userData?.imgProfile} alt="Profile-Img" />
                 <h3>{userData?.fullName}</h3>
-                <h3>{userData?.username}</h3>
+                <h3 className={styles.username}>{userData?.username}</h3>
                 <span>
-                    <CodeQR size={180} className={styles.qrCode} value={`https://criata.me/profile/${userData?.username?.replace('@', '')}`} />
+                    <CodeQR size={160} className={styles.qrCode} value={`https://criata.me/profile/${userData?.username?.replace('@', '')}`} />
                 </span>
-                <button className={styles.btn}>Compartilhar Codigo QR</button>
+                <button className={styles.btn} onClick={() => {
+                    const qrCode = document.querySelector(`.${styles.qrCode}`)
+                    const a = document.createElement('a')
+                    a.href = qrCode.src
+                    a.download = 'qrCode.png'
+                    a.click()
+                }}>Compartilhar Codigo QR</button>
             </div>
         </div>
     )
