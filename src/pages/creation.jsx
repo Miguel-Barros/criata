@@ -8,6 +8,7 @@ import styles from "../styles/Creation.module.css";
 import { ShowTool } from "../component/showTool";
 import PublishModal from "../component/publishModal";
 import Storage from "../services/Storage";
+import Swal from "sweetalert2";
 
 export const CreationContext = createContext();
 
@@ -154,9 +155,7 @@ function Creation({ auth }) {
     const url = await app.renderer.extract.base64(app.stage);
     const blob = await fetch(url).then(r => r.blob());
     const file = new File([blob], "curriculo.png", { type: "image/png" });
-    Storage.uploadFile(user.uid, file).then((res) => {
-      console.log(res);
-    })
+    Storage.uploadFile(user.uid, file)
   }
 
   let selectedElement = null;
@@ -250,8 +249,30 @@ function Creation({ auth }) {
 
         document.addEventListener("keydown", (e) => {
           if (selectedElement) {
-            if (e.key === "Enter") {
-              selectedElement.text = prompt("Digite o texto", selectedElement.text);
+            if (e.key == "Shift") {
+              if (selectedElement.text) {
+                Swal.fire({
+                  customClass: {
+                    container: styles.swal,
+                  },
+                  title: "Digite o texto",
+                  input: "text",
+                  inputValue: selectedElement.text,
+                  showCancelButton: false,
+                  showConfirmButton: true,
+                  inputValidator: (value) => {
+                    if (!value) {
+                      return "Você precisa digitar algo!";
+                    }
+                  },
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    selectedElement.text = result.value;
+                    selectElement(selectedElement);
+                  }
+                });
+              }
+              selectedElement.editing = false;
             }
             if (e.key === "ArrowUp") {
               selectedElement.position.y -= 10;

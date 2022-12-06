@@ -61,13 +61,13 @@ function Profile({ auth }) {
                                 router.push('/creation')
                             }} style={{ marginTop: '50%' }}>Criar um novo</button>
                         </div>
-                        <div className={styles.project}>
-                            <span>
+                        <div aria-disabled aria-readonly  className={styles.project}>
+                            {/* <span>
                                 <Icon icon={'mdi:pencil-box-outline'} className={styles.icon} />
                                 <Icon icon={'mdi:qrcode'} className={styles.icon} />
                             </span>
                             <button className={styles.btn} onClick={() => {
-                            }}>Visualizar</button>
+                            }}>Visualizar</button> */}
                         </div>
                         <div aria-disabled aria-readonly className={styles.project}>
                             {/* <span>

@@ -195,6 +195,10 @@
   flex-direction: column;
 }
 
+.swal {
+  font-family: 'Mulish'
+}
+
 @media (min-width: 1920px) {
   .main .side_bar .box {
     width: 70%;

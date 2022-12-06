@@ -89,7 +89,7 @@ class AuthService {
     async sendEmailVerification(user) { 
 
         const actionCodeSettings = {
-            url: 'https://localhost:3000',
+            url: 'https://criata.me/',
             handleCodeInApp: true,
         };
 
