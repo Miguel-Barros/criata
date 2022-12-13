@@ -36,8 +36,9 @@ function Curriculo({ auth }) {
                                 alt="Curriculo"
                                 className={styles.curriculo} />
                             :
-                            <div className={styles.curriculo}>
-                                <h1>Carregando...</h1>
+                            <div className={styles.loading}>
+                                <img src="/assets/components/criata_logo.svg" alt="Criata" />
+                                <p>Criata</p>
                             </div>
                     }
                 </div>
