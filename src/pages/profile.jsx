@@ -76,7 +76,7 @@ function Profile({ auth }) {
                                         <Icon icon={'mdi:qrcode'} className={styles.icon} onClick={() => (showQR) ? setShowQR(false) : setShowQR(true)} />
                                     </span>
                                     <button className={styles.btn} onClick={() => {
-                                        router.push(`/c/${userData?.username}`)
+                                        router.push(`/c/${userData?.username.replace("@", '')}`)
                                     }
                                     }>Visualizar</button>
                                 </div>

@@ -5,21 +5,13 @@ import Nav from '../component/nav';
 import { Icon } from '@iconify/react';
 import Router from 'next/router';
 import Swal from 'sweetalert2';
+import { useEffect } from 'react';
 
 function Home({ auth }) {
     const { logout, user } = auth
 
-    function click() {
-        Swal.fire({
-            icon: 'error',
-            title: "Opps...",
-            text: "Parece que essa função foi desativada por um administrador",
-            showConfirmButton: false,
-            timer: 2000,
-            customClass: {
-                container: styles.swal
-            }
-        })
+    const openTemplate = (id) => {
+        return Router.push(`/t/model${id}`)
     }
 
     return (
@@ -39,42 +31,42 @@ function Home({ auth }) {
                         <div className={styles.card} onClick={() => Router.push('/creation')}>
                             <Icon icon={'mdi:plus-circle-outline'} className={styles.plus} />
                         </div>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(1)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model1.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model1.png" alt="Template" className={styles.template}  />
                         </div>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(2)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model2.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model2.png" alt="Template" className={styles.template}  />
                         </div>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(3)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model3.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model3.png" alt="Template" className={styles.template}  />
                         </div>
                     </div>
                     <div className={styles.card_group}>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(3)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model3.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model3.png" alt="Template" className={styles.template}  />
                         </div>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(4)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model4.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model4.png" alt="Template" className={styles.template}  />
                         </div>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(1)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model1.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model1.png" alt="Template" className={styles.template}  />
                         </div>
-                        <div className={styles.card} onClick={click}>
+                        <div className={styles.card} onClick={() => openTemplate(2)}>
                             <p>Template</p>
                             <span className={styles.blur}></span>
-                            <img src="./assets/components/models/model2.png" alt="Template" className={styles.template} />
+                            <img src="./assets/components/models/model2.png" alt="Template" className={styles.template}  />
                         </div>
                     </div>
                 </section>
