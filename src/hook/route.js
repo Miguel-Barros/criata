@@ -6,8 +6,8 @@ export function withPublic(Component) {
 		const auth = useAuth();
 		const router = useRouter();
 
-		if (auth.user) {
-			router.replace("/home");
+		if (auth.user || !auth.user) {
+			router.replace("/warn");
 			return (
 				<>
 				</>
@@ -23,8 +23,8 @@ export function withProtected(Component) {
 		const auth = useAuth();
 		const router = useRouter();
 
-		if (!auth.user) {
-			router.replace("/signIn");
+		if (!auth.user || auth.user) {
+			router.replace("/warn");
 			return (
 				<>
 				</>
